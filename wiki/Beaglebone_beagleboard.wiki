@@ -1,0 +1,16 @@
+BEAGLEBONE, BEAGLEBOARD
+Beagleboard beaglebone ve rasperry pi ile yapılan ve görüntü işlenen bütün örneklerin internetten taranarak en iyiden kötüye arşiv oluşturulması.
+
+<wiki:video url="http://www.youtube.com/watch?v=8QouvYMfmQo
+
+bu video opencv ile beaglebone da capture ve image processing e giriş için hazırlanmış.
+
+http://derekmolloy.ie/beaglebone-images-video-and-opencv/
+
+kodlara buradan bakılabilir
+
+<wiki:video url="http://www.youtube.com/watch?v=mcy929FV8Qg <wiki:video url="http://www.youtube.com/watch?v=uls9F4Qscoc
+
+burada da beagle board örnekleri bulunmakta
+
+Emre Akyıldız akyildizemre@gmail.com
