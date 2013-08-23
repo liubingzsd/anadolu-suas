@@ -1,0 +1,13 @@
+Framebuffer, içerisinde tamçerçeve veri bulunduran bir bellek tamponu(memory buffer)  üzerinden video display birimini(monitör) süren bir video çıkış birimidir. Tampon içindeki veri tipik olarak herbir piksel için renk değerlerinden oluşur.Renk değerleri genelde  1bit monokrom, 4bit paletize, 8bit paletize, 16bit yüksek renk ve 24 bit gerçek renk formatlarındadır. Bazen ek olarak piksel şeffaflığı değeri bilgisini taşıyan "alfa kanalı" kullanılır. Framebuffer ı sürmek için gereken bellek miktarı çıkış sinyalinin çözünürlüğüne, renk derinliğine ve  palet boyutuna bağlıdır.
+
+Renk paleti, farklı renk derinlikleri için renk değerlerini hesaplamada kullanılan bir lookuptable dır.
+
+Intel’in görüntü işleme laboratuarlarında geliştirilen ve hız açısından optimize edilen OpenCV kütüphanesi, gerçek zamanlı uygulamalar hedef alınarak geliştirilmiştir. USB 2.0 teknolojisi ile birlikte artık standart bir bilgisayarda bile gerçek zamanlı uygulamalar çalıştırılabilmektedir. 
+
+Kamera ile Gerçek Zamanlı Görüntü Yakalama OpenCV kütüphanesi ile USB ya da dahili web kamerasından görüntü yakalayarak gerçek-zamanlı uygulamalar geliştirilebilir. Sistemde birden fazla kamera kullanılması durumunda gerekli kamera ID’si belirlenip ilgili metoda parametre olarak girilmelidir.
+Örnekte “cvCaptureFromCAM” metodu ile “CvCapture” tipinden bir değişkene görüntü gelmesi sağlandıktan sonra sonsuz bir döngü yardımıyla yakalanan görüntünün içerisindeki çerçeveler/resimler (frame) “cvQueryFrame” metodu ile tek tek sorgulanıp okutularak ekranda gösterilir. ESC’a basıldığında görüntü yakalama işlemi sona erer.
+
+OpenCV kütüphanesi, ücretsiz olması, işletim sistemi bağımsız olması, gerçek zamanlı uygulamalarda kullanılabilir olması ve 500’ün üzerinde fonksiyon desteği sayesinde görüntü işleme ile ilgilenen kişiler için hızlı ve rahat bir geliştirme süreci sağlar. Ayrıca eğitim kurumlarında açık kaynak kodlu ders aracı olarak kullanılabilir.
+
+Cansel Öğretmenoğlu    canseleal@gmail.com
+

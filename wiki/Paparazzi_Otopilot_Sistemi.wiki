@@ -1,0 +1,185 @@
+#labels Autopilot
+ PAPARAZİ OTOPİLOT SİSTEMİ
+
+
+
+http://anadolu-suas-boran.googlecode.com/svn/images/1.PNG
+ 
+
+Paparazzi  otopilot sistemi eksiksiz açık kaynaklı yazılım ve donanıma sahip bir sistemdir,bu sistem sadece uçuşla ilgili (airborne) yazılım ve donanım içermiyor ,yer istasyonu ( kontrol sistemi) da  içeriyor.Ayrıca bu  otopilot sistemi özellikle sabit kanatlı hava araçları için  güçlü ve çok yönlü otopilot sistemi oluşturmak için tasarlanmıştır fakat bu sistem geliştirildikçe pervane kanatlı hava araçları  içinde kullanılır hale gelmiştir.Bunun yanı sıra hibrit hava araçlarına uygun sistemler için  çalışmalarda devam etmektedir.Paparazzi pahalı olmayan otonom her tip  hava araçlarına yönelik açık kaynaklı bir otopilot sistemidir.
+
+ 
+ 
+
+Bu sistem düzinelerce  uçak gövdesinde kullanılmış ve dünyadaki pek çok takım tarafından uygulanmıştır.Paparazzi sistemi sayesinde binlerce saatlik  otonom uçuşlar başarılı şekilde tamamlanmıştır.Paparazi sistemi gerekli sensörleri ile  birlikte bir  uçuş işlemcisi (airborne processor) içermektedir.Ayrıca uçak otopilot yazılımı,yer kontrol terminali (Ground Control Station GCS) içerir ,iletişim protokolleri  farklı  elemanları ve simulasyon çevresini  bağlıyor.Paparazzi sistemin geliştirilmesinin baştan sona her evresinde güvenlik ve dayanıklılık ana amaçlar olmuştur.Kritik uçuş kodu(airborne code) güvenilirlik ve sağlamlık  için dikkatli bir şekilde mümkün olduğunca sade ve kısa  hazırlanmıştır.Tüm kritik kodlar Lustre’de(Lustre, Linux kümelerinde kullanılır ve açık kaynak bir paralel dosya sistemidir.) resmi olarak ispatlanmış ve filtrelenmiştir (rejenerasyon) , ayrıca donanımın içinde  ayrı mikrodenetleyici ile  ayrılmıştır (izole edilmiştir ).Bu sistem her çeşit uçak gövdesine adapte olabilecek şekilde tasarlanmıştır, halihazırda sabit ve döner  kanat sistemlerinin her ikisi içinde kullanılmaktadır.Uçuş yazılımı pek çok mikroişlemci yapılar ve donanım konfigürasyonları tarafından desteklenmektedir. Zorlu uçuş plan dili kullanıcının komplex otonom görevleri tanımlasına imkan tanır ve her senaryoya uyum sağlamak,her görevi yerine getirmek için otonom kararları içeren  bir mantık ağacı yaratır.Yer istasyonundaki kullanıcı hava aracının stabilizasyonu için videoları,gerçek zamanlı GPS verilerini ,görsel teması (otopilota dayanarak) kullanarak hava aracını her zaman izleyebilir.Yer kontrol istasyonu(GCS) güçlü ve esnek  alıcı/dağıtıcı bir yapı kullanmıştır.Bu sunucu ve alıcılar operatöre bir yada bir çok hava aracını, tek bir yerden yada bir çok yerden kontrol etme imkanı sağlamıştır.Kaynak kodu,donanım şeması, ve ayrıntılı belgeleme GNU(GNU, çekirdeği, sistem araçlarını, açıcılarını, kütüphanelerini ve son kullanıcı yazılımlarını içeren bir işletim sistemidir. İsminin açılımı "GNU's Not Unix" (GNU Unix değildir) dir. Bu ismi almasındaki sebep de tasarımının Unix'e benzerken kendisinin özgür yazılım olması ve herhangi bir UNIX kodunu içermemesidir.)Kamu Lisansı(GNU Genel Kamu Lisansı (GNU GPL ya da GPL) birçok yerde kullanılan ücretsiz yazılım lisansıdır ve özgün hali Richard Stallman tarafından GNU projesi için yazılmıştır. Bu lisansın en son sürümü (GPLv3), 29 Haziran 2007'de çıkmıştır. GNU Kısıtlı Genel Kamu Lisansı yani LGPL ise GPL'in bazı yazılım kütüphaneleri için yazılmış sürümüdür. ) altında müsaade edilmiştir ve tüm bunlar herkes tarafından projenin sitesinden ücretsiz olarak indirilebilir halde bulunmaktadır.Bu açık kaynak lisansı bu teknolojiyle ilgilinen çok sayıda insan tarafından kullanılması ve geliştirilmesi ümidiyle seçilmiştir.
+
+1.Tarihçesi
+
+•	Paparazzi otopilot sistemi 2003’ün başlarında hobi olarak başlayan bir projedir.İlk amaç 1.4m sabit kanat model ve en kolay muhtemel uçuş sistemi ile  otonom uçabilmekdir.İlk tekrarlamada denge sağlamak (stabilizasyon),GPS alıcısı ve temel veri uydu-yer bağlantı sistemi  için  standart cihazlar kullanışmıştır.Trivial arayüz, yer istasyonunda uydu-yer bağı sayesinde konum bilgisini alabilmek  ve bunu önceden yapılmış uçuş planı ile karşılaştırmak için uygulanmıştır.Yer bilgisayarı standart R/C aktarıcı(transmitter) sayesinde navigasyon komutlarını hesapladıktan sonra tekrar uçağa gönderebilmektedir.Hava aracı bu temel sistemi kullanarak temel ara noktaya (waypoint) sağlıklı bir şekilde ulaşıp ve burada stabil durumda kalabilmektedir.Otopilot sistemi için gelecek adım hatasız  bir uçuş dengesi ve navigasyon sistemi geliştirmedir. Temel devre kartı iki tane tasarlanmış ,kurulmuş AVR Atmel mikrodenetleyici (AVR, Atmel firmasının üretmiş olduğu 8 bitlik RISC mimarisine sahip mikrodenetleyicidir. Ucuz ve hızlı çalışan bir mikrodenetleyici olup, gelişmiş özellikleri bulunmaktadır. 2 KB ile 128 KB arasında değişen kapasitelerde yazılıp-silinebilen belleğe sahiptir.)içermektedir.Sistem tarafından , denge için infrared (kızılötesi) sensörler ,konum ve rota için GPS alıcı  ve manual kontrol için ise R/C alıcı kullanılmıştır.
+Otopilot tüm kumandaları(harekete geçiricileri) çalıştırıyordu,gerçek zamanlı telemetri ve durum (konum) için modem içeriyordu.Telemetri (uzaktan ölçüm) analog uydu-yer bağlantı kanalı  sayesinde elde ediliyordu, yer istasyonunda uçuş yollarını gözlemleyebilmek için uzaktan ölçüme izin veriliyordu.Bu sistemle donatılmış olan Multiplex Twinstar hava aracı ( 1.4m kanat genişliğine sahip) JMD03 (Micro Air Vehicle workshop,Toulouse,France) yarışmasını kazanmıştır.
+•	2004’te otopilot kodu her hava aracı için ayarlanabilmesi ve özelleştirilebilmesi için  tekrar tasarlanmış,dizayn edilmiştir.Daha sonra çok daha merak uyandırıcı Multiplex Microjet (65cm)otonom uçuş için donatılmış ve ayarlanmıştır.Bu araç EMAW05 and JMD04 yarışmalarında verilen görevi başarılı bir şekilde yerine getirmiştir.
+•	2005’te ,Paparazzi sistem montaja hazır hale gelmiştir ve diğer takımlar tarafından kullanılacak kadar popüler olmuştur.Sistem birden çok hava aracı için aynı anda kullanılmak amacıyla son bir kez daha yeniden tasarlanmıştır.Üç yeni hava aracı donatılmıştır.Diğer 11 takımın dışında dört takım MAV05(Garmish,Germany) yarışmasına katılmak için bu sistemi kullanmışlardır.Bu dört takımdan sadece bir tanesi görevi otonom bir şekilde yerine getirebildi.Bu sırada ENAC takımı 2 otonom hava aracını tanıtmıştı.
+•	2006 diğer dönemlere  en üretken dönemdir.Uçuş yazılımı ARM7 mikroişlemciye uygun hale getirilmiştir.Ground ve airborne yazılımı arasında çift yönlü haberleşme yöntemi kullanılmıştır.Bu haberleşme yöntemi görevin her anında operatöre değişiklik yapma fırsatı sunuyor, ayrıca temel uçuşlar (single flight) için yeni tasarım ayarlamalarına izin verilmiştir.
+Airborne donanımı daha küçük ve daha güvenilir bir pakete koymak  USB bağlantısı ile birlikte,eksiksiz GPS alıcısı ve anteni tek bir kartın üstüne koymak  için  yeniden dizayn edilmiştir.Son olarak yer istasyonu havada ayarlama(in-fligth tuning),dokunmatik ekran kontrolü ve Google Map başlığı ile otomatik bütünleşme için yenilendi.
+
+2.Donanım
+Atmel AVR ve Philips ARM7 LPC mikro denetleyicileri kullanılarak,birçok otopilot donanım versiyonları oluşturulmaktadır.En son model tek yada çift mikro denetleyici içermektedir.
+http://anadolu-suas-boran.googlecode.com/svn/images/2.png
+
+Single micro-controller(tiny controller board)
+
+http://anadolu-suas-boran.googlecode.com/svn/images/3.png
+
+Dual micro-controller(classix controller board)
+
+Ayrıca servoları,motor kontrolörlerlerini,farklı sensörleri,R/C alıcıyı,radio modemi ve diğer yararlı yükleri elde tutmak için bağlayıcılara ihtiyacı vardı.Classix kart yararlı yük işletimcilerini bağlamak için tasarlanmıştır,ARM9 mikro işlemci GNU/Linux işletim sistemini çalıştırmaktadır.Düzenleme video sıkıştırma,nesne tanıma,hemen hemen sınırsız sayıda otonom karar verme ve sensör yönetimi için yanı sıra çok büyük miktarda yerleşik(bütünleşik) işlem için  izin verecek.
+
+ 2.1 Minimum sensör grubu  
+Maliyeti düşük,güvenilirliği yüksek tutmak için ,en son paparazzi sisteminde denge sağlama ve yol gösterme sisteminde minimum grupta sensör kullanı. Durum tahmini bir grup kızılötesi sensör tarafından yapılmakta,yükseklik-irtifa starndart GPS alıcılardan elde edilmektedir.Yalpalama hassasiyeti jiroskop tarafından iyileştirilebilir ve donanım tüm atalet ve manyetik sensörleri destekler.
+
+2.2 Kızılötesi sensörler: Paparazzi otopilot  durumu algılamak için kızılötesi termopiller kullanıyor.Uçağın kanadının bir tarafa yatma açısı sıfır olduğunda (zero bank-pitch angle) iki sensör arasındaki sıcaklık farkı sıfır olmalı, ve yatma açısı 90 olduğunda bu fark maksimum olmalıdır. Bu ilişkiye göre doğrusal eğim (regresyon) yapılabilir ve bunun açısı hesaplanabilir.
+
+http://anadolu-suas-boran.googlecode.com/svn/images/4.png
+
+
+
+
+Zero bank-pitch angle 
+
+ 
+  
+http://anadolu-suas-boran.googlecode.com/svn/images/5.png
+
+
+
+
+90 degree of angle
+
+ Daha önceki modellerde yunuslama ve yalpalama hareketleri için iki grup sensör kullanılıyordu,ama son zamanlarda uçuş sırasındaki maksimum zıtlığı güncelleştirmek için  üçüncü bir  grup sensör entegre edilmiştir.Büyük hava araçları için bu üçüncü sensör gerekli olmayabilir fakat ,küçük insansız hava araçları için zorunludur.Önemli bir noktada şu ki, bu kızıl ötesi kararlı sensörler 7.5um-13.5um arasındaki IR(inf-rared) radyasyon dalga boyunda duyarlıdır.Bu dalgalar genel dünyevi nesneler tarafından meydana gelmektedir,su,güneş direk olarak etki etmemektedir.IR sensörlerin performansları ve sınırlarını gösteren kapsamlı testler yapıldı,bu sistem paparazzi takımı tarafından yürütüldü ve sistemin gece karanlıkta,aşırı yağmurda,yüksek irtifada (1500m AGL),açık okyanus üstünde,büyük bir dağa veya yapıya yakınken,-10C ile 48C arasında ,büyük çapta farklı bölgeleri geçerken(asfalt-su) %100 güvenilir olduğu kanıtlandı.Bu sensörlerin bilinen tek sınırlayıcıları yoğun sis ve bulut,böyle durumlarda düşük verim alınıyor.
+
+
+http://anadolu-suas-boran.googlecode.com/svn/images/6.png
+
+
+
+*Infrared sensor
+
+2.3 GPS Alıcı: Standart u-blox GPS alıcı modülü konum,rota,hız ve irtifa ölçmek için kullanılıyor.Bu GPS ünitesi(anten ve alıcı) bir kart üzerinde bulunabilir yada bağımsızda bulunabilir.Ayrıca GPS çoğaltmaya destek sağlayan aletlrede kullanılıyor(Wide Area Augmentation System WAAS,  European Geostationary Navigation Overlay Service  EGNOS).
+2.4 Opsiyonel Jiroskop: Kızılötesi stabilizasyon sistemi jiroskop tarafından yalpalama ekseni boyunca bir miktar geliştirilebilir.Bu jiroskop yüksek yalpa oranına sahip küçük hava aracı için bir avantaj olduğunu kanıtladı.
+
+
+3.Airborne Otopilot
+
+
+
+  
+http://anadolu-suas-boran.googlecode.com/svn/images/7.png
+
+Otopilot çift işlemci yapısını kullanıyor;ilk işlemci (Fly-by-Wire)servo kontrol gibi kritik kodla uğraşıyor ,ikinci işlemci navigasyonu,sensörleri,yararlı yükleri,iletişimi ve her türlü otonom işlemi yürütüyor.Otopilot işlemcisinde yıkıcı kod hatası olursa ,hava aracı FBW(Fly-by-Wire)(kontrollü uçuş) işlemci ile manuel olarak düzeltilebilir.Bu yapı için iki elektronik kart düzenlenmiştir,1’si Atmel AVR  mikrodenetleyici ile ,diğeri Philips LPC .
+ 
+https://code.google.com/p/anadolu-suas-boran/source/browse/images/8.png
+
+3.1 Kontrol Döngüsü
+
+
+Otopilot çekirdeği 3 parttan oluşuyor;sensör kazanımı (acquisition ),durum tahmini ve kontrol döngüsü yığını. Sensörler tarafından sağlanan ham veri durum tahmin edicileri tarafından filtreleniyor daha sonra düzgün bilgiyi denetçiye veriyor.Bu denetçiler periyodik olarak çalışıyorlar ve komutları ya gerçek aktüatörler için ya da diğer denetçiler için hesaplıyorlar.
+
+
+
+http://anadolu-suas-boran.googlecode.com/svn/images/9.png
+
+
+
+Aşağıdaki 3D pozisyon kontrolörleridir(altitude - navigation).Navigasyon dentleyicisi temel yörünge bölümü ,bölüm ve daireden sorumludur. Örneğin;her iki denetleyicide 3D tırmanışı ve düşüşü takip etmek için bağlantılı olabilir.Yanal eksen navigasyon denetleyicileri tarafından kontrol ediliyor ve stabilizasyon(dengeleme) denetleyecilerine girdi sağlıyor.Dikey eksen kontrolü ya pitch kontrolü için  yada yetişme hızını kısmak için 
+girdi komutu sağlıyor.Son pitch denetleyici boylamsal eksenden sorumludur.Bu kontrol yapısı operatörlerin mevcut durumu muhafaza etmesine olanak sağlıyor.Tüm bu denetleyiciler şuanda standart PID (Proportional –Integral-Derivative) denetleyicilerdir.
+
+
+4.Yer Kontrol İstasyonunun Yapısı
+
+
+http://anadolu-suas-boran.googlecode.com/svn/images/10.png
+
+
+
+
+
+Paparazi yer kontrol sistemi uçakla bağlantı kurmak için üç ana temsilci ile  dağıtılmış bir yapıya sahiptir.
+Link temsilcisi (agent) elektriksel ekipmanların donanımından sorumludur.Elektronik ekipmanlar ile uçak arasında mesaj çevirici kullanmaktadır.Birçok link temsilcisi aynı anda kullanılabilir,ayrıca tek bir temsilci  aynı elektronik ekipman üzerinde birçok araç iletişimi kullanabilir.Server temsilcisi link temsilcisinden gelen mesajları log içine kaydeder ve yapay bilgiyi diğer dinleyici temsilcileri için sevkeder.Ayrıca hava aracının ortalama hızından rüzgar tahmini yada irtifa bilgisi gibi çevresel bilgileri hesaplayabilmek, ve bunu uçakta yayınyalabilmektedir. Gcs grafiksel kullanıcı arayüzüdür.Sunucudan gelen bilgiyi  gösterir ve operatöre sırasıyla geri gönderir.Diğer temsilciler hata ayıklamak için mesaj izleme ,3D izleyici gibi olanaklar sağlar,ayrıca simulatör ve log player uçakla bağlantı kuran temsilcilerdir.
+
+Paparazzi Ivy yazılımını kullanmaktadır, IP ağının en üstünde bulunan basit özel bir yazılımdır.Ivy pek çok programlama dili ve işletim sistemi için  kullanışlıdır.Bu da dağıtılmış uygulamaların elemanlarıyla bağlantı kurmak için düşük maliyetli arayüz sağlıyor.
+Bu yapı sayesinde,yer kontrol istasyonu yerel ağ üzerinde özgür bir şekilde çalışabilir yada bir sunucu,birden çok link temsilcisi ve birden çok gcs temsilcisi ile  kişiye özel ağ üzerinde çalışabilir.
+
+4.1 Grafiksel Kullanıcı Arayüzü
+
+http://anadolu-suas-boran.googlecode.com/svn/images/11.png
+
+
+
+ 
+Bu örnekte iki hava aracı aynı anda kontrol ediliyor.
+•	Ana pencerede (sağda) bu pencerede her iki hava aracının yollarını,ara noktalarını ,güvenlik çemberi bilgilerini görebiliyoruz.Her kalibre edilmiş harita arka planda ayarlanabilir.Eğer uçuş sırasında  internet bağlantısı mevcut ise Google veritabanının döşemeleri yapı taşları  indirilebilir ve görüntülenebilir.Arayüz her noktadaki irtifayı göstermek için SRTM((Shuttle Radar Topography Mission)yer yüzünün toprak haritasının çıkarılması amacıyla Nasa tarafından yürütülen uluslar arası bir projedir) verilerini kullanmaktadır.
+•	Üst sol pencere her hava aracı için  suni ve gerekli bilgiyi göstermektedir.Bunlar batarya seviyesi,veri bağlantı durumu,hız,irtifa..v.s .Burada  emirleri hava aracına göndermek için bazı butonlar bulunmaktadır.
+•	Sağda bulunan ana pencerenin alt kısmındaki bölümde her hava aracı için çeşitli sekmeler bulunmaktadır 
+•	Sol alt kısımda gerçek zamanlı veri aktarımı görülmektedir.Videodaki anlık görüntüler video penceresinden aktarılabilir ve bu veriler bize hava aracının o andaki konumu hakkında bilgi verebilir.
+•	GUI tasarımı tamamen ayarlanabilir ,yanı sıra arayüzün işlevselliği pek çok kullanıcı tarafından onaylanmıştır.Karşılıklı etkileşim dokunmatik ekran sabitleri ile uyumludur.
+
+
+
+4.2 Simulasyon
+
+Paparazzi sistemi airborne kodunu ana bilgisayarda yada otopilot donanımında çalıştırmak için simulasyon olanaklarına sahiptir.
+
+ 
+
+5.Güvenlik
+
+Güvenlik paparazzi sistemlerin her aşamasında büyük önem taşımaktadır.Uçuş kodu (airborne code) sadelik ve hatasızlık noktalarına önem verilerek oluşturulmuştur ,yanı sıra tüm kritik kodlar hata ayıklama(düzeltme)için ayrılmışlardır.Kritik kodlar resmi metodlarla derinlemesine incelenmiştir ve Lustre’de gerçek zamanlı sabitleri hesaba katarak  yenilenmiştir .
+Hava aracının tehlike durumundaki davranışını belirlemek için pek çok tehlike önleyici mod uygulanmıştır.
+•	Merkezden çok uzakta ise;Otonom navigasyon sistemi ara noktayı belirler ve oraya geri döner
+•	Geri dönmesi mümkün olmadı durumda;Motor kendini kapatır ve araç spiral olarak alçalışa geçer.
+•	GPS sinyalini kaybettiğinde;Kullanıcı tanımlı özellik kullanılır.
+
+
+
+Son olarak Paparazzi otopilot sistemini katılacağımız yarışmada
+
+•	Utah State University
+•	Sherbrooke University
+•	M.S. Ramaiah Institute of Technology
+•	Utah States University ROSAM
+Bu kuruluşlar kullanmıştır.
+
+Bu listede AUVS yarışması sonuçları ve kullanılan otopilotlar bulunmaktadır.
+1- Utah State University FOSAM -- Paparazzi
+2- North Carolina State University -- Piccolo
+3- Sherbrooke University (Canada) -- Paparazzi
+4- United States Air Force Academy -- Piccolo
+5- California State at Northridge
+6- University of California at San Diego -- Kestrel
+7- Delhi Technical University (India) -- APM
+8- Kansas State University -- Piccolo
+9- University of Arizona -- Piccolo
+10- M.S. Ramaiah Institute of Technology (India) -- Paparazzi
+11- Utah States University ROSAM -- Paparazzi
+12- Cornell University
+13- Virginia Commonwealth University
+14- Mississippi State University -- Piccolo
+15- Bucknell University  -- APM
+16- Embry Riddle Aeronautical University -- APM
+17- Florida International University  -- Micropilot
+18- Great Mills High School --- Micropilot
+19- Rutgers University  -- APM
+20- University of Texas at Austin -- APM?
+21- University of Texas at Arlington -- APM?
+22- Wentworth Institute of Technology
+N/A - University of California at Los Angeles
+N/A- Illinois Institute of Technology
+N/A- Hampton Roads Area High School -- Homebrew
+N/A- Cal State Poly Pomona
+
+
+
+
+gozdeyasar92@gmail.com
+
+Gözde YAŞAR

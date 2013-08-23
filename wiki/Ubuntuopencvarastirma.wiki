@@ -1,0 +1,56 @@
+Bilmeyenler için öncelikle opencv’nin ne olduğundan kısaca bahsedelim
+
+OpenCV (“Open Computer Vision”) ; Windows,Linux, Mac OS X, PSP (PlayStation Portable) platformları üzerinde çalışabilen, C diliyle yazılmış, açık kaynak kodlu bir kütüphanedir.
+OpenCV içerisindeki bilgisayarla görüş (computer vision) ve görüntü işleme (image processing) algoritmalarını kullanılarak hareket tespiti, yüz algılama ve tanıma, kamera kalibrasyonu gibi pekçok uygulama yapılabilir. Bir resmi veya video doyasını kolaylıkla okuyabilir üzerinde işlem yapıp yenilerini yaratabilirsiniz. Hatta farklı kameralardan alınmış görüntüleri yorumlayıp, herhangi bir nesnenin konumunu belirleyebilirsiniz. 
+
+http://ranaalgan.wordpress.com/2011/02/06/opencv-nedir/
+http://erdemym.com/2012/06/09/opencv-nedir/
+
+Açık kaynak kodlu olduğundan bahsetmiştik. Bu da neden opencv’yi tercih etmemiz gerektiğinin gerekçelerinden biri. 
+Opencv yerine çeşitli kütüphaneler kullanabiliriz. Biraz da bunlardan bahsedelim.
+
+Opencv yerine kullanabileceğimiz diğer kütüphaneler nelerdir?
+
+Aşağıda linkini verdiğim sitede yaklaşık 30 40 tane farklı kütüphane bulunmakta. Tabi bunların hepsini incelemeyemedim. Sadece belli başlı öne çıkan kütüphaneleri kıyaslamak istiyorum.
+
+http://www.roborealm.com/links/vision_software.php
+http://www.keremcaliskan.com/hakkimda/linkler/
+http://peipa.essex.ac.uk/info/software.html
+
+Mesela İntel Integrated Performance Primitives (Intel IPP) adlı güzel bir kütüphane var. Windows, Linux, os x , destekliyor.
+http://software.intel.com/en-us/intel-integrated-performance-primitives-purchase/
+
+Eğer sadece kütüphaneyi almak istiyorsak 99dolar vermemiz yeterli. Bu yönden opencvyi tercih ederim. En azından açık kaynak kodlu.
+	İkinci olarak İmagej benim dikkatimi çekti. İmagej java ile geliştirilmiş güçlü bir görüntü işleme aracı. Fakat opencv gibi yeterince kaynak bulabilceğimizi sanmıyorum. 
+	Üçüncü olarak tabiî ki matlab var. Çok geniş bir kütüphaneye sahip. Fakat belli bir maliyeti var. Bu yönden opencv yi tercih ederim.
+
+	Opencv ile ubuntu versiyonları arasındaki belli başlı sorunlar nelerdir?
+
+Opencv kullanıcıları bi sorun olduğunda sorularını 
+http://answers.opencv.org/questions/ adresine soruyorlar. Bu opencv nin kendi sitesidir. Yaklaşık 4bin soru içerisinde ubuntu ile ilgili gözüme çarpan belli başlı hatalar dikkatimi çekti. Birinci sorun camera sorunu, ya kamerayı açamamışlar veya açtıktan sonra bi sorunla karşılaşmışlar bunlarla ilgili bi kaç sorunun linkini aşağıda verdim. 
+
+http://answers.opencv.org/question/16326/webcam-wont-open-since-246/ 
+http://answers.opencv.org/question/1281/camera-is-not-working-in-opencv-on-ubuntu-1204/ 
+http://answers.opencv.org/question/4799/capture-vidio-from-2-cameras/ 
+http://answers.opencv.org/question/6289/opencv-cannot-access-my-webcam/ 
+http://answers.opencv.org/question/5209/i-cant-access-my-webcam-opencv-243/ 
+
+
+ İkinci ve daha da önemli sorun ise opencvyi kurma konusunda. Hangi forum sitesine girdiysem (birkaçını aşağıda paylaştım) opencvyi kurma aşamasında sorun yaşanmış. Hatta ubuntunun kendi sitesinde bile bu konuya değinilmiş. Bu hatayı gördüğüm 10larca siteden birkaçının linkini aşağıda vermek istiyorum.
+
+http://answers.opencv.org/questions/scope:all/sort:relevance-desc/query:ubuntu/tags:ubuntu,opencv/page:1/ 
+https://help.ubuntu.com/community/OpenCV 
+http://stackoverflow.com/questions/14911365/how-to-install-opencv-in-ubuntu-12-04 
+http://miloq.blogspot.com/2012/12/install-opencv-ubuntu-linux.html 
+http://www.samontab.com/web/2011/06/installing-opencv-2-2-in-ubuntu-11-04/ 
+http://abhitak.wordpress.com/2009/08/29/installing-opencv-on-linux-ubuntu-9-04/ 
+http://karytech.blogspot.com/2012/05/opencv-24-on-ubuntu-1204.html 
+ daha yazamadığım bu konuyla ilgili link var bu linklerden bazılarında soru sorulmamış sadece kurulumun nasıl yapıldığını anlatıyor. Ama kurulum konusunda bu kadar sorun olmasaydı sanırım cevap için bunları koymazlardı.
+
+
+
+Hangi ubuntu versiyonunda opencvyi çalıştırmalıyız?
+
+Ubuntu her 6 ayda bir yeni versiyon çıkarmaktadır. Her versiyon bir önceki versiyonun eksikliklerini kapatarak üstüne yeni özellikler katar. Aslında her ubuntu versiyonunda opencvyi çalıştırabiliriz. Fakat hangi versiyonun daha uygun olacağı konusunda yazılmış bir yazı tam olarak bulamadım. Fakat aşağıda linkini verdiğim opencv’nin kendi sitesinde soruların çoğunluğu ubuntunun 12.04 ve 12.10 versiyonlarıyla ilgili sorulmuş. Bu yönüyle bakıcak olursak bu iki versiyon hariç 10.04’ten itibaren herhangi bir versiyonu kullanabiliriz. 
+ 
+http://answers.opencv.org/questions/

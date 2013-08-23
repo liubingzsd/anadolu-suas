@@ -1,0 +1,63 @@
+#summary Wiki Page oluşturma, Resim ve Video Ekleme
+
+=Wiki’de GoogleCode Üzerinden Sayfa Nasıl Oluşturulur?=
+
+https://code.google.com/p/anadolu-suas-boran/ ‘linkinden projemizin sayfasını acıyoruz.
+Wiki’ye tıklıyoruz.
+New page’e tıklayoruz. Page Name bölümüne sayfamızın adını yazıyoruz. 
+*Sayfa isminde Türkçe karakterler ve boşluk kullanmıyoruz*
+
+
+Content bölümünde ;
+
+
+
+
+http://anadolu-suas-boran.googlecode.com/svn/images/wiki_anlatim1.png
+
+*“One-sentence summary of this page “* yazısını silip buraya sayfamızın içeriğinin özetini yazıyoruz.
+*“Add your content here. “* yazısını silip sayfamızın içeriğini buraya yazıyoruz.
+*Introduction* yazısı yerine baslık ekleyebiliriz.
+*“Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages “*  kısmını da silerek konumuzun detaylarını ekliyoruz.
+
+Daha sonra ilgili label ve commit log da ekleyip sayfayı kaydediyoruz.
+
+*Yazımızın altına isim ve mail adresi eklemeyi unutmayalım *
+
+=Wiki’de SVN Üzerinden Sayfa Nasıl Oluşturulur?=
+ GoogleCode arayüzünden Wiki Page oluşturabilmenin yanısıra kendi bilgisayarımızda oluşturduğumuz bir dosyayı SVN ile de wiki page olarak kullanabiliyoruz. Ancak bu yöntem GoogleCode arayüzünü kullanmaya göre biraz daha zahmetli. Öncelikle oluşturmak istediğimiz isimli bir metin belgesi açıyoruz. Daha sonra bu metin belgesinin uzantısını(.txt), (.wiki) olarak değiştiriyoruz. Artık bu dosyaya erişiminiz windows araçlarıyla mümkün olamyacaktır. Bu dosyaya sağ tıklayıp edit with Notepad++ diyoruz ve metnimizi buraya giriyoruz.(Daha önce word ile yazılmış bir metni kes/kopyala yapıştır yapabilirsiniz.) Dosyayı kaydediyoruz. kaydedilen dosyayı SVN'den çekmiş olduğumuz wiki kalsörünün içine atıp add dedikten sonra commit yapıyoruz. izlenen bu aşamalar sonrası dosyamız wiki pages bölümünde görülecektir. Burada; önce metin belgesine neden metni girpi daha sonra dosya uzantısını değiştirmiyoruz diyorsanız, yapılan denemelerde yazı karakterlerinde ciddi hatalar oluştu bu nedenle sıkıntı yaşanmayan bu yöntem anlatıldı. neden Notepad++ ile yapıoruz windows'un kendine bir  programı yok mu derseniz yine bilgisayarımda bulunan diğer metin işlemci programlarından sadece Notepad++ bu işlevi yerine getirebildi, bu nedenle bu yöntemi anlattım. (Notepad++ indirmesi kolay ve güvenilir bir programdır.) "wiki page" 'ler oluşturulurken klasörler altında oluşturma denendi ancak klasör altında oluşturulan wiki page 'ler sources-> browse->svn->wiki üzerinde gözükse de direk wiki linkinden erişime açık olmamakta bu nedenle klasörleme yapılamamıştır.
+
+=Wiki Page’e SVN kullanarak Resim Ekleme=
+
+
+Öncelikle SVNCheckout ‘ ile proje dosyamızı bilgisayara çekiyoruz.
+Daha sonra çektiğimiz anadolu-suas-boran’ dosyamızın içindeki “images” klasörüne resimimizi atıyoruz. 
+Örneğin, resmimizin uzantısı .png olsun.
+Resime sağ tıklayığ TortoiseSVN’den add yapıyoruz. Daha sonra tekrar TortoiseSVN’den properties bölümündeki ayarları şekildeki gibi yapıyoruz.
+
+http://anadolu-suas-boran.googlecode.com/svn/images/wiki_page_image_properties.PNG
+
+Daha sonra klasörden çıkıp , images klasörüne sağ tıklıyoruz ve SVN Commit yapıyoruz.
+
+Daha sonra wiki page’imize aşağıdaki şekilde resmimizin linkini ekliyoruz.
+( “ekipg.png yerine kendi resminizin ismini yazın,http'den sonraki bosluk silinecek “ )
+
+_http ://anadolu-suas-boran.googlecode.com/svn/images/ekipg.PNG_
+
+
+=Wiki Page’e YouTube Uzerinden Video Ekleme=
+
+Wiki page üzerine bir video eklemek istediğimizde aşağıda yazılmış gibi olan bir formatla YouTube üzerinden wiki sayfasına video'yu çekebilirsiniz.
+
+{{{  <wiki:video url="http://www.youtube.com/watch?v=PxPUxivVXww"/> }}}
+
+
+
+
+
+_*Ezgi Tetik*_ _ezgitetik92@gmail.com_
+
+_*Kemal Mert MAKİNACI*_ _kmmakinaci@gmail.com_

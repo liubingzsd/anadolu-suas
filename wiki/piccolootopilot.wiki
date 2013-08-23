@@ -1,0 +1,23 @@
+Piccolo Otopilot Sistemleri
+Piccolo autopilot sistemleri Cloud Cap Technology tarafından üretilen ,bir çok farklı durum
+için tasarlanan otopilot sistemleridir .Piccolo daha çok profesyonel,bir çok görevi aynı anda
+yapması gereken insansız hava araçlarında kullanılmaktadır.
+Piccolo otopilot 3 farklı model olarak piyasada bulunmaktadır.Piccolo SL, ve Piccolo II.
+Genel olarak aynı özelliklere sahip olmakla birlikte Piccolo II ,SL den daha üstündür.
+Bu farklı iki model daha önceki yarışlara katılan üniversiteler tarafından kullanılmıştır.Bu
+Sistemle yarışmaya katılan takımların daha başarılı sonuçlar aldığı görülmektedir.Bunun
+sebebi olarak piccolo oto pilot sistemlerinin bir bütün olarak bir çok önemli özelliği içermesi ,
+gerekli yazılım, donanım ve ekipmanların hazır olarak sunulması gösterilebilir.
+Piccolo için farklı yazılımlar bulunmaktadır .Standart paket olarak gelen piccolo istendiği
+takdirde ücret karşılığında daha üst versiyona taşınabilmektedir.
+Teknik Özellikler:
+Piccolo II de SL den farklı olarak 2 tane yük ara yüzü girişi ,2 tane I/O girişi fazladan
+bulunmaktadır.Piccolo SL de analog giriş bulunmamaktadır.4 tane I/O girişi gerektiğinde
+Analog olarak ayarlanabilmektedir.Piccolo 2 de ayrıca 4 analog giriş bulunmaktadır.Bunun
+dışında basnıç sensörlerinde ve atalet sensörlerinde farklılıklar görülmektedir.
+Yazılım :
+Piccolonun kendi yazılımı uçuş için gereken özelikleri taşımaktadır.Ayrıca otonom iniş
+ve kalkışı desteklemektedir.Yazılım sayesinde belirlenen rota içinde görevi yerine getirip
+bu süre içerisinde farklı durumlar için değişiklik yapılmasına ,belirlenen rotanın
+değiştirilmesine olanak sağlamaktadır.Hava aracı ile ilgili bütün bilgiler bir yerden kontrol
+edilebilmektedir.

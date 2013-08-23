@@ -1,0 +1,123 @@
+#summary Kernel nedir? Kernel derleyerek ne elde ederiz? Neden kernel derleriz? Kernel çıktıları bizim ne işimize yarar?
+#labels kernel,uBoot,uImage
+
+Kernel Nedir?
+
+Kernel Linux tabanlı işletim sistemlerinde ana çekirdek yazılım anlamına gelir. İşletim sistemleri kernel'in üzerine yapılandıırlmış görsel ve yazılımlar yapılardır. Kernel bazı durumlarda işletim sisteminin daha verimli çalışması ya da güvenlik açıklarını kapatmak için güncellenebilir. 
+GNU/Linux aslında bir işletim sistemi değildir. GNU/Linux, Linus Torvalds adında Finlandiyalı bir bilgisayar mühendisinin 1991 yılında Helsinki Üniversitesi’nde bir öğrenci iken Intel’in yeni işlemcisi 80386nın korumalı mod mimarisini denemek üzere geliştirmeye başladığı Unix (aslen Minix) tabanlı bir işletim sistemi çekirdeğidir. Bilinenin aksine Linux bir işletim sistemi değil işletim sistemi çekirdeğidir. Yani Linux, Linux dağıtımlarının bel kemiğini oluşturmaktadır. Linus Torvalds internette yaptığı duyuru sonucunda tüm dünyadan birçok programcının da desteği ile hızla gelişmiş ve halen aynı destek ile gelişmekte olan açık kaynak kodlu, özgür bir yazılımdır.. Ancak insanlara “GNU/Linux çekirdeğini kullanan bir işletim sistemi” demek zor geldiği için zamanla GNU/Linux çekirdeğini kullanan işletim sistemlerine genel olarak GNU/Linux denmeye başlanmış ve bu kullanım yerleşmiştir.
+GNU/Linux çekirdeğini kullanan işletim sistemlerine Linux jargonunda “dağıtım” denir. Dağıtımlar; GNU/Linux çekirdeğini, diğer programları (müzik oynatıcı, CD yazma programı, İnternet tarayıcı vb.) ve bunların kolayca sabit diske kurulmasına imkan veren bir arayüzü içeren program paketleridir. Pardus, Ubuntu, Debian, Fedora, mageia, magma linux, truva linux vb. birer GNU/Linux dağıtımıdır. İşte asıl işletim sistemi diyebileceğimiz şeyler bunlardır.
+        Bu işletim sistemlerinin dosya sistemleri, komut satırında çalıştırılabilecek komutlar, klasör hiyerarşileri vb. ortaktır. GNU/Linux açık kaynak kodlu ve özgür bir işletim sistemi çekirdeğidir. Yani isterseniz GNU/Linux çekirdeğinin ve GNU/Linux dağıtımlarında kullanılan programların çoğunun kaynak kodlarını görebilir ve değiştirebilirsiniz (açıklık) ve isterseniz GNU/Linux çekirdeğini ve GNU/Linux dağıtımlarında kullanılan programların çoğunu -kaynak kodu değiştirerek veya değiştirmeden- arkadaşlarınıza ve İnternet üzerinden herkese dağıtabilirsiniz. GNU/Linux dağıtımlarında birinin örneğin Debian alt yapısını kullanarak yeni bir işletim sistemi çıkarabilirsiniz buna en iyi örnek Ubuntu’dur ubuntu debian altyapısı kullanarak çıkarılmış bir işletim sistemidir.
+
+
+
+
+
+
+Neden Kernel Derleriz ?
+
+ 
+İşletim sistemimizi ilk oluşturuken,  driverlarımızda hata oluştuğunda yada hiç çalışmadığında veya işletim sistemimiz yada kernelimiz tamamen çöktüğünde bunları düzeltmek için kernel derleriz.
+Kernel derlerken;
+•	Runtime ek kodlar yükleme ve silme işlemleri yapılabilir.
+•	KConfig ile yapılandırılabilr. 
+•	Komplex Makefilelardan oluşan KBuilt ile derlenir.
+•	GCC1 ve GCC-isms’e büyük ölçüde bağımlıdır.
+1GCC üzerine bir açıklama:
+GNU Compiler Collection (GNU Derleyici Koleksiyonu, genelde GCC olarak kısaltılır), GNU Projesi tarafından üretilen ve çeşitli programlama dillerini destekleyen bir derleyici sistemidir. GCC, GNU araç zincirinin önemli bir parçasıdır. Henüz tamamlanmamış GNU işletim sisteminin resmî derleyicisi olmanın yanı sıra, diğer birçok modern Unix benzeri işletim sistemleri tarafından standart derleyici olarak benimsenmiştir (örneğin GNU/Linux, BSD ailesi ve Mac OS X). GCC, çok çeşitliişlemci mimarilerine taşınmış; ticari, parakende ve kapalı kaynak yazılım geliştirme ortamlarında yaygın bir araç olarak konuşlanmıştır. GCC, birçok gömülü platformlarda kullanılabilir (örneğin Symbian, AMCC ve Freescale Power Architecture tabanlı çipler). Derleyici, PlayStation 2 ve Dreamcast gibi video oyun konsollarıdahil çok çeşitli platformları hedef alabilir. Orijinal adı, sadece C programlama dilini desteklediği için GNU C Compiler (GNU C Derleyicisi) olan derleyicinin ilk sürümü 1987 yılında piyasaya sürüldü. Aynı yılın Aralık ayında C++ programlama dilinin de derleyicisi oldu. Daha sonra FORTRAN, Pascal, Objective-C, Java, Ada ve diğer diller için geliştirildi.
+
+
+U-Boot Nedir ?
+
+U-Boot programı çoklu platform, açık kaynak kodlu , boot imageleri yükleme ve yönetmek için kapsamlı bir universal boot-loader’a sahip bir çeşit Linux çekirdeğidir. Bu aşağıdaki özellikleri destekler:
+•	Network download: TFTP, BOOTP, DHCP, NFS
+•	Serial download: s-record, binary (via Kermit)
+•	Flash management: copy, erase, protect, cramfs, jffs2
+•	Flash Types: CFI NOR-Flash, NAND-Flash
+•	Memory utilities: copy, dump. crc, check, mtest
+•	Mass Storage Devices: IDE, SATA, USB
+•	Boot from disk: raw block, ext2, fat, reiserfs
+•	Interactive shell: choice of simple or "busybox" shell with many scripting features.
+
+U-boot dosyası spesifik platform ayarlarını gerçekleştirir. Boot argümanlarını ayarlar, seri port üzerinden haberleşmeyi sağlar ve kernel kontrolünü çalıştırır. U-Boot önyüklenebilir görüntüler için özel bir biçimde kullanır.Bu biçim binary yada text dosyası gibi özel bir başlığa dayanan herhangi birşey olabilir.Bu biçime Bu başlık  şu görüntü özelliklerini tanımlar.
+	Target Operating System
+	Target CPU Architecture
+	Compression Type (uncompressed, gzip, bzip2)
+	Load Address
+	Entry Point
+	Image Name
+	Image Timestamp
+U-Image Nedir ?
+Kernel kontrolü uImage olarak isimlendirilir. Bu aşamada LCD,HDMI gibi çevresel aygıtlar ayarlanır. Linux dosya sistemine erişilir ve başlangıç uygulamaları çalıştırılır. Bu aşamada işletim sistemi canlandırılır da diyebiliriz. Bu şekilde boot aşamaları sonlandırılır ve cihaz çalışmaya başlar. U-Boot çeşitli dosya tipleri (ldr files,elf files, binary files) ile boot edilir demiştik ,uU-Boot kendi formatı için destek içerir, işte bu özel formata U-image format (yada uImage] denir. Bu özel format işletim sistemi tipini, yükleme adresini, giriş noktasını, basic integrity verification(!), sıkıştırılma biçimini ve tanım dosyası bilgilerini tutar. uImage yada cmImage çokça karşılaşacağımız U-Boot imageleridir. Bu imageler erişeilebilir bir bellek üzerinden yürütülür. U-Boot imageleri erişime açık bir kaynak olup ftp ile web üzerinden çekilebilmektedir.
+
+Bazı  Komutlar
+İminfo:  İminfo bellek adresindeki image  bilgisini gösterir ve checksum değerini doğrular.
+bfin> iminfo 0x1000000
+## Checking Image at 01000000 ...
+   Image Name:   Linux-2.6.24.4-ADI-2008R2-pre-sv
+   Created:      2008-03-31  20:07:15 UTC
+   Image Type:   Blackfin Linux Kernel Image (gzip compressed)
+   Data Size:    5142286 Bytes =  4.9 MB
+   Load Address: 00001000
+   Entry Point:  00244000
+   Verifying Checksum ... OK
+Bootm: Bir image’i boot etmek istediğimizde imagin hangi adreste kayıtlı tutulduğunu bu komutla gösteririz.
+bfin> bootm 0x1000000
+## Booting image at 01000000 ...
+   Image Name:   Linux-2.6.24.4-ADI-2008R2-pre-sv
+   Created:      2008-03-31  20:07:15 UTC
+   Image Type:   Blackfin Linux Kernel Image (gzip compressed)
+   Data Size:    5142286 Bytes =  4.9 MB
+   Load Address: 00001000
+   Entry Point:  00244000
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+Starting Kernel at = 244000
+Linux version 2.6.24.4-ADI-2008R2-pre-svn4516 (vapier@G5) (gcc version 4.1.2 (ADI svn)) #89 Mon Mar 31 16:07:02 EDT 2008
+
+
+Oluşturma 
+Genellikle kendimiz boot image oluşturmaya ihtiyaç duymayız.uClinux-dist ve Linux kernel bizim için uygun imageleri oluşturur. Ancak  ihtiyaç duyulduğunda mkimage komutu ile bu yapılabilir.
+The help for the mkimage utility:
+Usage: mkimage -l image
+          -l ==> list image header information
+       mkimage [-x] -A arch -O os -T type -C comp -a addr -e ep -n name -d data_file[:data_file...] image
+          -A ==> set architecture to 'arch'
+          -O ==> set operating system to 'os'
+          -T ==> set image type to 'type'
+          -C ==> set compression type 'comp'
+          -a ==> set load address to 'addr' (hex)
+          -e ==> set entry point to 'ep' (hex)
+          -n ==> set image name to 'name'
+          -d ==> use image data from 'datafile'
+          -x ==> set XIP (execute in place)
+Örneğin, eğer bir gzip ile kernelin içine image yaratmak istersek şunu yapıyoruz:
+$ gzip -9 vmlinux
+$ mkimage \
+	-A blackfin -O linux -T kernel \
+	-C gzip \
+	-n 'My Linux Image' \
+	-a 0x1000 -e 0x1000 \
+	-d vmlinux.gz vmImage
+İşte bu satırlarla Blackfin Linux çekirdeği için bir image yaratmış olduk ve bu image 0x1000 adresinden boot edilecektir. 
+Image Tipleri
+Standalone Programlar
+Standalone (Bağımsız ) Progrmlar U-Boot tarafından sağlanan ortamda doğrudan çalıştırabilir olan imagelerdendir.
+OS Kernel Images
+"OS Kernel Görüntüler" genellikle azı Gömülü OS görüntülerdir ve  tamamen kontrolü devralmak için kullanılırlar. 	
+RAMDisk Images
+"RAMDisk'te Görüntüler" data bloklarıdır ve parametreleri adres ve boyuttur.
+
+Multi-File Images
+Mulit-File Image’ler birden fazla image içerirler mesela OS(Linux) çekirdeği ve RAMDisk gibi bir data image’i .Bu yapıgenellikle network üzerinde boot işleminde kullanılır. İstemci iki OS kernel ve RAMDisk image istediği zaman , Boot server tek bir dosya altında bunları yollar.
+Firmware Images
+"Firmware Görüntüler" genellikle bellek flash programlama da kullanılacak (U-Boot veya FPGA görüntüleri gibi) içeren ikili imagelerdir.
+
+Script Files
+"Komut dosyaları"  U-Boot komut yorumlayıcısı tarafından çalıştırılacak komut dizileridir. BU özelliklik genellikle, komut yorumlayıcısı olarak gerçek bir kabuk (shell-hush) kullanmak için U-Boot yapılandırırken yararlıdır.
+
+
+
+
+
+                                                                                                             Kemal Mert MAKİNACI       
+kmmakinaci@gmail.com

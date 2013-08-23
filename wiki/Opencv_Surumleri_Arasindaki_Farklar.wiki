@@ -1,0 +1,46 @@
+#labels opencv,sürüm
+Opencv sürümleri arassındaki farklar 2.0 dan başlayarak son release e kadar. Hangi opencv sürümünü kurmalıyız neden?
+
+Open CV 2.2 birlikten en büyük farklar ortaya çıkmaya başladı.Cuda gibi paralel port haberleşmeyi  desteklemeye başladı 2.0 la birlikte.2.1 sürümü 2.0 dan sonra çıkmasına rağmen rabet görmedi ve kullanımı pek olmadı çünkü yükleme standartı normalden farklı ve daha zor üstüne üstün bir çok compile hatasıda mevcut bu yüzden kullanılması yersiz oluyor.Open CV 2.2 sürümüyle beraber isteniler özellikler ortaya çıkmıştır.şimdilik en stabil calışan sürümüdür 2.2sürümü.Üstelik sttandar yükleme prosedürleri ile birçok örnek ve parça kod bulmak mümkün.En çok webcam den yüz danıma plaka tanıma gibi uygulamalarda kullanılmıştır ve bu uygulamaların çoğuna erişmek mümkündür.Yarışmada istenilen görüntü işleme  işlerinin hepsini kaldıracak durumdadır.Open CV 2.3 hakkında pek veriye erişilemedi ancak bu sürümde de çogu özellik korunmuş işimizi görebilir ancak 2.2 kadar stabil değil.Yeni olan sürüm ise 2.4 ve bunun yamalı halleri 2.4.1 -2.4.2 vb. Bu sürümde güzel ve iş görür ve tutmuş bir sürüm ancak yeni olması bir handikap.Open CV 2.2 kadar örnek bulunamayabilir.
+
+Bu sebeplerden dolayı Open CV 2.2 sürümünde çalışmak bizi kurtaracaktır ve daha stabil çalışmamızı sağlayacaktır.Open CV 2.2 için Ubuntu 10.04 yada 11.04 sürümleri önerilmektedir.Burada seçim bize kalmış durumda ama bildiğim kadarıyla diğer sistemlerde 10.04 versiyonunda stabil çalıştığı için bunun seçilmesi en doğrusu olacak . Bu araştırmalarımda kullandığım blog ,forum ve bazı internet siteleri aşağıda ekte olacak.Bu ekteki siterde örnek kodlar,kurulum örnekleri de mevcuttur. 
+
+
+
+
+
+
+
+
+
+
+
+http://ihsanduyuncu.blogspot.com/search/label/opencv
+
+http://www.adilkaraoz.com/category/programlama/opencv/
+http://www.hakanu.net/2011/03/24/opencv-2-2-ile-gelen-gpumat-kullanimi-iplimage-mat-gpumat/
+http://forum.ceviz.net/c-c/74194-opencv-bilen-arkadaslar-yardim-4.html
+•	http://www.openzeka.com/?paged=2
+http://linuxconfig.org/introduction-to-computer-vision-with-opencv-on-linux
+http://karytech.blogspot.com/2011/02/opencv-22-on-ubuntu-1010.html
+http://www.samontab.com/web/2010/03/installing-opencv-2-0-in-ubuntu/
+http://www.samontab.com/web/2010/04/installing-opencv-2-1-in-ubuntu/
+http://forum.ubuntu-tr.net/index.php?topic=27799.0
+http://yusuftas.com/opencv-kurulumu-ve-visual-studio-ile-kullanmak/
+http://opencv.willowgarage.com/documentation/operations_on_arrays.html
+http://karytech.blogspot.com/2012/05/opencv-24-on-ubuntu-1204.html
+http://answers.opencv.org/questions/
+http://docs.opencv.org/2.3/modules/refman.html
+http://docs.opencv.org/2.4/modules/refman.html
+http://erdemym.com/category/c-ve-turevleri/opencv/
+http://www.openzeka.com/
+http://docs.opencv.org/doc/tutorials/imgproc/table_of_content_imgproc/table_of_content_imgproc.html
+http://dissipatedheat.com/kategori/opencv/
+http://dissipatedheat.com/2011/04/24/opencv-ile-webcam-goruntusu-isleme/
+http://umutkilic.blogspot.com/2008/09/opencvye-giri-1.html
+http://opencv.willowgarage.com/wiki/
+http://www.cs.iit.edu/~agam/cs512/lect-notes/opencv-intro/opencv-intro.html
+http://ranaalgan.wordpress.com/2011/02/06/opencv-nedir/
+
+
+mehmet çetintaş

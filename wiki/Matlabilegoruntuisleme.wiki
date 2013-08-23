@@ -1,0 +1,62 @@
+#summary Opencv ye alternatif olarak matlab ile goruntu isleyebilir miyiz?
+#labels Matlab
+
+=MATLABLA GÖRÜNTÜ İŞLEYEBİLİR MİYİZ? =
+
+
+       Görüntü işleme de en çok karşılaştığımız yöntem Opencv kütüphanesini kullanmaktır.Opencv (Open Computer Vision),Windows,Linux,Mac OS X,PSP platformları üzerinde çalışabilen, C diliyle yazılmış,açık kaynak kodlu bir kütüphanedir.Opencv içerisindeki bilgisayarlarla görüntü işleme algoritmalarını kullanılarak hareket tespiti,yüz algılama ve tanıma,kamera kalibrasyonu gibi pek çok  uygulama yapılabilir.Bir resmi veya videoyu kolaylıkla okuyabilir üzerinde işlem yapıp yenilerini yaratabilirsiniz.İşte bu sebeplerden ötürü en çok tercih edilen yöntem opencv kullanmaktır.
+Biz eğer matlab kullanmak istersek bir çok zorlukla karşılaşabiliriz. Bunlardan biri beagleboard üzerine yüklememize gerek yok , başka platformda derlemesini yapıcaz ama oldu da beagleboard üzerinde matlab çalıştırmak istersek,bunda başarılı olamayacağız (Beagleboard ya da beaglebone üzerine matlab kurunca rahat çalışılır gibi birkaç yorum olduğu için yazma gereksiniminde bulundum.).Yani matlab ı her platform da çalıştıramayabiliriz. Matlab ı düzgünce çalıştırabilmek için işlemcimizin SSE2 intruction set e sahip olması gerekiyor. 
+	
+      Peki nedir bu SSE ? 	
+	  
+      SSE,yani Streaming SIMD Extensions,Intel in 1991 de sunduğu bir SIMD komut setidir.Masaüstü işlemcilerde,tek komutla birden çok veriyi işlemeye yarayan SIMD (Single Instruction Multiple Data ) operasyonları,aynı işlemin benzer tipte bir grup veri üzerine uygulanması gibi işlemlerde performans artışını getirir.Bu tip operasyonlar Intel ve AMD nin komut setlerine yaptıkları eklemelerle yaygın kullanım alanı bulmuştur.SSE de zamanla gelişerek yeni versiyonlara doğru ilerlemiştir.
+	SSE2 ilk olarak Intel çiplerinde Pentium 4 te karşımıza çıktı.Bildiğim kadarıyla ARM tabanlı işlemciler bu instruction sete sahip değil.SSE2 donanımsal bir destektir ve asla sonradan işlemciye eklenemez.Geçtiğimiz yıllarda bir çok bilgisayar SSE2 ye sahipti.SSE2 uzun süredir işlemcilerde standarttır.Bildiğim kadarıyla SSE2 ARM tabanlı işlemcilerde mevcut değil.Bu yüzden biz matlab ı beagle üzerine kuramıyoruz.Eğer işlemcimizde SSE2 olup olmadığına şüphe duyuyorsa şu şekilde öğrenebiliriz:
+	Linux:From a terminal,run “cat/proc/cpuinfo”.”sse2” will be liste done of the flags if SSE2 is available.
+	Matlab da karşılaşılan sorunlardan biri de görüntü işleme konusunda opencv kadar geniş kapsamlı olmayışı.Hız açısından belki daha hızlı(kısa olduğu için) programlayabiliriz ancak ne istediğimiz konusunda ilerde bize sıkıntı yaşatabilir.Ayrıca sonunda matlab da yazdığımız kodları matlab embedded coder yardımıyla c ye çevirmemiz gerekebilir.
+	Matlab ın opencv ye karşı tek avantajlığı olduğu nokta kodların kolay yazılabilmesi ve okuma kolaylığı.Matlab da kodları çok kolay bir araya getirebiliriz.Örneğin; matlab da bir görüntüyü dosyadan okumak ve görüntülemek isteyelim.
+I = imread('springbreak.jpg');
+imshow(I)
+
+Aynı şeyi Opencv de yapmayı denersek:
+#include "cv.h" //main OpenCV header
+#include "highgui.h" //GUI header
+
+int main() {
+
+// declare a new IplImage pointer
+IplImage* myimage;
+
+// load an image
+myimage = cvLoadImage("springbreak.jpg",1); //change the file name to your own image
+
+//create a new window & display the image
+cvNamedWindow("Smile", 1);
+cvShowImage("Smile", myimage);
+
+//wait for key to close the window
+cvWaitKey(0);
+cvDestroyWindow("Smile");
+cvReleaseImage(&myimage);
+return 0;
+}
+
+	Görüntü hızı konusuna geldiğimiz zaman opencv ile matlab ı kıyaslayamayız bile.Matlab Java üzerine kuruludur ve Java da C üzerine inşa edilmiştir.Biz bilgisayarımızda bir matlab programı çalıştırmak istediğimiz de 	bilgisayarımız bütün matlab kodlarını yorumlamakla meşgul olur.Sonrasında bunları javaya çevirir ve buradan sonra kodlar ortaya çıkmış olur.Opencv ise c de basit bi fonksiyon kütüphanesidir.Kısa zamanda kodu bilgisayara gönderir.Çok sayıda algoritmaya sahip olduğu için ekstra yorumlanmaya ihtiyacı yoktur.Bu yüzden matlab da yazılmış aynı programa göre çok daha hızlı çalışır.Anlık görüntü alma hızı çok daha fazladır.Örneğin insanların gülümsemesini yakalayacak bir video görüntüsü için  küçük bi program yazmak isteyelim.Matlab da saniye de 3-4 fps yakalayabilirken,Opencv de 25-30 fps yakalarız.Fps (Frame per second), saniyede ekrana gelen görüntü sayısı (saniye de kare yakalama hızı) demektir.Fps nin yüksek olması görüntü işlemek için daha iyidir.Çünkü fps nin yüksek olması video da ki akıcılığı sağlar.Görüntü kalitesiyle alakası yoktu sadece akıcılığı sağlar. 
+	
+        Yine hızla yakından alakalı olarak,matlabta yazdığımız kodla görüntü işleme yaparken ram in büyük bi kısmını kaplarız (gigabyte a yakın) .Ancak opencv kullanırsak yaklaşık olarak ram in 100 MB nı kullanırız.
+	
+        Kısaca,araştırdığım kadarıyla matlab la görüntü işlenebilir ama ileride sorun çıkarabilir,opencv ye göre çok daha yavaş ve anlık görüntü almadaki akıcılık da aralarında çok büyük bi fark var.İnternette matlab ile beagle da görüntü işleme üzerine bir örnek bulamadım. Ancak simulinkle yapılmış bir robot videosu buldum .
+	
+        http://www.youtube.com/watch?v=-Mtx0OknYqQ
+        
+        Geçen senelerde yarışan takımlar arasında Pandaboard kullananlar da var.İlk çıkan Pandaboard,Beagleboard varken çok fazla tavsiye edilmiyor.Bunun nedeni de beaglebord üzerinde pandaboard a göre daha çok geliştirme çalışmaları yapılması. Bu da ileriye dönük olarak beagleboard u ön plana çıkarıyor.Ancak pandaboard un en güncel modeli pandaboard es modeli.
+
+       PANDABOARD  ES
+
+ http://anadolu-suas-boran.googlecode.com/svn/images/matlabgörnt1.png
+
+ http://anadolu-suas-boran.googlecode.com/svn/images/matlabgörnt3.png
+
+PANDABOARD
+
+ 
+ http://anadolu-suas-boran.googlecode.com/svn/images/matlabgörnt2.png

@@ -1,0 +1,41 @@
+#summary Bu yazımızda uçuş prensipleri ve uçuş kontrol yüzeylerinden bahsedilmiştir.
+#labels Uçuşprensibi,Aileron,Elevator,UçakKontrolYüzeyleri,Rudder,uçakhareketeksenleri
+
+= Uçuş Prensibi ve Uçak Kontrol Yüzeyleri =
+
+*UÇAK NASIL UÇAR ?*
+Uçak gövdesi ve kanatlar aerodinamik prensiplere göre dizayn edilir. Uçağın uçması altında yatan ana faktörde aerodinamik profil şekli denilen damla şeklindeki profil yapısıdır.
+
+https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-prn2/1150374_10201744592605793_1872800612_n.jpg
+
+https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-ash4/1001110_10201744605966127_2136708123_n.jpg
+
+Resimde görülen kanat profil şeklinde kanat üst kısmı diye adlandırılan  kambur kısım alt kısma göre daha uzundur. Bernolli prensibine göre bir noktadan giren hava akımı profili aynı anda terk eder. Bunu elinizi musluğun altına koyup parmaklarınızı birleştirerek kamburluğu değiştirip görebilirsiniz. Bu prensibe göre kanat üst kısmındaki hava hızı alt kısmına göre daha hızlı olmak zorundadır. Hız arttıkça basınç azalır. Böylece kanat üst kısmında alt kısma göre düşük basınç bölgesi oluşur. Kanat alt kısmı ise yüksek basınç bölgesidir. Uçuş prensibi oluşan bu basınç farkına dayanır.
+
+https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-ash3/1150915_10201744606246134_703424829_n.jpg
+
+https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-prn1/59327_10201744606406138_255965253_n.jpg
+
+*Hareketli Ana Kumanda Yüzeyleri*
+
+*Aileron :* Uçağın yatış (roll) kontrolünü sağlar. Aileronlar asimetrik çalışırlar ve lövyenin sağa sola hareket ettirilmesi ile kumanda edilirler.  Kanadın altına doğru hareket eden aileron, çarpan hava sayesinde kanadı yukarı kaldırırken, yukarı çıkan aileron ise kanadı aşağıya doğru yönlendirir. Bu düşünce tarzı anlatımı ve akılda kalmayı kolaylaştırır. Fakat aynı şey uçağın uçma prensibi ile de bağdaştırılabilir. Yani kanat altına hareket eden aileron kanat üst yüzeyinde kamburluğu daha fazla artırırken diğer aileron kanat altındaki kamburluğu arttırır. Böylece kanat altına inen aileron tarafındaki kanat diğerine göre daha fazla taşıma oluşturur.  Aileronlar kanadın firar kenarında ve flapların dış tarafında bulunurlar. 
+
+https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-prn2/971279_10201744606086130_394248284_n.jpg
+
+*Elevator :* Uçağın yunuslama  (pitch) olarak tanımlanan burun yukarı burun aşağı hareketini sağlar. Yatay stabilizenin firar kenarında bulunurlar. Elevatorlerin yukarı hareket etmesi ile bu yüzeylere çarpan hava sayesinde uçağın kuyruk kısmı aşağı hareket eder, uçağın burnu ise yukarı hareket eder. Tam ters durumda ise uçağın kuyruk kısmı yukarı, burun kısmı ise aşağı hareket eder. Kokpitte lövyenin ileri - geri hareketi ile kontrol edilir.
+
+*Rudder :* Uçağın dönüş (yaw) hareketini kokpitteki pedallar ile kontrol eder. Sağ pedala basıldığında sağa dönüş sol pedala basıldığında ise sola dönüş gerçekleşir. Pedallar asimetrik çalışır. Dikey stabilizenin firar kenarında bulunur. Rudder'ın sağa hareketi ile yüzeye çarpan hava sayesinde uçağın kuyruk kısmı sola doğru kayar, burun kısmı ise sağa doğru hareket eder. Rudder'ın sola hareketinde ise uçak kuyruğu sağa doğru kayarken burun kısmı sola doğru hareket eder. 
+
+*Uçak Hareket Eksenleri*
+
+https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-prn1/1010537_10201744606446139_1538757724_n.jpg
+
+*Boylamsal Eksen:* Bir uçağın ağırlık merkezinden geçen burnundan kuyruğuna uzanan eksendir. Uçağın bu eksen etrafında yaptığı harekete (roll) yatış hareketi denir. Temelde bu hareket aileron ile kontrol edilir. Fakat elevon ve spoiler da kullanılabilmektedir.
+
+*Yatay Eksen:* Uçağın ağırlık merkezinden geçerek bir kanat ucundan diğer kanat ucuna doğru uzanan eksendir. Bir uçağın bu eksen etrafında yaptığı harekete (pitch) yunuslama denir. Uçağın bu eksen etrafında yaptığı yunuslama hareketi, irtifa dümeni (elevator), hareketli yatay stabilize ve bazı uçaklarda elevonlar tarafından kontrol edilir.
+
+*Dikey Eksen:* Uçağın ağırlık merkezinden geçerek gövde üst kısmından gövde alt kısmına uzanan eksendir. Bir uçağın dikey eksen etrafında yaptığı harekete (yaw) dönüş hareketi denir. Uçağın dikey eksen etrafındaki hareketi (rudder) istikamet dümeni tarafından kontrol edilir.
+
+
+
+*Gökhan GÖL*

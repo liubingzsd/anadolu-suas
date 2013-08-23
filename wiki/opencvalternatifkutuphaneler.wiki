@@ -1,0 +1,52 @@
+#summary Opencv benzeri görüntü işlemek için kullanılabilecek kütüphaneler.
+#labels opencv,libraries
+
+
+
+Opencv nedir?
+
+     OpenCV ( Open Source Computer Vision Library ) C ve C++ dilleri ile yazılmış, Windows, Linux ve Mac OS X gibi farklı platformlarda çalışabilen açık kaynak kodlu bilgisayarla görme (computer vision) kütüphanesidir.
+     OpenCV nin amaçlarından biride programcının kolaylıkla kullanabileceği computer vision altyapısı oluşturmaktır.
+Günümüzde OpenCV görüntü işlemek için kullanılan en yaygın kütüphanelerden birtanesidir.OpenCV programcısı bünyesinde bulunan 500 den fazla fonksiyonla ürün denetimi, tıbbi görüntüleme, güvenlik, kullanıcı arayüzü, kamera kalibrasyonu gibi alanlarda uygulamlar geliştirebilir, akademik çalışmalar yapabilir.
+OpenCV ye alternatif olarak kullanılabilcek en yaygın kütüphanelerden bazıları şunlardır:
+
+•	The Point Cloud Library
+
+     Point Cloud Library (PCL) yani Nokta Bulut Kütüphanesi, görüntü işlemede kullanılan 3 boyutlu bulut işlemcisidir.Daha önce OpenCV ile iki boyutlu resim veya görüntü üzerinde yapılan işlemlerin üç boyutlu ortamda yapılmasını sağlamaktadır.  PCL, eşleme ve nesne tanımlama yapmak için yüksek seviyeli özellikler içeren algoritmaları içermektedir.
+     PCL açık kaynak kodlu ve BSD lisansı ile sunulmaktadır. Ticari uygulamalarda da ücretsiz kullanılabilir. Görüntü işlemenin yanında görüntülerde arttırılmış gerçekçilik kullanılmasınada imkan veren bir kütüphanedir.Linux veya Windowsta kullanılabilir.
+
+     http://pointclouds.org/about/
+     http://www.openzeka.com/?p=117
+
+•	SimpleCV
+
+     SimpleCV ,OpenCV gibi görüntü işlemede kullanılan açık kaynak kodlu bir kütüphanedir.Kolay kullanımı sayesinde bir çok kullanıcı tarafından ilgi görmektedir.Linuxta ve windowsta kullanılabilir.
+
+http://www.simplecv.org/
+
+•	LTI
+
+     LTI kütüphanesi görüntü işleme ve bilgisayarla görme için kullanılan nesne yönelimli bir kütüphanedir.linux veta windowsta kullanılabilir.
+
+http://ltilib.sourceforge.net/doc/homepage/index.shtml 
+
+•	libCVD
+
+     libCVD bilgisayarlı göreme,görüntü ve video ile programcılara yardımcı olmak için tasarlanmıştır.Kütüphanesi basittir.Verimli görüntü ve video işleme ve ortak alt düzey görüntü işleme fonksiyonlarını barındırır. Windows ve Linuxta çalıştırılabilir.
+
+http://mirror.umd.edu/roswiki/doc/diamondback/api/libcvd/html/
+http://www.edwardrosten.com/cvd/
+
+•	CCV
+
+http://libccv.org/
+
+Mehmet Sinan EGE
+
+
+
+
+
+
+
+

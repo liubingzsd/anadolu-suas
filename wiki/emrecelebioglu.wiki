@@ -1,0 +1,111 @@
+#summary Opencv ile yapılmış ileride örnek alınabilecek projeler
+
+= Introduction =
+
+Opencv ile yapılmış ileride örnek alınabilecek projeler
+
+
+= Details =
+
+Opencv ile yapılmış ileride örnek alınabilecek projelerden en göze çarpanları:
+1)göz bebeği takip sistemi
+2)plaka algılama sistemi
+3)yüz tanıma sistemi
+4)el hareketi algılama sistemi
+
+ 
+ 
+Görüntü işlemede kullanılan temel yöntemler:  
+ Geometrik dönüstürme: boyutlandırma, büyütme, küçültme ve döndürme gibi islemler
+Renk düzeltme: parlaklastırma, keskinlik ayarı, renk dönüstürme gibi islemler
+Sayısal karıstırma veya optik karıstırma: iki veya daha fazla görüntüyü birlestirme
+Görüntü düzenleme: görüntünün kalitesini yükseltme ve görüntü netlestirme
+Sabit cisimleri tespit ederek iki boyutlu nesne tanıma
+Parazit olusturma
+İstatistiksel bilgiler çıkarma
+İslem ve filtre seçenekleri (Gaussian Filters)
+Görüntü üzerinde birtakım bilgileri gizleme ve steganaliz
+Kayıpsız görüntü sıkıstırma
+Diğer matematiksel ve morfolojik islemler
+Görüntü anlama yöntemleri
+
+Görüntü işleme algoritmaları:
+Working in space:
+-doğrusal dönüşümler
+-morfolojik filtreler
+-histogramlar ve istatistikler
+-renk dönüşümü
+-nesne tespiti
+
+Working in time:
+-hareket tespiti
+-arka plan çıkarımı
+-optik akış
+-görsel izleme
+-ayrıca space de çalışan bütün algoritmalar
+
+Nesneyi tanımak
+ İlk olarak nesneyi tespit etmek gerekir
+– Nesne özellikleri
+- Geometrik özellikler
+- Fotometrik özellikler
+- Hareket
+- İşlevsellik
+– Nesne ile ilgili yukarıdaki bilgilerin yardımıyla bilinmeyen nesneyi tanımlarız.
+
+
+Nesne Tanımanın görevleri
+– Model gösterimi
+– Nesne tespiti
+– Özellik çıkarma
+– Sınıflandırma
+
+
+Verilen bir görüntüdeki görünen nesneleri tanıma yöntemleri:
+Görüntü tabanlı yaklaşım
+– Görünüm tabanlı nesne tanıma
+ Özellik tabanlı yaklaşım
+– Model tabanlı nesne tanıma
+– Bayesian ağları kullanarak nesne tanıma
+
+
+Görünüm tabanlı nesne tanıma
+Nesne modellerini içeren bir veritabanımız var.
+ Veritabanında nesnelerin farklı görünümleri var.
+ Görüntüdeki nesnenin en çok benzediği  nesne kümesi bulunuyor.
+– Avantajları
+● Nesne modellerine gerek yok, görüntü-görüntü  karşılaştırma ile tanıma yapılıyor
+● Özellik çıkarmaya gerek yok.
+– Dezavantajları
+● Çok geniş görüntü veritabanı gerekiyor.
+● Nesnenin bir kısmının görünmemesi problem  yaratabiliyor (Occlusion).
+
+Özellik çıkarma tabanlı nesne tanıma
+– Nesnelerin özelliklerini kullanır.
+● Tip, uzaysal ilişkiler, vb.
+– Görüntüden elde edilen özellikleri modelin özellikleriyle eşlemeye dayanır.
+– Avantajları
+● Nesne bilgileri çıkarılmış olur
+● Occlusion'a karşı sağlamlık sağlar
+● Aydınlatma, perspektif projeksiyon veya poz  çeşitlerine karşı değişmeyen sonuçlar üretir.
+– Dezavantajları
+● Özelliklerin tanımlanması gerekmektedir.
+● Özellik çıkarma işlemi gerçekleştirilmelidir
+
+
+Model tabanlı nesne tanıma
+– Görüntüdeki nesneyi veritabanındaki nesne  modelleriyle karşılaştırırız.
+– Nesnenin kimliğini bulduktan sonra pozisyon ve konum bilgisini belirleriz.
+Bayesian ağları kullanarak nesne tanıma
+– Nesneyi sıradüzensel olarak temsil etmek için yapı sağlar
+– Bilinmezleri, alana özgü bilgileri ve yapıya  özgü bilgileri tanımlamamıza olanak sağlar
+– Olasılık teorisi yardımıyla kanıt toplamak için sistematik bir düzenek sağlar
+
+
+Nesne Tespiti
+Nesne tespitinde amaç bir görüntüdeki nesneleri bulmaktır.
+● Yöntemler
+– Pattern Matching Using Correlation
+– Using Distance Sets for Shape Recognition
+– Deformable Contour Technique
+– Image Thresholding

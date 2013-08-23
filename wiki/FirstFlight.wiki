@@ -1,0 +1,7 @@
+#summary SUAS Anadolu - İlk Otonom Uçuş Öncesi Bilgilendirme
+
+=This page created to present first experimental flight.=
+
+
+
+<wiki:video url="http://www.youtube.com/watch?v=PxPUxivVXww"/>

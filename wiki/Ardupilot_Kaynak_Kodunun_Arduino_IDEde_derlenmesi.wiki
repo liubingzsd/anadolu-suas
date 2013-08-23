@@ -1,0 +1,54 @@
+#summary Bu yazımızda Arduplane yazılımının Arduino ortamında nasıl derleneceğinden bahsedilmiştir.
+#labels Ardupilot,Arduino,X-CTU,MissionPlaner,Arduplanecode
+
+
+= Ardupilot Kaynak Kodu- XCTU ve Mission Planer =
+
+
+
+
+= Details =
+
+*Ardupilot Kaynak Kodunu Arduino İDE ile derleme işlemi:*
+
+XP clone içine ardupilot ile ilgili olarak Arduino IDE, Ardupilot IDE, Mission Planer, X-CTU programlarını ve ardupilot kaynak kodlarını yükledim. Kaynak kodlarının çeşitli sürümleri mevcut eğer sabit kanatlı uçak yapacaksak masaüstünde bulunan “arduino ardupilot” programı kullanılacaktır. Döner kanatlı sistem kullanılacaksa (quadrocopter, hexacopter vs.)  masa üstündeki “Arduino” programı kullanılacaktır.
+
+*“arduino ardupilot” PROGRAMI KULLANIMI*
+
+1.	Yarışmada uçak kullanılacaksa bu program kullanılacaktır. 
+2.	Masa üstünde bulunan bu isimle kaydedilmiş programı çalıştırın.
+3.	Halihazırda programa program adresini kaydettim. Fakat sorun olması halinde bu işlemide nasıl yapacağınızı anlatacağım.
+4.	Sırasıyla, File-Sketchbook-ArduPlane yollarını takip edin (eğer bu sıralamayı takip edip ArduPlane göremiyorsanız adres değişikliği yapacaksınız bunun için 9. Maddeye bakın). Arduplane seçme sebebimiz uçak üzerinde çalışma yapacağımızdan dolayıdır. İsteyenler diğer sistemlerin kodlarınıda inceleyebilir.
+5.	Ek bir IDE sayfasında birçok dosyadan oluşan kaynak kodu açılacaktır.
+6.	IDE’ nin üst kısmında bulunan “Ardupilot-HAL board- Arduino Mega 2.x” i seçin. Bu çalışacağımız kontrol kartının adıdır.
+7.	Kodun çalışıp çalışmadığına bakmak için açılan IDE sayfasının sol üstünde bulunan think ya da ok işaretine tıklayıp programı çalıştırın yada derleyin. Bunlar aynı anlamı taşırlar.
+8.	Maksimum 1 dk gibi bir süre içerisinde derleme işlemi yapılıp “Done Compiling” yazısını göreceksiniz. 
+9.	Eğer hata verirse kaynak kodun adresini programa bildirmeniz gerekecektir. Bu işlem şu şekilde yapılacaktır:
+	IDE üst kısmından sırasıyla “ File- Preferences-Browse(açılacak sayfada) ” adımlarını takip ediniz. Buradaki adresin “   C:\Documents and Settings\Administrator\Desktop\Setuplar\Ardupilot-tümprogramlar\ArduPlane-2.74b  ” bu şekilde olması gerekir. Çünkü Ardupilot kaynak kodunu Setuplar/Ardupilot-tümprogramlar/ ArduPlane-2.74b  dosyasına kaydettim.
+	Adresi bu şekilde değiştirerek OK yapın
+	Programı kapatıp tekrar açın.
+	File-Sketchbook kısmından ArduPlane tıklanarak program açılabilir ve derlenebilir.
+
+
+*“arduino” PROGRAMI KULLANIMI*
+
+Döner kanatlı sistemler için bu program kullanılacaktır. Sebebi copterler için son sürüm kaynak kodu sisteme yeni yüklenmiştir ve Arduino 1.0.3 de kod eklemelerinde sıkıntı çıkmaktadır. Bu sebepten Arduino 1.0.4 kullanılacaktır. Yani masa üstündeki “arduino” programı.
+Bu program şu şekilde kullanılacaktır:
+1.	“arduino” yazılı programı açın.
+2.	Sırasıyla “File-Preferences-Browse” linklerine tıklayın ve şu edrese gelin :  “  C:\Documents and Settings\Administrator\Desktop\Setuplar\Ardupilot-tümprogramlar\Arducopter_2.8.1  ” . Arducopterin son kaynak kod sürümü 2.8.1 dir. Bu sebepten adres olarak bu kaynak kodu programa öğretmelisiniz. Kaynak kodunu “Setuplar\Ardupilot-tümprogramlar\Arducopter_2.8.1 ” klasörüne kaydettim.
+3.	OK butonuna basın ve “File-Sketchbook-Arducopter” i seçin.
+4.	Birden fazla sayıda dosyalanmış yeni bir IDE açılacaktır.
+5.	Üst kısımdan “Tools-Boards-Arduino Mega 2560- ADK “ linkini kart olarak seçin.
+6.	Derleme işlemini gerçekleştirin. Hata vermesi durumunda bana ulaşabilirsiniz.
+
+
+*Mission Planer*
+
+Mission planer ardupilot sistemi için tasarlanmış çeşitli verilerin anlık olarak izlenebildiği, konfigürasyon ayarlarının yapıldığı, güncellemelerin ve uçuş model seçiminin yapıldığı ara yüzdür. Çeşitli verilerden kastım ARDUPİLOT kontrol kartı üzerinde bulunan sensör verileridir (GPS, pitch, roll, yaw açısı, yükseklik, konum vs).
+
+
+*X-CTU*
+
+X-CTU telemetri işlemi için kullanılacak xbee sisteminin ID ve çeşitli ayarlamalarının yapıldığı ara yüzdür. Xbee sistemlerinin birbirlerine tanıtılma işlemi ve test işlemleri bu arayüz sayesinde yapılmaktadır.
+
+                                                       *GÖKHAN GÖL*

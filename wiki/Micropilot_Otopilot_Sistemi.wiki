@@ -1,0 +1,261 @@
+#labels Autopilot
+=== MICROPILOT ===
+
+The MicroPilot autopilot system is one method of flying a UAV. The entire unit consists of remote and ground-based components. An on-the-ground pilot can control a remote plane using a standard RC transmitter. The aircraft‟s servos (or servomechanisms) can be controlled directly, allowing for easier, faster flight control. For example, when signals are sent to the servo, it translates them into position commands that control the flaps on the plane‟s wing. The DC motor inside the servo moves a certain number of turns until the flap reaches a desired position. 
+
+The system even allows for a switch to manual controls if the autopilot fails. Figure 1 is a diagram of what the system will look like, including a computer, the autopilot system, the UAV, and the servos. On this particular diagram the elements form an open-loop controller. Therefore it does not use feedback to determine if the input created the desired output. However, we can also use this platform for closed-loop feedback control testing and development.
+
+
+
+The software‟s visual interface used in MicroPilot‟s system is HORIZONmp (seen in Figure 2 below). At the bottom of the computer screen a live feed of the airspeed, altitude, and pitch is shown. Many variables must be entered into the program before flight is possible. First, a user has to select the object being flown (a UAV, for example). Then, the plane‟s statistics have to be added into the system (aerodynamic properties, best climb speed, capabilities, etc). A flight file, or flight path, is then created. Waypoints, or the different points where a plane flies to, are added into the system to determine the path. A map can even be placed right on the screen, and calibrated with the system to show the real-time location of a plane. The software also has the capabilities to have a live camera feed if the plane has a camera attached. The last step is to input a code that tells the plane what to do. This code has simple commands such as „takeoff‟ and „climb.‟
+ 
+
+
+
+== A Family of UAV Autopilots ==
+
+•	Board level autopilots for the smallest micro UAVs and fully integrated LRC autopilots for the most complex UAVs.
+•	All software is easily field upgradeable
+•	RC override, fly by datalink or redundant fly-by-datalink
+•	150MIPs RISC processor allows future growth
+•	High value MP1028 through High function MP2128 and redundant autopilots anticipate all of your market requirements.
+
+
+== Reliability ==
+
+•	Fully integrated - all required sensors are integrated into a circuit board provides the maximum reliability with the minimum size.
+•	DC to DC converter minimizes current consumption, heat dissipation and provides a wide range of supply voltages
+•	Low battery warning on ground and in flight
+•	Automatic software version checking
+•	Automatic CRC error checking on all critical autopilot information
+•	Dead reckoning in case of loss of GPS
+•	User programmable error handlers for: loss of GPS signal, loss of RC signal, engine failure, loss of datalink, pitch/roll/airspeed out of range and low battery voltage.
+
+
+
+
+== OEM Features ==
+
+•	Profile lock protects your investment in your proprietary configuration
+•	User definable operational limits including airspeed, altitude
+•	Optional Geo-Fence limits the operation of your uav to one geographical area.
+•	Fully automated assembly and calibration guarantees you’ll have as many autopilots as you need, when you need them
+•	XTENDERmp SDK allows you to add your own code to your MicroPilot autopilot to ensure that all of your customer’s needs are met and to differentiate yourself from your competitors.
+
+
+== Superior Technical Support ==
+
+•	MicroPilot consistently provides Industry leading Technical Support so we’re there for during your integration and once its complete.
+•	Typically same day response on Email and Phone Technical Support keeps your team moving.
+•	Technical Support Management Tools track your request from start to resolution to ensure that your questions and issues are addressed quickly and accurately.
+•	MicroPilot’s technical Support Web Site provides a wealth of information to help you with your integration efforts.
+•	Common questions, Technical notes, Known Problems, Release notes, Historical Software versions are all available online.
+
+
+== Flexible Flight Management Settings ==
+
+•	User programmable operational limits for min/max airspeed, min/max altitude
+•	Flexible altitude hold mechanisms – throttle or elevator
+•	Multiple launch methods: runway takeoff, catapult, bungee.
+•	Multiple configurable recovery methods: wheel landing, parachute, deep stall.
+•	Automatic speed reduction on final improves recovery.
+•	Automatic speed increase when flying into wind allows you to operate in higher winds.
+
+
+== Flexible Servo Settings ==
+
+•	Manually directed, autonomous and an integrated RC override provides tremendous operational flexibility.
+•	Flaperons, elevons, spoilers, v-tail, x-tail, split rudders, split ailerons and flap/aileron mixing, automatic spoiler and flap management
+•	User programmable feedback gains and flight parameters tailor the autopilot to your airframe and mission
+•	Control eight, sixteen or twenty four servos – you’ll never be one servo short.
+
+
+== Flexible Control ==
+
+•	Variable inner loop rate: 30hz to 100hz
+•	Gain scheduling provides optimum control over a wide speed range
+•	User Defined feedback loops lets you control other systems on your UAV.
+•	I-term anti windup available on all loops prevents the problems associated with I-term windup.
+•	Smooth feedback loop transitions supports micro air vehicles.
+•	Input/Output limits available on all loops allow you to further tailor their operation to your requirements
+•	Slew rate limits available on all loops for controls that cannot tolerate instantaneous changes.
+Open Architecture
+
+•	Full access to internal configuration and state fields helps you to understand how the autopilot functions.
+•	Over 100 user configurable fields give you a place for your data.
+•	Over 500 pages of professionally written, fully indexed manuals help you understand our autopilots.
+•	Context sensitive help on all autopilot configuration fields.
+•	Change settings in flight provides flexibility.
+•	User definable table lookup functions and integrators provide additional flexibility.
+•	100 user defined telemetry fields
+•	User defined failure handlers tailor your UAV’s reaction to error conditions and better satisfy your customer’s requirements.
+
+
+== Fully Autonomous ==
+
+MicroPilot UAV Autopilots include our HORIZONmp UAV Ground Control Software at no extra charge. HORIZONmp is an invaluable tool while you are developing your UAV and after your UAV is deployed.
+•	1,000 waypoints/commands accommodates your most complicated flight plan.
+•	Arcade, RPV and UAV flight modes
+•	Fully autonomous from launch to recovery (heli and fixed wing).
+•	Runway takeoff, hand launch, bungee launch, and catapult launch
+•	Runway landing, parachute recovery and deep stall landing
+•	Automatic flap & spoiler management
+•	Straight line wind estimation and compensation
+
+
+== Video Ready ==
+
+The most common UAV payload is a pan tilt zoom (PTZ) camera system. Regardless of whether you need a basic servo based PTZ, a higher end stabilized payload, video overlay or other video related capabilities, MicroPilot UAV Autopilots are video capable.
+•	Real time Camera stabilization allows you to use low cost servo based Pan Tilt Zoom payloads with a minimum of effort.
+•	Provides multiple, configurable, gimbal orientations so you can be sure that your configuration is supported.
+•	Real time Camera pointing gives high end functionality to even low cost servo based payloads.
+•	Support for multiple COTS PTZ Payloads so you can choose the high performance payload that best suites your requirements.
+•	On-board video overlay support adds up to 16 user definable fields to your video signal before it leaves your UAV.
+
+
+== More than just Waypoints ==
+As UAVs are deployed to handle ever increasingly complex tasks, it is important that your UAV autopilot have the flexibility to handle the requirements of the task at hand. MicroPilot UAV autopilots allow you to specify much more than a list of waypoints. Complex commands, conditional statements, assignment and basic math commands are all available in addition to waypoints.
+•	Powerful scripting language allows to tailor the autopilots operation to suite your needs
+•	Supports relative and absolute coordinates
+•	Feature lockout disables features during critical flight regimes.
+•	Multi-threaded command buffer
+•	Launch and recovery: takeoff, approach, circuit, flare.
+•	Navigation: climb, waitClimb, flyTo, fromTo, turn, circle, setControl, setOrigin.
+•	Calculation: push, pop, add, sub, div, mult, assign.
+•	Pattern: startPattern, definePattern, int, return, wake,
+•	Control: repeat, stop, skipEqual, skipNotEqual, skipGreaterThan, skipLessThan
+•	Wait: wait, waitEqual, waitNotEqual, waitGreaterThan, waitLessThan.
+•	Define up to 16 holding patterns – circles, figure 8, racetrack - whatever you require
+
+
+== Fixed Wing Configuration Wizard ==
+
+•	Setup wizard guides you through the process of configuring your MicroPilot autopilot your UAV for its first flight.
+•	Step by step process is easily understood.
+•	Save and continue feature lets you pause the configuration process and continue later at your convenience.
+•	Includes basic checks to ensure that your autopilot is configured properly.
+
+
+== Datalog Viewer ==
+
+•	Powerful, user friendly tool for reviewing datalogs, telemetry data and simulator output aids in post flight analysis.
+•	Logs up to 50 fixed fields to ensure our support team can diagnose any problems you may encounter.
+•	Logs 24 fields so you can see your data.
+•	5hz or 30hz lets you choose maximum information or maximum duration.
+•	Time plot linked to ground track linked to current command simplifies interpretation
+•	Configurable graphs - you to quickly see the information you need.
+•	Curve smoothing, sub graphs, and zoom features separates information from noise.
+•	FFT, averages min max to understand data.
+•	Records any divide by zero, unexpected interrupts, stack overflow allows superior customer support.
+
+
+== Status Monitor ==
+Real time feedback loop performance graphs give you the information you need to properly adjust the gains in your MicroPilot UAV Autopilot.
+•	Status Monitor tells you exactly what your autopilot is doing so you know how to fine tune your gains.
+•	In-flight gain adjustments allow you to tune your airframe quickly.
+•	Graphs tailored to selected control configuration provide you with feedback loop inputs/outputs as well as P, I, D, and feed forward contributions so you can visualize the control system.
+•	Simulation mode allows you understand the autopilot operation on the ground before you flight test.
+•	Real Time feedback loop configuration display shows you which loops to tune.
+
+== Vibration Analyzer ==
+
+•	Captures high frequency accelerometer, compass and gyro data so that you can analyze and isolate vibration issues
+•	Save captured data allows you to compare changes
+•	View Time and Frequency plots to identify problem vibrations
+•	Export data to a csv file for further analysis
+•	Log and linear plots lets you view vibration data in the most convenient format
+Configuration Test
+
+•	Quickly identify configuration errors to speed your integration.
+•	Identifies Horizon/Autopilot inconsistencies to identify problem areas before you begin
+•	Flags both errors and warnings so you can be secure that your configuration is correct.
+•	Over 45 test groups with multiple sub-tests provide a comprehensive review of your configuration.
+•	Errors and warnings a separated to better focus your attention.
+•	Automatically identifies and segregates unused tests so you can focus on the most critical.
+•	Errors and warning report can be saved for future reference.
+
+
+
+== ADC Calibration ==
+
+Calibrating sensors is a time consuming chore that sometimes must be performed for each UAV shipped. Using MicroPilot’s ADC calibration tool speeds this process and even allows you to perform temperature compensation.
+•	Up to 16 Optional ADC Channels
+•	24 bit resolution eliminates need for external signal conditioning circuitry
+•	8 input ranges adapts to your sensors.
+•	GUI based calibration tool simplifies the task of calibrating individual sensors.
+•	Temperature compensation maximizes sensor performance
+
+
+== Additional Integration Tools ==
+
+•	GUI Autopilot Code update Utility Simplifies the process of updating your autopilot’s software.
+•	UAV Name Utility allows you to modify a UAV’s text name.
+•	Dial up modem Configuration Utility simplifies setting the phone number for dial up modems (e.g. Iridium and cell phone modems).
+•	GUI LRC Base and Remote Configuration Utility simplifies configuring your LRC autopilots.
+•	Servo Stress Tester helps you evaluate you servos and power supply.
+
+
+
+
+
+
+
+
+
+
+
+
+== Attachment about Alberta University ==
+
+They have compared Paparazzi and Micropilot
+
+== 2.3. Autopilot and Navigation ==
+
+=== 2.3.1. Autopilot Requirements ===
+The autopilot system was required to integrate into the airframe designed above. This includes both mechanical integration - size and weight - as well as electrical integration - power supplies, PWM signals, etc... Furthermore, the minimum requirements for the autopilot included:
+- Monitor the plane’s flight properties such as position, altitude, and velocity from the ground station.
+- Receive an RC backup signal and switch the plane to manual mode when required.
+- Set the flight path of the plane from the ground station while in flight.
+- Hand over control of the aircraft to the autopilot to maintain controlled flight while navigating between waypoints.
+
+=== 2.3.2. Choice of Autopilot ===
+
+The MicroPilot and Paparazzi autopilots were determined to meet  these requirements. Both systems were designed and analyzed, but in testing, Paparazzi was chosen as the best suited autopilot for our needs.MicroPilot is a closed, proprietary system and comes with technical support. Paparazzi is an open source system, in both hardware and software, created and used by enthusiasts and university research groups. The MicroPilot autopilot that we flight-tested is the MP2128g2 which is their high-end non-redundant autopilot for fixed wing aircraft. The various sensors, connectors, and software are all made and sold by MicroPilot. Because of this, a smaller number of design decisions needed to be made than with Paparazzi. For Paparazzi, the airborne software, the ground-station software, and several versions of airborne hardware are all open sourced, permitting modifications, although not all versions of hardware are readily available. There are also some sensors that are part of the Paparazzi project and software has been written to support many more sensors. Since any of the Paparazzi code can be changed, any sensor can be made to work with it so we had many more choices here than with MicroPilot. However, there is a well-documented set of sensors that work with Paparazzi and we determined that it would likely be easier to implement these.
+
+=== 2.3.3. Method of Autonomy ===
+
+Both the MicroPilot and Paparazzi systems achieve autonomous flight using primarily a Global Positioning System (GPS) receiver and an Inertial Measurement Unit (IMU). The MicroPilot also has two barometric pressure transducers to measure airspeed through differential pressure and altitude through static pressure. The air is sampled by a pitot tube protruding from the wing and connected using air hoses. These measurements are typically more accurate than GPS which was designed primarily for horizontal navigation. Furthermore, it has an optional ultrasonic Above Ground Level (AGL) meter to measure the height above the ground for smoother landings. The Paparazzi system can be connected to many different third party sensors including barometric altimeters, ultrasonic AGLs, laser rangefinder AGLs, infrared thermopiles, and more. We chose to create a functional Paparazzi system using only GPS and the IMU since that is all that is required to meet our minimum requirements. In order to achieve some more advanced features such as autonomous takeoff and landing, we expect that a more accurate form of height measurement will be necessary and future work might include integration of a barometric altimeter. We believe this method would be most effective for us since ultrasonics and laser AGLs have questionable performance on varied terrain, especially grass.Both the MicroPilot and Paparazzi systems already have the necessary airborne code to analyze the sensor data and use control loops to adjust servo positions and stabilize the aircraft. Each system provides a method for adjusting the control values 
+to provide appropriate performance for various aircraft.The second half of autonomous flight is navigation. It is not enough for the autopilot to be able to stabilize the plane and perform simple maneuvers such as turns, and 
+altitude changes. It also needs to be able to navigate waypoints, search areas, and eventually perform takeoffs and landings. Furthermore, it must be able to do all of this according to a flight plan and be flexible enough to perform in-flight changes according to user input. Paparazzi uses an Extensible Markup Language (XML) file 
+to define the flight plan. This plan is created before the flight and includes important information such as the GPS positions of important waypoints and blocks of flight maneuvers such takeoff, landing, waypoints to navigate, search areas, and the order in which to do all of this. Paparazzi also enables in flight modifications such as jumping directly to one particular block, increasing or decreasing the altitude at which each waypoint is navigated, and even moving waypoints around. It should be noted, though, that the more complicated the modification, the less practical it is to perform while the aircraft is airborne. We created several flight plans for use at our testing airfield. During test flights, we successfully communicated wirelessly with the aircraft, monitored all aspects of the flight, let the pilot control between manual and autonomous mode, and loaded the flight plans so that the plane would navigate a series of waypoints when put into autonomous mode.
+
+=== 2.3.4. Sensor Integration ===
+
+A major part of the project was implementation and integration of the MicroPilot and Paparazzi hardware. For MicroPilot we created a wiring harness and connectors to provide power to the MP2128g2 circuit board and connect it to the servos. For Paparazzi, we had many more decisions to make including which GPS, IMU, and autopilot to use.There are several different hardware configurations that are designed to run Paparazzi. They are all similar in most respects, having only a few different electrical or mechanical differences. For example, the only difference between the Tiny v2 and TWOG (Tiny Without GPS) (Fig 2.3) is that the Tiny has a built in 
+GPS and antenna whereas the TWOG requires an external GPS. Everything else, down to the exact layout of components on the Printed Circuit Board (PCB) is the same for these two autopilots. We chose to use the TWOG autopilot because it met our needs and because it has an external GPS, unlike many other Paparazzi autopilots. This external GPS allows us to enclose the autopilot in a metal avionics box, which isolates some of the electronic components to help reduce Radio Frequency (RF) interference.We chose to use the CHIMU (Cheap IMU), available from Ryan Mechatronics as our IMU (Fig 2.8). We made this decision because IMU accuracy is very important to achieve good autonomous performance and the CHIMU was the most accurate IMU within our price range. Our research showed us that it is quite accurate compared to the similarly priced IMU’s around $200. It is also readily available and code already existed to integrate it with Paparazzi. We integrated the CHIMU using Serial Peripheral Interface (SPI) since this provides a faster refresh rate than the CHIMU’s Universal Asynchronous Receiver/Transmitter (UART). After including several configuration lines in the airframe.xml file and connecting the wiring properly, the IMU worked seamlessly with the Paparazzi software. We used a small U-Blox Lea-5H GPS with a helical antenna as our GPS receiver (Fig 2.7) since it was provided to us by our client. This GPS connected to the TWOG over UART After configuring the settings on the GPS using U-Blox’s U-Center, the GPS also worked seamlessly with Paparazzi and we were able to consistently get a solid GPS lock within 2 minutes. We also never had trouble with GPS reception while airborne, even with the 900 MHz and 2.4 GHz radios running.
+
+=== 2.3.5. Servo and RC Integration ===
+
+For MicroPilot, the servo signals from the RC receiver can be connected directly into one of its connectors. The servo signals going out to the servos pass through MicroPilot’s servo board to keep the power for the servos separate from MicroPilot’s power. Once connected, the servos were first adjusted mechanically before being powered up. The neutral positions of both the servo and the control surface were physically set to be near the centre of each of their ranges of motion.Then, using Horizon, the zero and range of motion of the servos were appropriately adjusted according to the discretion of an experienced pilot. Servos are controlled using PWM signals, normally with an operational width between 1 and 2 milliseconds. For modes of operation such as takeoff, climb, cruise, and descent, desired values and tolerances were programmed for percent throttle, speed, and altitude. Additional parameters such as waypoint radius and low battery indicator threshold were also set. These setting are saved as a configuration file for Horizon and are flashed to the autopilot.For Paparazzi, a Pulse Position Modulated (PPM) encoder was required to change multiple PWM signals from the RC receiver into a single PPM signal which the TWOG can read. We used a small PPM encoder for this purpose. The order of the 
+PWM signals was matched between the RC receiver, PPM encoder, and Paparazzi’s Radio.xml configuration file to ensure that the correct channel controlled the correct servo. Pulse Width Modulation (PWM) signals for the servos came directly from the TWOG while power for the servos was provided separately using a small wiring 
+harness. Which servo was controlled by which connector on the TWOG was specified in the airframe.xml file.
+
+=== 2.3.6. Ground Control Station ===
+
+Computer software enables communication between the user and the autopilot. Both MicroPilot and Paparazzi come with airborne software and ground control station software. The ground control station software lets the user monitor the plane’s flight wirelessly from the ground. It displays position, heading, altitude, and flight path 
+overlaid on a map. It also allows the user to command the plane by setting waypoints, search areas, and takeoff and landing routines.The ground control station software for MicroPilot (Horizon) and for Paparazzi (GCS) both allow communication with the autopilot hardware through a serial connection. Since the computers we are using do not have a serial port we used a RS232 to Universial Serial Bus (USB) cable. To allow for wireless communication, the serial connection passes through a pair of wireless radios. For MicroPilot, we bypassed this wireless connection at times for faster downloads of flight data.One complication of developing and testing two autopilot systems simultaneously is that the ground control software for MicroPilot only runs on a Windows Operating System (OS) and Paparazzi only runs on a Linux OS. As well, a few different computers were used in this project. This issue was addressed using Virtual Machines (VM) in Oracle’s VM VirtualBox. Windows 7 and Ubuntu 11.10 were installed as VMs, the necessary software was installed, and the VMs were exported between computers as necessary for transfer and backup. Software running in a VM does not perform as well as software installed on the computer’s host OS, but using VMs is convenient for being able to back up files and software installations, as well as allowing the software for both autopilots to be run on the same computer.
+
+=== 2.3.7. Telemetry Data Link ===
+
+The data link between the autopilot and the ground station (Fig 2.9) is one of the more important parts of this project. It provides telemetry so that the ground station user knows where the plane is and what it is doing. It also enables the ground station user to control the plane by telling it what part of the flight plan to execute. In order 
+to achieve this data link, we used two 900 MHz wireless modems - one in the aircraft, and one connected to the ground station. We decided to use 900 MHz modems instead of 2.4 GHz ones (the two unlicensed frequencies at which this type of product are readily available) because 900 MHz has lower attenuation through air [1]. There are other factors that favor 2.4 GHz for some applications such as a smaller Fresnel zone and better antenna gains, but they are not applicable for us. The aircraft will by flying as low as 45 m, and as far away as 5 km. The Fresnel radius can be calculated using the formula
+r = 8.657√(D/f)
+where r is the radius in meters, D is the distance between the transmitter and receiver in kilometers, and f is the frequency in Gigahertz [2]. At 900 MHz, it is 20.4 m; and at 2.4 GHz it is 12.5 m. So within our typical flight conditions, both 900 MHz and 2.4 GHz radios would be accurately modeled as in free-space. The other advantage of 2.4 GHz radios is that parabolic antennas of a given size have larger gain. Because we don’t want to require aiming a parabolic antenna at the plane for autopilot telemetry, this is not an option, so 900 MHz works just as well as 2.4 GHz. Lastly, since our imaging and RC systems already operate at 2.4 GHz, using a  different frequency helps avoid interference between systems.We experimented with two different 900 MHz modems: the XTend (Fig 2.10), and the XBee (Fig 2.11). The XTend is a larger, more powerful modem with a transmit power of 1W and receiver sensitivity of around -100 dBm. It has a maximum line of sight range of 22 km, which is plenty for our application. The XBee is a smaller modem with a transmit power of 50 mW, and receiver sensitivity of around -100 dBm. It has a maximum line of sight range of 3 km - enough for testing, but not enough for our final product.
+
+=== 2.3.8. Failsafe ===
+
+A critical part of any autonomous vehicle, and particularly airborne ones, is a suitable failsafe system. The failsafe system ensures that if any part of the autopilot system fails, the aircraft will behave in an appropriate manner. For example, if all wireless communications are lost, the unmanned vehicle should autonomously turn  around and fly to the home point. The worst case scenario to be avoided is for the aircraft to fly away and be lost, possibly later to crash somewhere where it may cause damage.We implemented a multi-layered failsafe system using the built in features of both MicroPilot and Paparazzi.Both autopilots include the ability to toggle between autopilot and manual control, Pilot in Command (PIC) and Computer in Control (CIC) for MicroPilot, and Manual and Auto2 for Paparazzi. The toggle switch was set up from the RC controller, as required by the competition rules. An extra channel is used between the RC transmitter and RC receiver to tell the autopilot what mode to be in. If the pilot observes at any time that the autopilot mode is not properly controlling the planes, the pilot can flip a toggle switch and take over control of the aircraft.There are also automatic failsafe routines built into MicroPilot and Paparazzi’s software, including a prioritized list of in-flight failures and what action to perform in the event of such a failure. We configured both autopilots to perform failsafe manoeuvres according to the competition requirements.
+
+
+Mehmet Kerim PEKER
+kerim.peker@gmail.com

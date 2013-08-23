@@ -1,0 +1,12 @@
+#summary GitHub ve GitHub'u SVN ile kullanmak.
+#labels GitHub,SVN
+
+GitHub Nedir?
+
+     GitHub kod geliştirenler için projelerini saklayabilecekleri ,açık kaynak kodlarına erişebilecekleri, git revision/version kontrol sisteminini kullanan web tabanlı hosting hizmetidir. Biz bu servisin ücretsiz versiyonunu kullanacağız. Öncelikle kendimize bir github hesabı almamız gerkiyor. Sonra googleCode üzerinde oluşturduğumuz aynı proje adını  “anadolu-suas-boran” arattığımızda kmmakinaci/anadolu-suas-boran projesi çıkıyor. Onu watch diyerek web sitesi üzerinden yapılacak işlemleri tamamlamış oluyoruz.
+     Bundan sonra yapacağımız işlemler SVN ile Google Code kullanımı dökümanına benzer işler. Ancak Burada directory seçimi ilk kez bir dosya göndereceğimizde :
+https://github.com/kmmakinaci/anadolu-suas-boran.git/branches/deneme olarak girilecek. Burada son yazılan deneme klasörü bir branch ve bu test aşamasından sonra gerçek kullanılacak bir branch adı olacak. Veri çekme SVN Checout ile üzerinde değişiklik yaptığımız dosyayı tekrar gönderme yne SVN commit ile olacak. Burada yine veri yolumuzun “ https://github.com/kmmakinaci/anadolu-suas-boran.git/branches/deneme” olmasına dikkat edin.  Burada ilk import ve commit işlemleri sırasında yine kullanıcı adı ve şifre istiyor. Buraya GitHub üyelik bilgilerimizi giriyoruz bu sefer. Hatırlayacağımız üzere googleCode üzerinde bunları yaparken google hesabımızın bilgilerini kullanmıştık. SVN kullanımın temel özellikleri add, delete , ignore gibi detaylara yine bu dökümanda değinmedim. Google code üzerindeki kaynaklarda ilgili pdf zaten paylaşmıştık.
+Not:
+	GitHub ile ilgili araştırma yaparken windows üzerinden GitShell, Git Bash, mysgit, tortoise git (puttygen.exe ile ssh key tanımlama ) vb. Git Revision Controle ait eklenti ve programlarla denemeler yaptım ancak başarılı sonuçlar alamadım. Yukarıda açıkladığım yöntem deneme yanılmalar sonucu elde ettiğim sonuçlardır.  Burada bu ortamları birlikte etkin olarak test edebilirsek daha açıklayıcı sonuçlar elde edebiliriz. 
+
+_*Kemal Mert MAKİNACI*_
