@@ -56,7 +56,9 @@ Wiki page üzerine bir video eklemek istediğimizde aşağıda yazılmış gibi 
 
 
 
+=Branch Oluşturma=
 
+Source>Browse>svn>branches 'bölümüne girip *create* diyerek branch olusturabiliyoruz. Yazılan kodların branches' bölümüne eklenmesi gerekmektedir. Kod'ların takibi bu bölümden yapılıcaktır.
 
 _*Ezgi Tetik*_ _ezgitetik92@gmail.com_
 
