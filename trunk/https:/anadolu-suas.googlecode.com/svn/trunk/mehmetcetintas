@@ -1,0 +1,36 @@
+#include <cv.h>
+#include <highgui.h>
+int main()
+{
+    //Window to display shapes
+    cvNamedWindow("Shapes",CV_WINDOW_AUTOSIZE);
+    //Image structure
+    IplImage* shape=cvCreateImage(cvSize(1000,1000),8,3);
+    //Initializing font
+    CvFont font;
+    cvInitFont(&font, CV_FONT_HERSHEY_SIMPLEX, 1.0, 1.0, 0, 3, CV_AA);
+    //Drawing a Line
+    cvLine(shape,cvPoint(100,100),cvPoint(200,100),CV_RGB(0,255,0),10,8);
+    //Putting Text 'Line'
+    cvPutText(shape,"Line", cvPoint(100,80), &font, cvScalar(255,0,0));
+
+    //Drawing a Rectangle
+    cvRectangle(shape,cvPoint(100,150),cvPoint(300,300),CV_RGB(0,255,0),5,8);
+    //Putting Text 'Rectangle'
+    cvPutText(shape,"Rectangle", cvPoint(100,140), &font, cvScalar(255,0,0));
+
+    //Drawing a Circle
+    cvCircle(shape,cvPoint(500,150),50,CV_RGB(0,255,0),-1);
+    //Putting Text 'Circle'
+    cvPutText(shape,"Circle", cvPoint(450,90), &font, cvScalar(255,0,0));
+
+    //Showing the image
+    cvShowImage("Shapes",shape);
+    //Escape Sequence
+    cvWaitKey(0);
+    //CleanUp
+    cvReleaseImage(&shape);
+    cvDestroyAllWindows();
+
+}
+
