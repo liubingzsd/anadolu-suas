@@ -2,4 +2,4 @@
 
 = Anadolu Suas Boran Ekip Görevlendirme Listesi =
 
-http://anadolu-suas-boran.googlecode.com/svn/images/ekipg.PNG
+http://anadolu-suas.googlecode.com/svn/images/ekipg.PNG
