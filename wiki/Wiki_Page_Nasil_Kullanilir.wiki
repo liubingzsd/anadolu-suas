@@ -2,7 +2,7 @@
 
 =Wiki’de GoogleCode Üzerinden Sayfa Nasıl Oluşturulur?=
 
-https://code.google.com/p/anadolu-suas-boran/ ‘linkinden projemizin sayfasını acıyoruz.
+https://code.google.com/p/anadolu-suas/ ‘linkinden projemizin sayfasını acıyoruz.
 Wiki’ye tıklıyoruz.
 New page’e tıklayoruz. Page Name bölümüne sayfamızın adını yazıyoruz. 
 *Sayfa isminde Türkçe karakterler ve boşluk kullanmıyoruz*
@@ -13,7 +13,7 @@ Content bölümünde ;
 
 
 
-http://anadolu-suas-boran.googlecode.com/svn/images/wiki_anlatim1.png
+http://anadolu-suas.googlecode.com/svn/images/wiki_anlatim1.png
 
 *“One-sentence summary of this page “* yazısını silip buraya sayfamızın içeriğinin özetini yazıyoruz.
 *“Add your content here. “* yazısını silip sayfamızın içeriğini buraya yazıyoruz.
@@ -38,14 +38,14 @@ Daha sonra çektiğimiz anadolu-suas-boran’ dosyamızın içindeki “images�
 Örneğin, resmimizin uzantısı .png olsun.
 Resime sağ tıklayığ TortoiseSVN’den add yapıyoruz. Daha sonra tekrar TortoiseSVN’den properties bölümündeki ayarları şekildeki gibi yapıyoruz.
 
-http://anadolu-suas-boran.googlecode.com/svn/images/wiki_page_image_properties.PNG
+http://anadolu-suas.googlecode.com/svn/images/wiki_page_image_properties.PNG
 
 Daha sonra klasörden çıkıp , images klasörüne sağ tıklıyoruz ve SVN Commit yapıyoruz.
 
 Daha sonra wiki page’imize aşağıdaki şekilde resmimizin linkini ekliyoruz.
 ( “ekipg.png yerine kendi resminizin ismini yazın,http'den sonraki bosluk silinecek “ )
 
-_http ://anadolu-suas-boran.googlecode.com/svn/images/ekipg.PNG_
+_http ://anadolu-suas.googlecode.com/svn/images/ekipg.PNG_
 
 
 =Wiki Page’e YouTube Uzerinden Video Ekleme=
