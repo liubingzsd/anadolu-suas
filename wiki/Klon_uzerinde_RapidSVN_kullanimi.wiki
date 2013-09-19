@@ -1,5 +1,13 @@
 #summary Ubuntu Klonu uzerinde RapidSVN kullanımı, sifre sorunu, Branches'a kod ekleme
 
+Subversion nedir?
+Web sayfası, program kaynak kodu gibi belgelerin bir depoda (klasör, web servisi, web sunucusu) toplu olarak tutulduğu ve böylece bu belgelerin sürüm takibinin yapıldığı bir sistemdir. Bizim subversion'ımız GoogleCode .
+
+RapidSVN nedir?
+Subversion düzenlemeleri için kullanılan bir yazılımdır. Bu yazılım aracılığı ile subversionlar kontrol edilebilir ve gerekli görülen belgelerde güncelleme, düzenleme yapılabilir.
+
+
+
 =Ubuntu klonu üzerinde Rapid SVN kullanımı=
 
 Merhabalar arkadaşlar ,
