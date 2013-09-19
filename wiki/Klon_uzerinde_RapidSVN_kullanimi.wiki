@@ -10,7 +10,7 @@ Subversion düzenlemeleri için kullanılan bir yazılımdır. Bu yazılım arac
 
 =Ubuntu klonu üzerinde Rapid SVN kullanımı=
 
-Merhabalar arkadaşlar ,
+
 
 =Klon üzerinde Rapid Svn bağlantısı sağlama:=
 
