@@ -20,7 +20,7 @@ Ok’leyip Checkoutumuzu tamamlıyoruz.
 
 Şuanda GoogleCode’da bulunan Source’umuzu klonumuza çektik.
  
-http://anadolu-suas.googlecode.com/svn/images/svn2.PNG
+http://anadolu-suas.googlecode.com/svn/images/svn6.PNG
 
 =Branches’a nasıl kod ekliyoruz?=
 
@@ -30,13 +30,18 @@ Kendi adımıza oluşturduğumuz klasörü acıyoruz, braches klasörü altına 
 RapidSVN’imizi açıyoruz, bookmarkımızı seçip braches klasörüne tıklıyoruz. Örnek olarak ben deneme adında bir kod dosyası oluşturdum. Dosyamızı sağ tıklayıp *add* yapıyoruz. Resimdeki gibi + işareti çıkıcak ve kırmızı bı renk alıcaktır.
 
 http://anadolu-suas.googlecode.com/svn/images/svn3.PNG
- 
+
+
 Daha sonra *branches* klasörüne sağ tıklayıp *commit* diyoruz.
  
+
 http://anadolu-suas.googlecode.com/svn/images/svn4.PNG
+
 
 Log message’ımızı da girip tamama tıklıyoruz.
  
+
 http://anadolu-suas.googlecode.com/svn/images/svn5.PNG
+
 
 Branch’ımız oluşturuldu.
