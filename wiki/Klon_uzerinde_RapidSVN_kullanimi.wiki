@@ -27,8 +27,10 @@ Destination directory kısmındanda kendi adımıza oluşturduğumuz klasorumuzu
 Ok’leyip Checkoutumuzu tamamlıyoruz.
 
 Şuanda GoogleCode’da bulunan Source’umuzu klonumuza çektik.
+
  
 http://anadolu-suas.googlecode.com/svn/images/svn6.PNG
+
 
 =Branches’a nasıl kod ekliyoruz?=
 
