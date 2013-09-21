@@ -52,11 +52,11 @@ return 0;
 
        PANDABOARD  ES
 
- http://anadolu-suas-boran.googlecode.com/svn/images/matlabgörnt1.png
+ http://anadolu-suas.googlecode.com/svn/images/matlabgörnt1.png
 
  http://anadolu-suas-boran.googlecode.com/svn/images/matlabgörnt3.png
 
 PANDABOARD
 
  
- http://anadolu-suas-boran.googlecode.com/svn/images/matlabgörnt2.png
+ http://anadolu-suas.googlecode.com/svn/images/matlabgörnt2.png
