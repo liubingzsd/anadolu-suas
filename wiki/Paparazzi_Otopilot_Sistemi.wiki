@@ -3,7 +3,7 @@
 
 
 
-http://anadolu-suas-boran.googlecode.com/svn/images/1.PNG
+http://anadolu-suas.googlecode.com/svn/images/1.PNG
  
 
 Paparazzi  otopilot sistemi eksiksiz açık kaynaklı yazılım ve donanıma sahip bir sistemdir,bu sistem sadece uçuşla ilgili (airborne) yazılım ve donanım içermiyor ,yer istasyonu ( kontrol sistemi) da  içeriyor.Ayrıca bu  otopilot sistemi özellikle sabit kanatlı hava araçları için  güçlü ve çok yönlü otopilot sistemi oluşturmak için tasarlanmıştır fakat bu sistem geliştirildikçe pervane kanatlı hava araçları  içinde kullanılır hale gelmiştir.Bunun yanı sıra hibrit hava araçlarına uygun sistemler için  çalışmalarda devam etmektedir.Paparazzi pahalı olmayan otonom her tip  hava araçlarına yönelik açık kaynaklı bir otopilot sistemidir.
@@ -24,11 +24,11 @@ Airborne donanımı daha küçük ve daha güvenilir bir pakete koymak  USB bağ
 
 2.Donanım
 Atmel AVR ve Philips ARM7 LPC mikro denetleyicileri kullanılarak,birçok otopilot donanım versiyonları oluşturulmaktadır.En son model tek yada çift mikro denetleyici içermektedir.
-http://anadolu-suas-boran.googlecode.com/svn/images/2.png
+http://anadolu-suas.googlecode.com/svn/images/2.png
 
 Single micro-controller(tiny controller board)
 
-http://anadolu-suas-boran.googlecode.com/svn/images/3.png
+http://anadolu-suas.googlecode.com/svn/images/3.png
 
 Dual micro-controller(classix controller board)
 
@@ -39,7 +39,7 @@ Maliyeti düşük,güvenilirliği yüksek tutmak için ,en son paparazzi sistemi
 
 2.2 Kızılötesi sensörler: Paparazzi otopilot  durumu algılamak için kızılötesi termopiller kullanıyor.Uçağın kanadının bir tarafa yatma açısı sıfır olduğunda (zero bank-pitch angle) iki sensör arasındaki sıcaklık farkı sıfır olmalı, ve yatma açısı 90 olduğunda bu fark maksimum olmalıdır. Bu ilişkiye göre doğrusal eğim (regresyon) yapılabilir ve bunun açısı hesaplanabilir.
 
-http://anadolu-suas-boran.googlecode.com/svn/images/4.png
+http://anadolu-suas.googlecode.com/svn/images/4.png
 
 
 
@@ -48,7 +48,7 @@ Zero bank-pitch angle
 
  
   
-http://anadolu-suas-boran.googlecode.com/svn/images/5.png
+http://anadolu-suas.googlecode.com/svn/images/5.png
 
 
 
@@ -58,7 +58,7 @@ http://anadolu-suas-boran.googlecode.com/svn/images/5.png
  Daha önceki modellerde yunuslama ve yalpalama hareketleri için iki grup sensör kullanılıyordu,ama son zamanlarda uçuş sırasındaki maksimum zıtlığı güncelleştirmek için  üçüncü bir  grup sensör entegre edilmiştir.Büyük hava araçları için bu üçüncü sensör gerekli olmayabilir fakat ,küçük insansız hava araçları için zorunludur.Önemli bir noktada şu ki, bu kızıl ötesi kararlı sensörler 7.5um-13.5um arasındaki IR(inf-rared) radyasyon dalga boyunda duyarlıdır.Bu dalgalar genel dünyevi nesneler tarafından meydana gelmektedir,su,güneş direk olarak etki etmemektedir.IR sensörlerin performansları ve sınırlarını gösteren kapsamlı testler yapıldı,bu sistem paparazzi takımı tarafından yürütüldü ve sistemin gece karanlıkta,aşırı yağmurda,yüksek irtifada (1500m AGL),açık okyanus üstünde,büyük bir dağa veya yapıya yakınken,-10C ile 48C arasında ,büyük çapta farklı bölgeleri geçerken(asfalt-su) %100 güvenilir olduğu kanıtlandı.Bu sensörlerin bilinen tek sınırlayıcıları yoğun sis ve bulut,böyle durumlarda düşük verim alınıyor.
 
 
-http://anadolu-suas-boran.googlecode.com/svn/images/6.png
+http://anadolu-suas.googlecode.com/svn/images/6.png
 
 
 
@@ -73,11 +73,11 @@ http://anadolu-suas-boran.googlecode.com/svn/images/6.png
 
 
   
-http://anadolu-suas-boran.googlecode.com/svn/images/7.png
+http://anadolu-suas.googlecode.com/svn/images/7.png
 
 Otopilot çift işlemci yapısını kullanıyor;ilk işlemci (Fly-by-Wire)servo kontrol gibi kritik kodla uğraşıyor ,ikinci işlemci navigasyonu,sensörleri,yararlı yükleri,iletişimi ve her türlü otonom işlemi yürütüyor.Otopilot işlemcisinde yıkıcı kod hatası olursa ,hava aracı FBW(Fly-by-Wire)(kontrollü uçuş) işlemci ile manuel olarak düzeltilebilir.Bu yapı için iki elektronik kart düzenlenmiştir,1’si Atmel AVR  mikrodenetleyici ile ,diğeri Philips LPC .
  
-https://code.google.com/p/anadolu-suas-boran/source/browse/images/8.png
+https://code.google.com/p/anadolu-suas/source/browse/images/8.png
 
 3.1 Kontrol Döngüsü
 
@@ -86,7 +86,7 @@ Otopilot çekirdeği 3 parttan oluşuyor;sensör kazanımı (acquisition ),durum
 
 
 
-http://anadolu-suas-boran.googlecode.com/svn/images/9.png
+http://anadolu-suas.googlecode.com/svn/images/9.png
 
 
 
@@ -97,7 +97,7 @@ girdi komutu sağlıyor.Son pitch denetleyici boylamsal eksenden sorumludur.Bu k
 4.Yer Kontrol İstasyonunun Yapısı
 
 
-http://anadolu-suas-boran.googlecode.com/svn/images/10.png
+http://anadolu-suas.googlecode.com/svn/images/10.png
 
 
 
@@ -111,7 +111,7 @@ Bu yapı sayesinde,yer kontrol istasyonu yerel ağ üzerinde özgür bir şekild
 
 4.1 Grafiksel Kullanıcı Arayüzü
 
-http://anadolu-suas-boran.googlecode.com/svn/images/11.png
+http://anadolu-suas.googlecode.com/svn/images/11.png
 
 
 
