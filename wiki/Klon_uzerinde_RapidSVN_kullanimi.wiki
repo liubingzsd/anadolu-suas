@@ -32,44 +32,6 @@ Ok’leyip Checkoutumuzu tamamlıyoruz.
 http://anadolu-suas.googlecode.com/svn/images/svn6.PNG
 
 
-=Branches’a nasıl kod ekliyoruz?=
-
-Eclipse’de oluşturduğumuz projemizin dosyasını acıyoruz. Eger değiştirmediyseniz projeniz workspace klasörü altında oluşacaktır. Dosyanın içinde bulunan *.c* uzantılı dosyayı kopyalıyoruz. 
-Kendi adımıza oluşturduğumuz klasörü acıyoruz, braches klasörü altına yapıştırıyoruz. *Dosyanın sonundaki .c uzantısını kaldırıyoruz.*
-
-RapidSVN’imizi açıyoruz, bookmarkımızı seçip braches klasörüne tıklıyoruz. Örnek olarak ben deneme adında bir kod dosyası oluşturdum. Dosyamızı sağ tıklayıp *add* yapıyoruz. Resimdeki gibi + işareti çıkıcak ve kırmızı bı renk alıcaktır.
-
-http://anadolu-suas.googlecode.com/svn/images/svn3.PNG
-
-
-Daha sonra *branches* klasörüne sağ tıklayıp *commit* diyoruz.
- 
-
-http://anadolu-suas.googlecode.com/svn/images/svn4.PNG
-
-
-Log message’ımızı da girip tamama tıklıyoruz.
- 
-
-http://anadolu-suas.googlecode.com/svn/images/svn5.PNG
-
-
-Branch’ımız oluşturuldu.
-
-Google Code'da *Source-browse-svn-branches* bölümünde kodumuzu görebilirz.
-
-http://anadolu-suas.googlecode.com/svn/images/svn7.PNG
-
-
-http://anadolu-suas.googlecode.com/svn/images/svn8.PNG
-
-
-
-
-
-
-
-******************************
 
 = Rapid SVN Branches'a Proje Klasörü Ekleme =
 
