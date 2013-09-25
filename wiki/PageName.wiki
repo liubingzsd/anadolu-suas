@@ -1,21 +1,21 @@
 #labels Qemu,Emulator
 #QEmu (Quick emülatör)kurulumu
 
-Qemu Nedir?
+=Qemu Nedir?=
 
-     
-        Beagleboard ve beaglebone kullanıyorken bazı durumlarda yazılımlarımızı test etmek için sana arm işlemci makinelerine ihtiyaç duaybiliriz. Bu tarz bir çevre, en basit ve yaygın olarak emülatörlerle yapılmakta. Emülatörler farklı fiziksel makinelermiş gibi çalışabilirler. Linuz üzerinde bu yapıda çalışan birçok emülatör vardır, bunlardan biri de Qemu’dur.
+  Beagleboard ve beaglebone kullanıyorken bazı durumlarda yazılımlarımızı test etmek için sana arm işlemci makinelerine ihtiyaç duaybiliriz. Bu tarz bir çevre, en basit ve yaygın olarak emülatörlerle yapılmakta. Emülatörler farklı fiziksel makinelermiş gibi çalışabilirler. Linuz üzerinde bu yapıda çalışan birçok emülatör vardır, bunlardan biri de Qemu’dur.
      Qemu( Quick-Emulator), donanım gerçeklemesi yapabilen, bedava ve açık kaynak tabanlı hosted bir hypervisor’dır. Qemu VMware de kullandığımız gibi makinenin yüklenen ve çalışan uygulamalar üzerindeki değişiklikleriyle kaydedip geri çağırabildiğimiz bir ortamdır. Qemu ARM gibi değişik mikroişlemci yapılarının emülasyonunu desteklemektedir. QEmu iki çalışma moduna sahiptir bunlar; user-mode emulation, computer emulation.
 User-mode emulation : Bu modda biz Linux programlarını farklı  instruction setleri cross-compilation ve cross debugging ile çalıştırabiliriz. 
 Computer mode emulation : Qemu tüm bilgisayar sisteminin emülasyonunu yapar.
 
-Qemu Yapıları
+==Qemu Yapıları==
+
 http://anadolu-suas.googlecode.com/svn/images/qemu_arch.PNG
 
 
 Qemu ARMv5TEJ instruction seti ve  tüm türevi işlemci ailelerini emulate edebilir..
 
-Qemu kurulumu için kullandığımız terminal satırı kodları:
+===Qemu kurulumu için kullandığımız terminal satırı kodları:===
 
 $ git clone git://git.qemu-project.org/qemu.git
 $ cd qemu/
@@ -25,14 +25,9 @@ $ make -j2
 $ sudo make install
 
 
+==Compiling QEMU for an ARM1176 Systems ==
 
-
-
-
-
-Compiling QEMU for an ARM1176 Systems 
-
-Yüklenmesi gereken paketler
+===Yüklenmesi gereken paketler===
 sudo apt-get install git zlib1g-dev 
 sudo apt –y install libsdl1.2-dev
 sudo apt-get install libpixman-1-dev
@@ -46,7 +41,7 @@ Qemu clonunu  git’ten çekiyoruz
 
 git clone git://git.qemu-project.org/qemu.git
 
-Qemu configurasyonu 
+===Qemu configurasyonu=== 
 
 cd qemu
 ./configure –help
@@ -61,9 +56,9 @@ Sudo make install
 
 Reference :  http://xecdesign.com/compiling-qemu/
 
-Beagleboard Emulator in Ubuntu with Qemu
+==Beagleboard Emulator in Ubuntu with Qemu==
 
-Linaro Nedir ?
+==Linaro Nedir ?==
 Linaro kar amacı gütmeyen  Arm yapıları için açık kaynaklı geliştirme ve danışmalık yapan bir mühendislik grubudur. Yaptıkları geliştirmeler GCC toolchain, the Linux kernel, ARM power management, grafik ve multimedya arayüzleridir.
 
 
