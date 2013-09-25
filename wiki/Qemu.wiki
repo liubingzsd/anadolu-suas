@@ -1,0 +1,171 @@
+Qemu Nedir?
+
+     
+        Beagleboard ve beaglebone kullanıyorken bazı durumlarda yazılımlarımızı test etmek için sana arm işlemci makinelerine ihtiyaç duyabiliriz. Bu tarz bir çevre, en basit ve yaygın olarak emülatörlerle yapılmakta. Emülatörler farklı fiziksel makinelermiş gibi çalışabilirler. Linuz üzerinde bu yapıda çalışan birçok emülatör vardır, bunlardan biri de Qemu’dur.
+
+     Qemu( Quick-Emulator), donanım gerçeklemesi yapabilen, bedava ve açık kaynak tabanlı hosted bir hypervisor’dır. Qemu VMware de kullandığımız gibi makinenin yüklenen ve çalışan uygulamalar üzerindeki değişiklikleriyle kaydedip geri çağırabildiğimiz bir ortamdır. Qemu ARM gibi değişik mikroişlemci yapılarının emülasyonunu desteklemektedir. QEmu iki çalışma moduna sahiptir bunlar; user-mode emulation, computer emulation.
+
+User-mode emulation : Bu modda biz Linux programlarını farklı  instruction setleri cross-compilation ve cross debugging ile çalıştırabiliriz. 
+Computer mode emulation : Qemu tüm bilgisayar sisteminin emülasyonunu yapar.
+
+Qemu Mimarisi
+
+http://anadolu-suas.googlecode.com/svn/images/qemu1.png
+
+Qemu ARMv5TEJ instruction seti ve  tüm türevi işlemci ailelerini emulate edebilir..
+
+Qemu kurulumu için kullandığımız terminal satırı kodları:
+
+$ git clone git://git.qemu-project.org/qemu.git
+$ cd qemu/
+$ git submodule update --init dtc
+$ ./configure --prefix=/opt/qemu
+$ make -j2 
+$ sudo make install
+
+
+
+
+
+
+
+Compiling QEMU for an ARM1176 Systems 
+
+Yüklenmesi gereken paketler
+sudo apt-get install git zlib1g-dev 
+sudo apt –y install libsdl1.2-dev
+sudo apt-get install libpixman-1-dev
+
+Çalışacağımız klasörü oluşturuyoruz ve dizine erişiyoruz
+
+mkdir ~/qemudosya
+cd ~/ qemudosya /
+
+Qemu clonunu  git’ten çekiyoruz 
+
+git clone git://git.qemu-project.org/qemu.git
+
+Qemu configurasyonu 
+
+cd qemu
+./configure –help
+
+P.S. ::    For dtc error use this ;  git submodule update --init dtc
+Sudo 
+./configure --target-list="arm-softmmu arm-linux-user" l--enable-sdl --prefix=/usr
+
+Derleme ve Yükleme:
+Make
+Sudo make install
+
+Reference :  http://xecdesign.com/compiling-qemu/
+
+Beagleboard Emulator in Ubuntu with Qemu
+
+Linaro Nedir ?
+Linaro kar amacı gütmeyen  Arm yapıları için açık kaynaklı geliştirme ve danışmalık yapan bir mühendislik grubudur. Yaptıkları geliştirmeler GCC toolchain, the Linux kernel, ARM power management, grafik ve multimedya arayüzleridir.
+
+= Çalışmalarımız =
+
+*1.)*
+( http://balau82.wordpress.com/2010/08/17/debugging-arm-programs-inside-qemu/ )  
+Öncelikle CodeSourcery GNU/Linux toolchain'i kurduk, daha sonra qemu'yu install edip, linux kernel'i compile ettik. 
+Daha sonra busybox kurma kısmına gecıyoruz fakat burda takılıyoruz. Kullandıgımız kod bu şekilde;
+$ sudo apt-get install build-essential ddd cpio libncurses5-dev libsdl-dev zlib1g-dev
+$ wget http://www.codesourcery.com/sgpp/lite/arm/portal/package6490/public/arm-none-linux-gnueabi/arm-2010q1-202-arm-none-linux-gnueabi.bin
+$ chmod +x arm-2010q1-202-arm-none-linux-gnueabi.bin
+$ ./arm-2010q1-202-arm-none-linux-gnueabi.bin
+$ git clone git://git.qemu-project.org/qemu.git
+$ cd qemu/
+$ git submodule update --init dtc
+$ ./configure --prefix=/opt/qemu
+$ make -j2 
+$ sudo make install
+
+$ wget http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.35.tar.bz2
+$ tar xjf linux-2.6.35.tar.bz2
+$ cd linux-2.6.35/
+$ make ARCH=arm versatile_defconfig
+$ make ARCH=arm menuconfig  // “Kernel Features” section and enable EABI support seçildi.
+$ make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- all
+$ cd arch/arm/boot
+$ qemu-system-arm -M versatilepb -m 128M -kernel zImage
+
+http://anadolu-suas.googlecode.com/svn/images/qemu5.png
+
+
+
+$ cd 
+
+$ wget http://busybox.net/downloads/busybox-1.17.1.tar.bz2
+$ tar xjf busybox-1.17.1.tar.bz2
+$ cd busybox-1.17.1
+$ make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- defconfig
+$ make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- menuconfig 
+(option to compile Busybox as a static executable)
+$ make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- install
+$ sudo apt-get install kvm qemu-kvm qemu-kvm-extras
+$ cd _install
+$ find . | cpio -o --format=newc > ../rootfs.img
+$ cd ..
+$ gzip -c rootfs.img > rootfs.img.gz  // bu komuttan sonra görülen bir işlem yapmıyor
+
+$ qemu-system-arm -M versatilepb -m 128M -kernel zImage -initrd rootfs.img.gz -append "root=/dev/ram rdinit=/bin/sh"
+
+http://anadolu-suas.googlecode.com/svn/images/qemu2.PNG
+
+
+
+
+Link’e göre , (http://balau82.wordpress.com/2010/03/27/busybox-for-arm-on-qemu/ ) daha sonra da bu sekilde devam etmemiz gerekiyor fakat bu kısıma geçemiyoruz, üsteki kodu atlayıp denediğimizde de init.d de ve rcS’de hata veriyor ;
+
+The Linux kernel will boot, and the shell /bin/sh will be executed as specified by the boot parameter rdinit, showing the common “#” prompt. The shell can be used normally, for example you can run ls to find the same directory structure of the Busybox _install directory, but using commands like ps and mount we can see that not everything is in place: both programs complain abount the /proc directory. We can create and populate the /proc directory running these commands inside the QEMU emulated system prompt:
+# mkdir /proc
+# mount -t proc none /proc
+After that, the ps and mount programs work fine. We can also note that the /dev directory is almost empty (the only exception being the console device). To populate it we need to mount also the /sys directory, so that we can use the mdev tool; run inside QEMU:
+# mkdir /sys
+# mount -t sysfs none /sys
+# mdev -s
+The /sys and /dev directory are now populated. To execute these steps every time, we can use /sbin/init functionality: this program is usually the first run by the Linux kernel, and its default behavior is to execute the initialization file with path /etc/init.d/rcS. In the host computer this time, in the folder where we compiled Busybox, we create the missing directories:
+$ cd _install
+$ mkdir proc sys dev etc etc/init.d
+$ cd ..
+Now we create a new _install/etc/init.d/rcS with the following content:
+#!/bin/sh
+mount -t proc none /proc
+mount -t sysfs none /sys
+/sbin/mdev -s
+Then set it as an executable file:
+$ chmod +x _install/etc/init.d/rcS
+We can then recreate an updated root filesystem compressed image as before, and run:
+$ qemu-system-arm -M versatilepb -m 128M -kernel zImage -initrd rootfs.img.gz -append "root=/dev/ram rdinit=/sbin/init"
+
+*2.) Beagleboard Emulator in Ubuntu with Qemu*
+(http://www.cnx-software.com/2011/09/26/beagleboard-emulator-in-ubuntu-with-qemu/)
+Bunu yapmaya calıstık basta qemu yükleyip kernel derledim daha sonra, 
+sudo add-apt-repository ppa:linaro-maintainers/tools
+sudo apt-get update
+sudo apt-get install linaro-image-tools
+
+wget http://releases.linaro.org/platform/linaro-n/nano/11.08/nano-n-tar-20110823-1.tar.gz
+wget http://releases.linaro.org/platform/linaro-n/nano/11.08/hwpack_linaro-omap3_20110823-0_armel_supported.tar.gz
+
+sudo linaro-media-create --image_file beagle_sd.img --dev beagle --binary nano-n-tar-20110823-1.tar.gz --hwpack hwpack_linaro-omap3_20110823-0_armel_supported.tar.gz
+
+http://anadolu-suas.googlecode.com/svn/images/qemu4.png
+
+
+
+
+bu şekilde hata alıp burda takılıyoruz.
+
+*3.)* Qemulator isminde bir program indirdik, onun üzerine ubuntu image’ı calıstırmayı denedik bu sekılde bı cıktı aldık fakat verimli olur mu bilemediğimiz için devam etmedik.
+http://anadolu-suas.googlecode.com/svn/images/qemu3.png
+
+
+
+*4.)*
+http://www.ucanlinux.com/2013/03/06/arm-tabanli-bir-sistemin-kurulusu-ve-emulator-ile-testi/
+
+bu linkten de gitmeye çalıştık Sanal Disk kurulusu kısmından sonra hatalar aldık fakat ekran çıktısı almayı unutmuşum onu ekleyemiyorum.
+
