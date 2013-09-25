@@ -1,0 +1,80 @@
+#summary Rootstock nasıl kullanılır ve beagleboarda nasıl ubuntu yüklenir.
+#labels rootstock,beagleboard,ubuntu
+
+     Rootstock beagleboard üzerine ubuntu kurmaya yarayan bir sistemdir.Normalde kurulan ubuntu kendi bilgisayarlarımızdan farklı olarak root file system dediğimiz çok yer kaplamayan boyutu küçük bir sistem olacaktır.Bunun sebebi ise hem beagleboard üzerinde sistemi yormasını engellemek hem de sistemden iyi bir performans almaktır.Rootstock u kurmak için verilen linkten rootstock u indiriyoruz https://launchpad.net/project-rootstock . Daha sonra indirdiğimiz dizinde .tar.gz uzantısından çıkartıyoruz ( Windows daki zip dosyaları gibi ).
+	
+     Beagleboard üzerine yükleyeceğimiz ubuntu için gerekli paketlerin seçimi , kullanacağımız memory kartın boyutu ve bunun gibi özellikleri barındıran rootfs dosyasını oluşturuyoruz.Açtığımız terminalde gerekli olan özelliklerin belirtilmesinde aşağıdaki kodlar kullanılacaktır ( Hepsi yan yana olacak şekilde yazın ve parantez içindekiler açıklamadır onlar koda dahil değil ) .
+
+	sudo ./rootstock
+	--fqdn suas    (Oluşturacağımız sistemin ismini yazdığımız alandır.Bizde alan adı suas.)
+	--login suas	(Admin kullanıcısının kullanıcı adını giriyoruz. suas olarak girdik )
+	--password boran (Kullanıcının şifresini giriyoruz.Şifre boran .)
+	--imagesize 4G    (Hedef alanın büyüklüğünü ifade ediyor. 4 gigabyte SD kartımızın 
+olduğunu düşünerek  yazıyoruz.)
+	--seed linux-image-omap,gcc,g++,make,build-essential,
+openssh-server,nano,apt,usbutils,linux-kernel-headers,linux-firmware,
+wireless-tools,wpasupplicant,zip,linux-source-2.6.32,xserver-xorg-video-omap3,
+xfce4,lxde,network-manager
+	
+	--components "main universe multiverse"   (Arşiv bileşenlerini ifade ediyor. Default 
+olarak main universe olarak tanımlıdır. Bizde bunu değiştirmiyoruz.)
+	--dist maverick   (Hangi ubuntu sürümünü kullanacaksak onu yazıyoruz..Biz lucid 
+kullanıyoruz.)
+	--serial ttyS2	(Burada login olunacak yerdeki tty uzantılı ismi istiyor bizden. biz 
+ttyS2 üzerinden bağlantı sağlayacağız.)
+–seed<cvs listesi>       (Burada yüklenecek paketleri belirtiyoruz)
+
+Bizim istediğimiz paketler: 
+linux-image-omap 	(Linux kernel image ile ilgili paketidir)
+gcc		     (The GNU C compiler)
+g++		     ( GNU C++ compiler,)
+make		     (yürütülebilir dosyaları ve diğer hedef dosyaların kaynaktan alınmasını sağlar.)
+build-essential
+openssh-server              (Kullanıcı güvenlik kabuğu)
+nano    		     (text editor kullanmamızı sağlayan program )
+apt		     (paketleri güvenli ve daha basit şekilde yüklememizi sağlar .)
+usbutils    		     (USB portlarında ne olduğunu görmemizi sağlar.)
+linux-kernel-headers     (Ana kernel dosyalarına ulaşmamızı sağlar.)  
+linux-firmware              (Linux kernel tarafından kullanılan donanım ve aygıt yazılımlarını sağlar.)
+wireless-tools                (wireless araçlarını içinde barındırır)
+wpasupplicant	     (wireless ağlarını korumak için kullanılır .)
+zip
+linux-source-2.6.32	      (Bu paket Linux kernel version 2.6.32 nın kaynak kodlarını sağlar.)
+xserver-xorg-video-omap3
+xfce4	                      (Hafif masaütüyle daha hızlı çalışmayı sağlar.)
+lxde	                      (Arayüz sağlar.)
+network-manager
+
+Bu kodları girdikten sonra sistemimiz otomatik olarak belirttiğimiz paketleri indirmeye başlar bu işlem yaklaşık yarım saat kadar sürüyor.Fakat dikkat edilmesi gereken nokta bu işlemlerin başında sudo komutunun kullanılması.Bu komutu daha sonraki adımlardada kullanıcaz. linux işletim sistemlerinde windowstan ayrı olarak admin kullanıcısından bir üst kullanıcı daha tanımlı gibi davranır.Yani kritik sistem dosyalarını değiştirmek istediğinizde (silmek,kopyalamak,yer değiştirmek vb.) bize engel olur buna izin vermez genelde "permission denied " yazısıyla karşılaşırız.Sudo komutunu terminale yazdığınız zaman bize bu işlemleri yapmamız için gereken izni verir. yükleme işlemi bittiğinde indirilen rootfs dosyasını ayrı bir klasöre kopyaladık daha sonraki işlemlerimizde kolaylık sağlaması için. Daha sonra uImage dosyasını oluşturabilmek için dizine çıkarmamız gerekiyor. İçerisindeki boot klasörü altındaki vmlinuz dosyası sayesinde hazır bir uImage oluşturma olanağımız var. Diğer türlü kernel derlemek durumunda kalacaktık. Bu indirdiğimiz dosyanın ismi armel-rootfs-20133423423.tgz gibi bir dosya olucak ve bunu dizine çıkarmamız için sudo komutuyla birlikte tar xvf komutunu kullanıcaz.
+
+Dosyaları çıkarttıktan sonra terminalden oraya geliyoruz ( cd komutu ile istediğimiz dizine ilerleyebilir ve .. komutuyla geri gelebilirsiniz . Aynı zamanda ls yazarak içinde bulunduğunuz dizindeki dosyaları görünteleyebilirsiniz .) dosyaları çıkarttığımız yerde boot dizinine geliyoruz ve uImage dosyasını oluşturuyoruz . Bunun içine terminale şu kodu yazmamız gerekiyor.
+ sudo mkimage -A arm -O linux -T kernel -C none -a 0x80008000 -e 0x80008000 -n "Linux" -d ./vmlinuz* ./uImage
+ uImage dosyamızın yanında sisteme uInitrd dosyasını da tanıtmamız gerekiyor. Normalde kernel derleseydik böyle bir şeye gerek kalmayacaktı fakat sanal olarak derlediğimiz için bu dosyayı belirtmemiz gerekiyor.
+ sudo mkimage -A arm -O linux -T ramdisk -C none -a 0 -e 0 -n initramfs -d ./initrd.img-* ./uInitrd
+
+Bu noktaya kadar memory card ile ilgili bi işlemimiz yoktu fakat şimdi bu dosyaları memory card ımıza göndermemiz gerekiyor. Gönderme işlemini yapmadan önce memory cardımızı biçimlendirmemiz gerekiyor. Bunun için gparted adlı programı kullanabiliriz ya da başka bir yerde memory card ınızı biçimlendirip bu işlemi yapabilirsiniz ( windows gibi ) .Fakat biçimlendirirken sd kartımızı iki bölmeye ayırıyoruz .Biri fat16 diğeri ext3.Bu alanlar için yarı yarıya bölmek mantıklı.Bunlardan fat bölümünde oluşturduğumuz uImage ve uInitrd dosyaları olucak,diğer ext bölümünde iste oluşturduğumuz rootfs dosyası olucak. Ayırca şuna dikkat edilmesi gerek ,dosyaları gönderirken sisteminizin sd kartı nerde gördüğü önemlidir. Örneğin bizde sdb olarak gördü yani sd card b bölümü gibi düşünebiliriz.
+Şu komutlarla sırayla işlemimizi gerçekleştiriyoruz. 
+1-	mkdir /tmp/fat 
+2-	mkdir /tmp/ext 
+3-	sudo mount /dev/sdb1 /tmp/fat 
+4-	sudo mount /dev/sdb2 /tmp/ext
+5-	cd ubuntu/
+6-	cdboot/ 
+7-	sudo cp uImage /tmp/fat
+8-	 sudo cp uInitrd /tmp/fat 
+9-	cd .. 
+10-	 sudo cp armel-rootfs-234234234.tgz /tmp/ext 
+11-	cd /tmp/ext
+12-	 sudo tar xvf armel-rootfs-234234234.tgz 
+
+
+Not: armel-rootfs-234234234.tgz yazan dosyanın 234234234 kısmı farklı olur aynısını kopyalamayıp kendi dosyanızı belirtin ve bunun için uzun uzun yazmak yerine armel yazdıktan sonra tab tuşuna basarsanız tamamlanır otomatik olarak.terminal eğer dizin içinde aynı isimde başka dosya yoksa belirli bi kısmını yazdıktan sonra tab tuşuna basarsınız otomatik tamamlar.
+
+Artık sd kartımızı bilgisayardan veya kart okuyucudan çıkarıp beagle board umuza taktığımızda sistemimiz hazır.
+
+mehmetsinanege@gmail.com         
+
+akyildizemre@gmail.com   
+
+seckiinyener@gmail.com
+
