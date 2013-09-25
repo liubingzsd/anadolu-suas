@@ -62,3 +62,31 @@ http://anadolu-suas.googlecode.com/svn/images/svn7.PNG
 
 
 http://anadolu-suas.googlecode.com/svn/images/svn8.PNG
+
+
+
+
+
+
+
+******************************
+
+= Rapid SVN Branches'a Proje Klasörü Ekleme =
+
+Öncelikle proje dosyamızı RapidSvn'de bookmark'ımızın branches bolumune atalım. 
+Bazen hata verip program kapanıyor, böyle olursa eger googlecode'umuzu çektiğimiz bilgisayarımızın ıcındekı klasore de atabılırız.
+( Desktop-MySVNcode-isim-branches )
+
+Daha sonra RapidSVN'den branches'a giriyoruz. Proje'mızı sag tıklayıp add/ add recursive yapıyoruz. Ne olur ne olmaz alt klasorlerı de kontrol edelim eger uzerlerınde soru ısaretı varsa eklenmemıs demektır tekrar sag tusla add yapabilirsiniz. + isaretı varsa tamamdır.
+
+http://anadolu-suas.googlecode.com/svn/images/add.PNG
+
+Daha sonra sol taraftan branches'a gelip commit yapıyoruz.
+
+http://anadolu-suas.googlecode.com/svn/images/commit.PNG 
+
+Branches bölümüne projemiz eklendi :)
+
+http://anadolu-suas.googlecode.com/svn/images/branch.PNG
+
+http://anadolu-suas.googlecode.com/svn/images/kod.PNG
