@@ -1,12 +1,11 @@
-Qemu Nedir?
+=Qemu Nedir?=
 
-     
-        Beagleboard ve beaglebone kullanıyorken bazı durumlarda yazılımlarımızı test etmek için sana arm işlemci makinelerine ihtiyaç duyabiliriz. Bu tarz bir çevre, en basit ve yaygın olarak emülatörlerle yapılmakta. Emülatörler farklı fiziksel makinelermiş gibi çalışabilirler. Linuz üzerinde bu yapıda çalışan birçok emülatör vardır, bunlardan biri de Qemu’dur.
+  Beagleboard ve beaglebone kullanıyorken bazı durumlarda yazılımlarımızı test etmek için sana arm işlemci makinelerine ihtiyaç duyabiliriz. Bu tarz bir çevre, en basit ve yaygın olarak emülatörlerle yapılmakta. Emülatörler farklı fiziksel makinelermiş gibi çalışabilirler. Linuz üzerinde bu yapıda çalışan birçok emülatör vardır, bunlardan biri de Qemu’dur.
 
-     Qemu( Quick-Emulator), donanım gerçeklemesi yapabilen, bedava ve açık kaynak tabanlı hosted bir hypervisor’dır. Qemu VMware de kullandığımız gibi makinenin yüklenen ve çalışan uygulamalar üzerindeki değişiklikleriyle kaydedip geri çağırabildiğimiz bir ortamdır. Qemu ARM gibi değişik mikroişlemci yapılarının emülasyonunu desteklemektedir. QEmu iki çalışma moduna sahiptir bunlar; user-mode emulation, computer emulation.
+  Qemu( Quick-Emulator), donanım gerçeklemesi yapabilen, bedava ve açık kaynak tabanlı hosted bir hypervisor’dır. Qemu VMware de kullandığımız gibi makinenin yüklenen ve çalışan uygulamalar üzerindeki değişiklikleriyle kaydedip geri çağırabildiğimiz bir ortamdır. Qemu ARM gibi değişik mikroişlemci yapılarının emülasyonunu desteklemektedir. QEmu iki çalışma moduna sahiptir bunlar; user-mode emulation, computer emulation.
 
-User-mode emulation : Bu modda biz Linux programlarını farklı  instruction setleri cross-compilation ve cross debugging ile çalıştırabiliriz. 
-Computer mode emulation : Qemu tüm bilgisayar sisteminin emülasyonunu yapar.
+  *User-mode emulation : Bu modda biz Linux programlarını farklı  instruction setleri cross-compilation ve cross debugging ile çalıştırabiliriz. 
+  *Computer mode emulation : Qemu tüm bilgisayar sisteminin emülasyonunu yapar.
 
 Qemu Mimarisi
 
@@ -14,7 +13,7 @@ http://anadolu-suas.googlecode.com/svn/images/qemu1.png
 
 Qemu ARMv5TEJ instruction seti ve  tüm türevi işlemci ailelerini emulate edebilir..
 
-Qemu kurulumu için kullandığımız terminal satırı kodları:
+===Qemu kurulumu için kullandığımız terminal satırı kodları:===
 
 $ git clone git://git.qemu-project.org/qemu.git
 $ cd qemu/
@@ -23,15 +22,9 @@ $ ./configure --prefix=/opt/qemu
 $ make -j2 
 $ sudo make install
 
+==QEMU'yu  ARM1176 Systemler İçin Derleme==
 
-
-
-
-
-
-Compiling QEMU for an ARM1176 Systems 
-
-Yüklenmesi gereken paketler
+===Yüklenmesi gereken paketler===
 sudo apt-get install git zlib1g-dev 
 sudo apt –y install libsdl1.2-dev
 sudo apt-get install libpixman-1-dev
@@ -45,7 +38,7 @@ Qemu clonunu  git’ten çekiyoruz
 
 git clone git://git.qemu-project.org/qemu.git
 
-Qemu configurasyonu 
+===Qemu configurasyonu=== 
 
 cd qemu
 ./configure –help
@@ -54,15 +47,15 @@ P.S. ::    For dtc error use this ;  git submodule update --init dtc
 Sudo 
 ./configure --target-list="arm-softmmu arm-linux-user" l--enable-sdl --prefix=/usr
 
-Derleme ve Yükleme:
+===Derleme ve Yükleme:===
 Make
 Sudo make install
 
 Reference :  http://xecdesign.com/compiling-qemu/
 
-Beagleboard Emulator in Ubuntu with Qemu
+==Beagleboard Emulator in Ubuntu with Qemu==
 
-Linaro Nedir ?
+===Linaro Nedir ?===
 Linaro kar amacı gütmeyen  Arm yapıları için açık kaynaklı geliştirme ve danışmalık yapan bir mühendislik grubudur. Yaptıkları geliştirmeler GCC toolchain, the Linux kernel, ARM power management, grafik ve multimedya arayüzleridir.
 
 = Çalışmalarımız =
@@ -169,3 +162,7 @@ http://www.ucanlinux.com/2013/03/06/arm-tabanli-bir-sistemin-kurulusu-ve-emulato
 
 bu linkten de gitmeye çalıştık Sanal Disk kurulusu kısmından sonra hatalar aldık fakat ekran çıktısı almayı unutmuşum onu ekleyemiyorum.
 
+
+_*Ezgi Tetik*_ _ezgitetik92@gmail.com_
+
+_*Kemal Mert MAKİNACI*_ _kmmakinaci@gmail.com_
