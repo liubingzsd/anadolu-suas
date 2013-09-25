@@ -167,5 +167,6 @@ bu linkten de gitmeye çalıştık Sanal Disk kurulusu kısmından sonra hatalar
 
 Bunların dışında da denemelerımız oldu fakat sureklı komut komut hata alıyoruz, Google’da hatayı aratıp düzeltmeye çalışıyoruz fakat bu kısma bıle gelmemız cok vaktımızı aldı. 
 
-Ezgi Tetik 
-Kemal Mert MAKİNACI
+_*Ezgi Tetik*_ _ezgitetik92@gmail.com_
+
+_*Kemal Mert MAKİNACI*_ _kmmakinaci@gmail.com_
