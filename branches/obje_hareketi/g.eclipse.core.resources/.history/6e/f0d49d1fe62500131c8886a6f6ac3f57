@@ -1,0 +1,159 @@
+#include <cv.h>
+#include <highgui.h>
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <iostream>
+
+
+void drawshape();
+//IplImage* shape;
+int circle(int,int);
+int x=400;
+int y=300;
+
+char key1;
+char key2;
+
+	void GoturSag(void)
+	{
+
+	x = x+50;
+	circle(x,y);
+	}
+
+	void GoturSol(void)
+	{
+
+	x = x-50;
+	circle(x,y);
+	}
+
+	void GoturYuk(void)
+	{
+
+	y= y-50;
+	circle(x,y);
+	}
+
+	void GoturAsa(void)
+	{
+	y=y+50;
+	circle(x,y);
+	}
+
+	void GoturSagYuk(void)
+		{
+
+		x = x+50;
+		y = y-50;
+		circle(x,y);
+		}
+
+	void GoturSolYuk(void)
+			{
+
+			x = x-50;
+			y = y-50;
+			circle(x,y);
+			}
+
+	void GoturSagAsa(void)
+			{
+
+			x = x+50;
+			y = y+50;
+			circle(x,y);
+			}
+
+	void GoturSolAsa(void)
+				{
+
+				x = x-50;
+				y = y+50;
+				circle(x,y);
+				}
+
+int main(int argc, char** argv)
+{
+	drawshape();
+
+    while(1)
+		{
+    	scanf("%s",&key1);
+
+
+    	switch(key1)
+    	{
+    	case 'z':
+    		GoturSolAsa();
+    		break;
+    	case 's':
+    		GoturAsa();
+    		break;
+    	case 'c':
+    		GoturSagAsa();
+    		break;
+    	case 'a':
+    		GoturSol();
+    	    break;
+    	case 'd':
+    		GoturSag();
+    	    break;
+    	case 'q':
+    		GoturSolYuk();
+    		break;
+    	case 'w':
+    		GoturYuk();
+    	  	break;
+    	case 'e':
+    		GoturSagYuk();
+    		break;
+		}
+
+
+
+		}
+
+
+
+}
+void drawshape(void)
+{
+	IplImage* shape=cvCreateImage(cvSize(850,650),8,3);
+
+	cvRectangle(shape,cvPoint(25,25),cvPoint(800,600),CV_RGB(255,255,0),5,8);
+	circle(x,y);
+	cvShowImage("shapes",shape);
+	cvWaitKey(0);
+	cvReleaseImage( &shape);
+	cvDestroyWindow( "shapes" );
+
+
+
+}
+int circle(int x,int y)
+{
+
+		IplImage* shape=cvCreateImage(cvSize(850,650),8,3);
+
+		cvRectangle(shape,cvPoint(25,25),cvPoint(800,600),CV_RGB(255,255,0),5,8);
+		cvCircle(shape,cvPoint(x,y),50,CV_RGB(0,255,0),-1);
+		cvShowImage("shapes",shape);
+		cvWaitKey(0);
+		cvReleaseImage( &shape);
+		cvDestroyWindow( "shapes" );
+
+
+
+		return (0);
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+#include <cv.h>
+#include <highgui.h>
+#include <stdio.h>
+#include <math.h>
+
+
+int drawshapes(int);
+int x=400;
+int y=300;
+float xsag=10;
+float xsol=0.1;
+float yuk=0.1;
+float asa=0.1;
+int key1;
+char key2;
+
+
+int main()
+{
+    while(1)
+		{
+
+    	scanf("%d",&key1);
+
+    	switch(key1)
+    	{
+    	case 1:
+    		xsag=400+xsag;
+    		y=300;
+    		drawshapes(xsag);
+
+    		break;
+    	case 's':
+
+
+    	    break;
+    	case 'a':
+
+
+    	    break;
+    	case 'd':
+
+
+    	    break;
+
+
+
+
+
+
+
+		}
+
+
+		}
+
+
+
+}
+int drawshapes(int x)
+{
+	IplImage* shape=cvCreateImage(cvSize(850,650),8,3);
+
+	cvRectangle(shape,cvPoint(25,25),cvPoint(800,600),CV_RGB(255,255,0),5,8);
+	cvCircle(shape,cvPoint(x,300),50,CV_RGB(0,255,0),-1);
+	cvShowImage("Shapes",shape);
+	cvWaitKey(0);
+
+
+return 0;
+}
+
+
+
+
+
+
+
+
