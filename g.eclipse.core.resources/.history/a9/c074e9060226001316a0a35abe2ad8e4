@@ -1,0 +1,197 @@
+#include <cv.h>
+#include <highgui.h>
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <iostream>
+#include <conio.h>
+
+
+//void drawshape();
+//IplImage* shape;
+int circle(int,int);
+int x=400;
+int y=300;
+
+int key1;
+char key2;
+
+	void GoturSag(void)
+	{
+		if (x<750)
+		{
+			x = x+25;
+			circle(x,y);
+		}
+		else
+		{
+			x=x;
+		}
+	}
+
+	void GoturSol(void)
+	{
+		if(x>75)
+		{
+			x = x-1;
+			circle(x,y);
+		}
+		else
+		{
+			x=x;
+		}
+	}
+
+	void GoturYuk(void)
+	{
+
+		if(y>75)
+		{
+			y = y-1;
+			circle(x,y);
+		}
+		else
+		{
+			y=y;
+		}
+	}
+
+	void GoturAsa(void)
+	{
+		if(y<550)
+		{
+			y=y+1;
+			circle(x,y);
+		}
+		else
+		{
+			y=y;
+		}
+	}
+
+	void GoturSagYuk(void)
+		{
+		if((x<750)&&(y>75))
+		{
+			x = x+1;
+			y = y-1;
+			circle(x,y);
+		}
+		else
+		{
+			x=x;
+			y=y;
+		}
+
+		}
+
+	void GoturSolYuk(void)
+			{
+			if((x>75)&&(y>75))
+			{
+
+				x = x-1;
+				y = y-1;
+				circle(x,y);
+			}
+			else
+			{
+				x=x;
+				y=y;
+			}
+			}
+	void GoturSagAsa(void)
+			{
+			if((x<750)&&(y<550))
+			{
+				x = x+1;
+				y = y+1;
+				circle(x,y);
+			}
+			else
+			{
+				x=x;
+				y=y;
+			}
+			}
+	void GoturSolAsa(void)
+				{
+				if((x>75)&&(y<550))
+				{
+
+					x = x-1;
+					y = y+1;
+					circle(x,y);
+				}
+				else
+				{
+					x=x;
+					y=y;
+				}
+				}
+
+
+int main(int argc, char** argv)
+{
+	//drawshape();
+
+	circle(x,y);
+    while(1)
+		{
+    	//scanf("%s",&key1);
+    	key1=getche();
+
+    	switch(key1)
+    	{
+    	case 'z':
+    		GoturSolAsa();
+    		break;
+    	case 's':
+    		GoturAsa();
+    		break;
+    	case 'c':
+    		GoturSagAsa();
+    		break;
+    	case 'a':
+    		GoturSol();
+    	    break;
+    	case 'd':
+    		GoturSag();
+    	    break;
+    	case 'q':
+    		GoturSolYuk();
+    		break;
+    	case 'w':
+    		GoturYuk();
+    	  	break;
+    	case 'e':
+    		GoturSagYuk();
+    		break;
+
+		}
+		}
+}
+/*void drawshape(void)
+{
+	IplImage* shape=cvCreateImage(cvSize(850,650),8,3);
+
+	cvRectangle(shape,cvPoint(25,25),cvPoint(800,600),CV_RGB(255,255,0),5,8);
+	circle(x,y);
+	cvShowImage("shapes",shape);
+	cvWaitKey(0);
+	cvReleaseImage( &shape);
+	cvDestroyWindow( "shapes" );
+}*/
+int circle(int x,int y)
+{
+
+		IplImage* shape=cvCreateImage(cvSize(850,650),8,3);
+
+		cvRectangle(shape,cvPoint(25,25),cvPoint(800,600),CV_RGB(255,255,0),5,8);
+		cvCircle(shape,cvPoint(x,y),50,CV_RGB(0,255,0),-50);
+		cvShowImage("shapes",shape);
+		cvWaitKey(0);
+		cvReleaseImage( &shape);
+		cvDestroyWindow( "shapes" );
+		return (0);
+}

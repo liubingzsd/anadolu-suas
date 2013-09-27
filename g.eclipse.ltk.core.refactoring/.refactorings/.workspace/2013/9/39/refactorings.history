@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;helloOpencv&apos; to &apos;obje_hareketi&apos;" description="Rename resource &apos;helloOpencv&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/helloOpencv" name="obje_hareketi" stamp="1380235505632" updateReferences="true"/>
+</session>
