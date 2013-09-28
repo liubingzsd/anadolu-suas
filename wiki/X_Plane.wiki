@@ -1,0 +1,43 @@
+2.4 Bir Uçak Seçme
+Menü çubuğunun görünmesi için farenizi tekrar ekranın üst kısmına hareket ettirin.
+	1. Öncelikle "uçak"a tıklatın, daha sonra bu uçağı aşağıdaki şekilde açınız.
+		 
+	2. Ekranın üst kısmında, şimdi bir menü açılır. Daha sonra mevcut uçağın yer aldığı klasör adı görüntülüyor. Klasör isminin sağ tarafındaki aşağı yukarı sembolüne tıklayın.
+	3. Şimdi klasör hiyerarşisinin bir listesi açılır. Bu ana X-Plane klasör ile başlar ve mevcut uçağın olduğu klasöre iner. Örneğin, F-22 Raptor şu anda açık ise uçak, hiyerarşi aşağıdaki maddeleri göstermektedir:
+		• X-System klasörü
+		• Uçak
+		• Savaş Uçakları
+		• FA 22 Raptor
+		 
+
+	4. Uçak klasörü açılır. Burada klasörler, X-Plane uçaklarını sınıflara böler.
+		* Savaş Uçakları (fighters),
+		* Yaygın hava araçları (general aviation craft),
+		* Planörler (gliders),
+		* Helikopterler (helicopters),
+		* Deniz Uçakları (seaplanes) vb...
+		Örneğin bu kısımda "yaygın hava araçları" maddesine çift tıklayınız.
+	5. Şimdi ekranın sol alt kısmındaki navigasyon kutusu, "yaygın hava araçları" sınıfındaki çeşitli hava araçlarını gösterir. "Cessna 172SP" klasörüne çift tıklayınız.
+	6. X-Plane platformunda, uçaklar ".acf" uzantısıyla kaydedilir. Uçağınızı yüklemek için Cessna 172.acf dosyasına çift tıklayınız.
+		 
+
+2.5 Konum Seçimi 
+	1. Farenizi ekranın üst kısmına ilerleterek, menünün görnmesini sağlayın.
+	2. Konuma(location) tıklayın ve global havalimanını seç (Select Global Airport).
+		 
+	3. Aklınızda bir havalimanı varsa, onun ismini ve havalimanı numarasını(airport ID) giriniz. Aksi takdirde, Los Angeles ulusalararası havalimanını bulmak için, KLAX yazınız ve bu havalimanına git (Go To This Aircraft) butonuna tıklayınız.
+		 
+	Eğer bir sorununuz varsa X-Plane'in built-in araştırma özelliğini kullanabilirsiniz. Airnav, istediğiniz ID'yi veya havalimanının resmi adını bulmanız için tamamlanmış bir veritabanına sahip. GPS'teki ara noktaları yazdığınızda, ID'lerin üç veya dört karakterden oluştuğunu ve Amerika'daki havalimanlarının ID'lerinin 'K' ile başlayıp harflerle devam ettiğini (numara bulunmadığını) farkedeceksiniz. Daha fazlası için Wikipedia'nın "International Civil Aviation Organization" sayfasında "Codes registered with ICAO" bölümünü inceleyebilirsiniz. 
+
+2.6 Kalkış
+	Bu talimatların Cessna 172 için verildiği unutulmamalıdır. Başka bir hava aracıyla uçmak için başka talimatlara ihtiyaç duyacaksınız. 
+	1. Uçağınızın motorunun çalışır vaziyette olduğunu göreceksiniz. Kumanda organınız yapılandırıldığında, fren yapmak için komutlandırılmış butona basınız. Eğer bu komutlandırma işlemine yapmadıysanız 'b' tuşuna basabilirsiniz.
+	2. Gaz kumandasını sonuna kadar yükseltin. 
+	3. Varsa, uçağın sağ ve sol hareketlerini, merkez eksenini kumanda etmek için kumandanızın dümen pedallarını kullanınız. Eğer yoksa, simülatör sizin için konrol yasalarını atayacaktır.
+	4. Hız göstergesinden gözünüz ayırmayınız ve hızınız 60 mile ulaştığında kalkış dümenini kaldırınız.
+	5. Bir fare kullanıyorsanız, kontrolü ele geçirmek için ekranın merkezinde bulunan beyaz '+' işaretine tıklamak zorunda kalacaksınız. Farenizi:
+	* Yukarı sürüklediğinizde, aşağıya doğru yunuslama hareketi,
+	* Aşağı sürüklediğinizde, yukarı doğru yunuslama hareketi ,
+	* Sola sürüklediğinizde sola yalpalama hareketi,
+	* Sağa sürüklediğinizde sağa yalpalama hareketi yapacaktır.
+	6. Biraz daha hızlanmak için nazikçe uçağınızı düzleştiriniz. Hız göstergeniz 80 mili gösterdiğinde, kalkışa başlayınız.Uçuş süresince hızınızı kaybetmemeniz, intifanızın korumasına yardımcı olacaktır.
