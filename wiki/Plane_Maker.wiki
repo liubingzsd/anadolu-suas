@@ -1,0 +1,375 @@
+4.Uçak Sistemleri ile Çalışma
+	Elektrik, hidrolik, yakıt, aviyonik, uçuş kontrol ve itme alt sistemleri bir uçak sistemini içerir.  Ayrıca, bu sistemler pilotlara pratik yapma imkanı tanımasına rağmen, X-Plane platformunda bazı hatalar gözlemlenebilir. 
+I. Motor Oluşturma 
+	Uçağın motoru, ilgili pervaneler ile birlikte iticiler ve onun itici alt sistemlerini teşkil eder.
+	 Bir uçağı motorunu oluşturmak için öncelikle "Standard Menu" menüsünü açınız ve "Engine Specs" maddesine tıklayınız. "The Location" sekmesi başlamak için en iyi yerdir. orada motorların ve pervanelerin sayını, tipini, konumunu ve diğer özelliklerini düzenleyebilirsiniz. Buradaki parametreler seçtiğiniz motorun çeşitine bağlı olarak farklılık gösterecektir. 
+	Başlamak için iletişim kutusunun üstündeki kutunun kullanıldığı uçaktaki mevcut motorlarının sayısını düzenleyin. Düzenlediğiniz her bir motor için ayrı bir satır gözükecektir. Her bir motor tipi için açılan menüyü kullanınız. Bu motor tipleri daha sonra size uygun olacak parametreler tarafından kararlaştırılacaktır. Ayrıca bu motor tarafından çıkarın sesi ve yakıt yatağını etkileyecektir.
+	Burada aşağıdaki motor tipleri mevcuttur:
+		* carb recip
+		* injected recip
+		* turboprop (free)
+		* turboprop (fixed)
+		* electric
+		* low bypass jet
+		* high bypass jet
+		* rocket
+		* tip rocket
+
+	A. Tüm Motor Çeşitleri tarafından Paylaşılan Özellikler
+	Konum sekmesinde seçilen motor tipi  ne olursa olsun, motorun özellikleri ayarlanmalıdır. Bu özelliklerden bazıları; motorun konumu, yakıt tüketimi özellikleri ve en iyi performansını sağladığı irtifadır.
+	i. Konum
+ 	Bütün motor tiplerinin konum sekmesinde belirli bir konumu olmalıdır.
+	ii. İtiş Ayarları
+	Konumun haricinde, tüm motor tipleri kendilerine özgü itiş dizisine sahiplerdir. Bunları "Engine Specs" diyalog kutusunun "Description" sekmesinde bulabilirsiniz. Aşağıdaki figür çoğu öotor tiplerinin paremetrelerini içeriyor:
+ 
+
+	Figürdeki ilk satır maksimum ileri ve maksimum geri itiş gücünü gösteriyor. Bunlar X-Plane'de geçerli olan etkin olan tüm motorlarla kontrol edilir. Bu motorların gerçek hayattaki performanslarıyla ilişkilendirilmek için kullanılır. Nadir olmayan başka bir şey de, üreticinin güvenliği sağlayacak şekilde motorun nominal gücünün %75 veya 80 değerleri arasında tuttulduğunda gerçek hayattaki performansına ilişkilendirmek için maksimum itiş kuvvetinin %80 kullanırız. Acil durumlar için geri tepme kuvvetinin bir kısmını kaybettiğinde, %100'ünden daha fazlasını kullanmak mantıklı olacaktır.
+	Plane Marker'daki tüm uçak özellikleri ful itiş kuvvetiyle ilişkilendirilmiştir. Bu yüzden, maksimum itiş gücü 1.00'dan daha fazla hareket ettirdiğinizde motorun Plane Merker'daki karakteristik dizilimi X-Plane'deki performansıyla ilişkilendirilemeyebilir. Bu gerekli bir bilgi olamamakla birlikte, aklınızda bulundurmalısınız.
+	Ters ayarlanamaz motorlar için ters itiş kuvveti sıfırdır.
+	"max forwards” ve “max reverse throttle" parametrelerinin altında, acil bir motor hatası oluştuğunda maksimum uygulanabilir itiş gücünü girebileceğimiz "maximum emergency throttle" parametresi vardır.
+	Sonraki kutu ise düşük ve yüksek rölanti ayarlarıdır. Plane Maker motorun rölantide çalışma aralığını otomatik olarak değerlendirir. Rölanti hızını değişirmek için bu kutuyu kullanınız(varsayılan Plane Maker değerine oranını yazınız).
+	Altta ise "go to Beta below this throttle setting" kutusunu göreceksiniz. ters itiş özelliği bulunan motorlarda Beta aralığı uçağın yerdeyken pervane kanat hatvesi değişirken sabit RPM üretimine yardımcı olur, uçağın zemindeyken hızının ince ayarlarının kontrolünü sağlar. Ne zaman kumanda kolunun ne zaman Beta koşullarına değiştirilmesini sağlamak için bu parametreyi kullanınız.
+	Son ayarlamamız ise "turnbine spool-up time" parametresidir. Pervaneli ve jet motorların her ikisi için de uygulanabilir. Bu sayı, motorun sahip olduğu eylemsizlik miktarı ile belirlenir, ve sadece türboproplar ve jetler gibi türbin motorları için uygulanabilir. Bu  itiş gücünün aniden rölantiden maksimuma geçtiğinde hızın maksimuma geçmesinin düşük başınç kompressörüne geçme süresidir. X Plane'de gerçek bobin süresi; atmosferik koşullar, pervanenin genişliği ve pilotun gelişmiş itiş gücüne geçme süresinden etkilenir.
+
+
+
+	iii. Kritik Rakım ve FADEC Karakteristikler
+	Uçakların rakımları arttıkça çoğu motor daha az güç harcar. Yüksek rakımdaki hafif hava yakılmak için daha az oksijen sağlar. Bundan dolayı her motorun daha fazla rakıma sahip olamayacağı bir kritik deniz seviyesi vardır. Daha alçak rakımlarda, tüm güç hala geçerlidir. Aşağıdaki figür "Critical Altitude" kutusunu gösteriyor("Engine Speces" diyalog kutusunun "Description" sekmesinin üstünde bulunur).
+	Bu kritik rakım parametreler kutusunun sağ tarafında, FADEC(Tam Yetki Dijital Motor Kontrolü) eklemek için üç adet onay kutusu göreceksiniz. Bir FADEC sistemi, motor performansını gözlemlemek için tasarlanmıştır. FADEC'e sahip olmanın bir avantajı da pistonlu motorlarda mükemmel bir yakıt-hava oranı üretmek ve performansın artmasını ve daha temiz egzoza sahip oluşmasını sağlamaktır. Ayrıca FADEC motor pervanesinin hızını güvenli bir RPM seviyesinde tutar(aşağıdaki figürde göründüğü gibi). Bunlara ek olarak FADEC, motoru maksimum tolere edilebilir itiş gücünde tutabilir(aşağıdaki figürde göründüğü gibi). Turboşarj egzoz baypası da otomatiğe alınabilir(bu durumda aynı onay kutusu işaretlenmelidir).
+
+ 
+
+
+	iv. Ek Besleme Karakteristliği
+
+	Tüm yanmalı motorlar (jet veya pistonlu) ek beslemeye sahip olabilir. Bu antidetonant ya da azot oksitle sağlanabilir. Antidetonant motora enjekte edildiğinde motorun ateşleme odası soğur, motordaki gazın yoğunluğu düşer ve motorun basınç oranı yükselir. Ayrıca motorun soğumasına yardımcı olur ve  daha fazla RPM hızıyla çalışmasını sağlar. Diğer yandan da azot oksit ise motora enjekte edildiğinde ayrıştırmayı hızlandırır. Ateşlenme süresince, uygun oksijenin miktarını arttırabilir. Antidetonant gibi azot oksit de motorun soğumasını sağlar.
+
+	Plane Maker'a uçağınızın ek beslemeye sahip olduğunu saöylemek için "Engine Specs diyalog kutusunun "Description" sekmesine gidiniz. "Prop Engine Specs" olarak etiketlenen kutunun sağ-alt tarafında ek beslenme için ayrılmış iki parametre bulacaksınız. Bunlar "Prop Engine Specs kutusunda bulunmasına rağmen, X-Plane'deki tüm motorlar etkilenir.
+
+ 
+
+	X-Plane ek besleme için kullandığınız kaynağın antidetonant mı yoksa azot okist  mi olduğunu tanımlamaz. Sadece sizin ek besleme metodunuzun ne kadar verdiğine ihtiyaç duyar. Motorunuzun ihtiyaç duyduğu ek besleme miktarınızı "boost amount" kutusundan, ek beslenme kullanılmadan gözlemlenen motor performansı cinsinden ayarlayınız. Eğer sizin azot oksidiniz motorun performansını %50 arttırıyorsa, parametreyi 0.5 olarak girmeniz gerekiyor.
+	
+	Daha sonra "boost capasity" kutusuna ek besleme süresini saniye olarak yazınız. X-Plane ek besleme uygulanmak için itiş gücünün maksimum değeri ni arttırır.
+
+	v. Özgül Yakıt Tüketimi
+	
+	Pistonlu veya jet motorunuzun temel ayarlarını ayaladıktan sonra, motorun özgül yakıt tüketim ayarlarını ayarlayabilirsiniz. "SFC/Sound" sekmesinde "Reciprocating or Turboprop Specific Fuel Consumption" etiketli bir kutu göreceksiniz. Bir başka kutu da "Jet Engine Specific Fuel Consumption." adıyla etiketlenmiştir. Bu kutular etkiledikleri motor tipleri haricinde aynıdır. Bu kutuları kullanarak motor "özgül yakıt tüketim(SFC)" tanımlayabilirsiniz(motor beygir gücü başına saatte yakılan yakıt miktarını). Bu bir tanesi düşün bir tanesi yüksek olacak şekilde iki yükseklikte ayarlanmalıdır ve her yükseklik yarı-güç ve tam-güç SFC'sine sahip olmalıdır. 
+
+	Pervaneli motorlar için kullanılan ölçü "fren özgül yakıt tüketimi(BSFC)" olmalıdır ("Reciprocating or Turboprop" kutusunda).
+
+	Jet motorlat için "itiş gücü özgül yakıt tüketimi(TSFC)" olmalıdır ("Jet Engine" kutusunda). TSFC yakıt akışının itiş gücüne oranı olarak hesaplanır.
+
+	Çoğu durumda, "lo altitude for prop engines" ortalama deniz seviyesinde sıfır metredir. "hi altitude for prop engines" seyir yüksekliğinde olabilir, ama olmak zorunda değildir. Bu iki kontrol  "Reciprocating or Turboprop SFC" kutusunun sol yarısında bulunmaktadır.
+
+		 
+
+	Her kutunun sağ yarısında her biri için "half power SFC" ayarlanmalıdır(motor yarı güçte çalıştığı zaman saat başına beygir gücüne düşen yakıt miktarının pound cinsinden değeri). Mesela motor saat başına 100 pound yakıt tüketiyor ve 200 beygir gücü elde ediyor olsaydı bizim "lo altitude
+half power SFC" kutusuna 0.500 yazmamız gerekirdi.
+	
+	"max power SFC" kutusu da aynı prensipte çalışır, sadece yakıt tüketiminin  tam güçte çalıştığı belirlenir.
+
+	SFC kutusunun altında rölanti halindeki motorun harcadığı yakıt akışıdır("maksimum yakıt akışına oranı"). 
+
+	Roket motorlarda yakıt tüketiminin belirlenmesinin yanmalı motorlardakinden daha basit olduğunu gözlemleyebilirsiniz(roket motorlarının tüm güç ayarları, tüm irtifaları için gerekli olan parametreleri "Engine Specs" iletişim kutusunun "Description" sekmesinin sağ alt bulunan SFC parametrelerinde bulabilirsiniz). Motorun itiş gücünde yakıtın pound başına saatte yanan yakıt miktarını tanımlayabilirsiniz. Ayrıca özel yakıt tüketiminin, motorun özel dürtüsünün tersi olduğu da fark edilmelidir(bu sayı yakıt tüketimine bağlıdır).
+
+
+
+
+
+	B. Pervane Döndüren Motorlarla Çalışma
+	
+	
+"Engine Specs" diyalog kutusununu "Location" sekmesini kullanarak pervanelerin özelliklerini ve sayısını belirlemelisiniz.
+
+	
+	Diyalog kutusunun üst kısmında(motor sayısının ve çeşitinin sağ altında), pervanelerin sayısını ve tipini ayarlayabilirsiniz. Hemen hemen tüm koşullarda motor başına bir tane pervane vardır.
+
+	Plane Marker'da bulabileceğiniz pervane tipleri:
+	* fixed
+	* constant RPM
+	* manuel pitch
+	* manuel rotor
+	* constant tip Mach
+	* tail rotor
+	* lift fan
+	* VTOL cyclic
+	Seçtiğiniz her pervanenin motorlarda yaptığımız gibi kendilerine ait ayarlar satırı vardır. Bu ayarlar motor ayarlarıyla birleştirilecektir.
+	
+	
+ 
+
+	Pervane ayarlarının altındaki kısımda "number of blades" kontrolünü bulabilirsiniz(yukarıdaki figürde olduğu gibi). Bu sayı her bir pervane için ayrı ayı ayarlanabilir. Hemen sağ tarafta ise, pervane kanatlarının dönme yönünü ayarlayabileceğiniz bir kutucuk göreceksiniz. Uçağınızın arkasından baktığınızda bu yönün saat yönünde olduğu görürseniz CW'yi, tersi yönünde döndüğünde döndüğünü görürseniz CCW'yi girmelisiniz.
+
+	Sağ tarafta ise üç adet onay kutusu göreceksiniz. "engine clutched(motor kavrama)" ve "prop clutched(pervane kavrama)" helikopterler, otojirler vb. araçlar için kullanılır.
+
+	"prop ducted" olarak etiketlenen son kutu ise havalandırma kanalları içindir(silindirik bir kefen içine monte edilen pervaneler).
+
+   
+ 
+
+	
+	Motor konum kontrollerinin altında pervane ayarlarını göreceksiniz.
+
+	İlk özellik pervane kanadının çapı, pervanenin merkezinin kanatların birinin ucuna kadar olan mesafesinin fit cinsinden değeridir.
+
+	Altındaki kutularda ise pervanenin genişliği ayarlanır. "root chord" parametresi (ikilinin solundaki) pervanenin merkezdeki(uçakla temas halinde olduğu nokta) genişliğini inç cinsinden ayarlamamızı sağlar. "tip chord" ise pervanenin uçağa temas ettiği noktadan en uzak olduğu mesafedeki kalınlığıdır.
+	
+	Minimum ve maksimum pitch açısı hücum açısını değiştirebilen pervane kanadıyla açı cinsinden ayarlanabilir. Bu açı pervane kanat ucundan ölçülür. Sabit RPM ve manuel pitch pervaneleri onların pervane kanat çeşitleri arasında sabit bir dönme hızında istenen itme elde etmek için kendi bıçak aralığı değişir. Soldaki kutuyu kullanarak minimum, sağdaki kutuyu kullanarak maksimum pitch verilerini ayarlayın. Normalde, minimum pitch sıfır derecedir yani pervane kanatları rüzgara doğru düz şekildedir.
+
+	Alttaki "design RPM" parametresi pervane için optimize edilmiş hızı ayarlar(dakikadaki dönüş sayısı). 
+
+	Sıradaki ayarlar, "design spd acf, prop" parametresidir. Soldaki ilk parametre, pervaneler arasından geçip optimize olan havanın hızı içindir. Bu ek yarım propwash için optimize etmek istediğiniz uçağın ileri hızına eşittir.
+
+	İkinci parametre, "design speed of the propeller", pervane ucundaki maksimum hızın mil cinsinden değeridir.  Pervane aksi halde bu hızı aşarsa, X Plane bu hızda veya altında kalmak için geri tarar. Geri taranmaması gereken pervaneler için bu sayı basit bir şekilde büyük bir sayı giriniz. 	
+
+	Plane Maker yarı çap, "design RPM" ve "design speed of th propeller"e bağlı olarak otomatik bir hücum açısı hesaplayacaktır. Bu açıyı özelleştirmek için aşağıdaki "Pervaneleri Uyarlama" bölümünü inceleyebilirsiniz.
+
+	"Location" sekmesindeki son ayar "engine-to-gear ratio" parametresidir. Bu, pervanelerin her bir dönüş için motorun dönüş sayısıdır. Bu genellikle 1.000'a ayarlanır.
+ 
+
+
+
+	i. Motor Detaylarının Ayarlama
+
+	Motorun konumu ve pervane temel özelliklerini ayarladıktan sonra, motor performansının detaylarını (çeşitli modeller için beygir gücü ve RPM gibi) ayarlayabilirsiniz.
+
+	Pervaneli motorların bu ayarlarının çoğunu "Engine Specs" diyalog kutusunun "Description" sekmesinde konumlanmış, "Prop Engine Specs" etiketli kutudan değiştirebilirsiniz. Maksimum itiş gücü ve kritik rakım gibi diğer detaylar tüm motorlar için geneldir ve "Features Shared by All Engine Types" bölümünde tanımlanmıştır.
+
+ 
+
+	En üstte sol taraftaki kutu, maksimum emniyetli güçtür. Bu deniz seviyesindeki standart atmosfer basıncındaki maksimum beygir gücüdür.
+
+	Bu kısmın altında kırmızı redline ve rölantideki RPM değeri yer alır. "redline RPM", bir motordaki birim dakikada maksimum emniyetli dönüş sayısıdır; "idle RPM", itiş gücünün sıfır olduğunda motorun dönüş hızıdır. Pistonlu motorlarda standart redline değeri 2000 ile 3000 RPM değerleri arasındadır.
+	Redline ve rölanti RPM'lerinin altında "transmission losses" parametresi yer alır. Tüm hava araçları motordan pervanelere aktarılan enerjinin kısmını geçiş esnasında kaybeder. "transmission losses" kutusu, bu kaybın motordan gelen ful güce oranını ayarlar. Sıradan bir uçak için bu değer 0.00 ile 0.02 arasındadır.
+
+	"transmission losses" değeri motordaki sürtünmeyi de kapsar. 
+
+	"Prop Engine Specs" kutusunun orta sütununda üç farklı motor RPM limitleri vardır. En üstteki "top of green arc," X-Plane'de pervane kontrolü kullanılabilen maksimum motor RPM'idir. Bu motorun redline RPM'inin sol tarafına yakın olması gerekmektedir.
+
+	"minimum of green arc," X-Plane'de pervane kontrolü kullanılabilen minimum motor RPM'idir.
+
+	Son RPM limiti olan " minimum prop governor engine RPM " parametresi, X-Plane'de pervane kontrolünü geri çekerek elde edilen en düşük RPM'dir. Bu, ters olan Beta veya modları özelleştirilen hesaba girmez. Bunlar için "Deneral Enginer Specs" kutusunun altındaki kontrol eden pervane hatvesini(dişlerini) sola ayarlamamız gerekekiyor, X-Plane otomatik olarak uygun RPM'i hesaplayacaktır(bu dişliler hakkında daha fazla bilgi için aşağıdaki "Pervaneleri Uyarla" bölümünü inceleyiniz).
+
+	Motor RPM limitlerinin sağ tarafındaki satırlarda muhtelif ayarları göreceksiniz. En üstteki "engine sart fuel into time", motorun başlama süresince motora giren boş yakıt akışından rölanti miktarına giden yakıtın süresini hesaplar.
+
+	"Fuel intro time" kutusunun altında, "throttle advence idle to max" parametrelerini bulacaksınız. Eğer itiş gücünün aniden rölantiden fule değiştirilmesi komutu gelirse, bu parametre motorun rölantiden fule geçişi sırasında geçen süreyi saniye cinsinden ayarlar.
+
+	ii. Pervaneleri Uyarlama
+
+	Pervaneler, "Engine Specs" diyalog kutusunun "Location" sekmesinde oluşturulur. Yukarıda "Pervaneleri Döndüren Motorlar" bölümünde tartıştığımız gibi, "Location" sekmesinde pervanelerin boyutları gibi özellikleri özelleştirebiliyoruz. Bazı uçaklar bu özelliklerden daha fazlasına sahiptir.
+
+	"Engine Specs" diyalog kutusunun "Description" sekmesinin solunda "General Engine Specs" adlı bir kutu vardır. Bu kutunun en üstünde kalan bölüm çoğu motor çeşitlerinin itiş gücü ayarlarıyla alakalıdır. Bu yüzden "Trottle Settings" bölümünün üst kısmında tanımlanmıştır. 		
+
+ 
+
+	Ayarlanabilir pervanelerin ilk karakteristiği "feathered pitch of prop"tur.  Bu pervanelerin yunuslama açısını ayarlar. Kanatları üzerinden geçen hava akımına paralel olan pervaneler, püsküllü pervanelerdir. Motor arızalandığında, pervaneleri püsküllendirmek büyük miktarda ürettiği sürtünmeyi azaltır. C-130 Hercules'ın pervane kanatları rüzgara karşı açılanmıştır (aşağıdak figürde gösterilen).
+
+ 
+
+	"featured pitch of the propeller" kutusunu altındaki kısım ile Beta yunuslama açısını ayarlayabilirsiniz. Bunu yapmanız için bu açının Beta aralığında olması gerekmektedir. Bu özellikleri taşıyan motorlarda, Beta aralığı uçağımızın yere temas halindeyken hızını daha iyi kontrol etmeye yardımcı olan pervane kanatlarının açısını değiştirirken, sabit hızda devam etmesine katkıda bulunur.
+
+	Yukarıdaki figürde sıradaki kutu "reverse pitch of prop" ayarlarıdır. Önceki parametrelerimize benzer olarak; ters itiş gücü modundayken, bu pervanemizin açısını tanımlar.
+
+	"propeller mass ratio" parametresi pervanemizin kolayca nasıl hızlandığı veya yavaşladığını etkileyen pervane yoğunluğudur. Bu katı alüminyumun yoğunluğu oranı olarak ayarlanır. Alüminyum metre kareye 2700 kg yoğunluğuna sahiptir. Bu yüzden pervane yoğunluğunu 0.37 olarak ayarlamamız lazım(1000/2700).
+
+	Sıradaki parametremiz olan "tip weights on rotors", sadece helikopterler ve VTOL'lar için kullanır.
+
+	"constan March propellers" parametreleri, "General Engine Specs" kutusundaki son parametrelerdir. Bunlar, pervanenin uç kısmının ful ve yarım itiş gücündeki hızlarının ses hızından değeridir. X-Plane bu değeri otomatik olarak diğer itiş gücü ayarlarındaki değerlerin arasına sokacaktır. 
+
+	Şu ana kadar pervanenin açısından ağırlığına kadar çoğu karakteristik özelliği ayarlamış olduk. Bahsetmediğimiz tek şey ise pervanenin şeklinin hassas ayarlamalarıdır. Mesela pervanenin genişliğini ve kanatlarının uzunluğu hakkında ayarları yapmamıza rağmen arada kalan kısımların genişliği hakkında daha bilgi sahibi değiliz. Ayrıca pervanenin her bir dilimi için pervanenin eğimine değinmedik.
+
+ 
+
+	
+	Yukarıdaki figürde gösterildiği gibi her bir şeklin ayarlamasını "Engine Specs" diyalog kutusunun "Propeller" sekmesinden yapabiliyoruz.
+
+ 
+
+	Her pervane kanadı dokuz parçaya ayrılmıştır ve her parça üç adet parametreye sahiptir. Bu parametreler; "chord ratio", "chord offset", "angele of incidence".
+
+	"chord ratio" parametresi pervanenin her diliminin genişliğini kontrol eder. Bu sayı her bir kordun orjinal genişliği oranı cinsinden girilir(Plane Maker baş ve uç kısmı arasına doğrusal olarak ayarlar).
+
+	"chord offset" parametresi her pervane parça merkezinin kayma miktarını arttırma veya azaltmayı ayarlar. Bu, kord genişliği oranı cinsinden ayarlanır. Mesela, zıt yönde kaydırılmaya ihtiyaç duyulan pervanelerin belirli bir bölümü, bir noktada pervanenin genişliğinin onda biri kadar dönüyorsa kord ofseti 0.1'e ayarlamalısınız.
+
+	"Propeller" sekmesindeki son seçenek is her parçanın geliş açısıdır. Başlangıçta, Plane maker pervanenin çapı, Rpm tasarımı ve pervane hız planına bağlı olarak uygun bir açı hesaplar. Bu açıyı değiştirmek için öncelikle "check here to set prop element incidence manually" adlı kutuyu kontrol etmeniz gerekiyor.
+
+	Pervane şekillerinde ayarlamadığımız son element ise onun kesitsel şeklidir(profili). Onu tanımlamak için "Expert" menüsünden "Airfoils" diyalog formunu açınız. "Props" adlı diyalog kutusunun en üstünde bulunan ilk sekme pervanenin profili için kullanılır.
+
+	iii. Güneş Pillerini Ayarlama
+
+	Eğer kanatlardaki güneş pilleri elektrikli motorlara güç sağlamak için kullanılıyorsa, "SFC/Sound" sekmesindeki güneş enerjisi ayarları düzenlenmelidir. Aşağıdaki figürde gösterilen parametreler, kanatlardaki güneş pili kapsamındadır(bütün kanada oranı ve verimlilik oranı).
+
+
+ 
+
+
+	Genelde güneş pillerini verimlilikleri, %5 ile %10 arasında değişir(oran olarak 0.05 ile 0.20 arasında). Gün ortasında bu piller uzayda metrekareye 1400 watt, deniz seviyesinde 1000 watt güç üretir. Bu değerler ortalama yükseklik için 1100 watt olarak düşünülür. Güneş pillerinden elde edilen gücü bulmak için aşağıdaki formülü kullanacağız:
+
+	WingsSurfaceArea x SolarCellCoverage x SolarCellEfficiency x PowerComingFromTheSun
+
+	Watt cinsinden elde edeceğiniz sonucu beygirgücüne çevirmek için değeri 760'a bölmeniz gerekiyor. 
+
+	C. Jet Motorlarıyla Çalışma
+
+	Plane Marker'da jet motorlarının ayarları pervane döndüren motorlara göre çok daha basittir. Motorun itki merkezinin konumlandırılması için "Engine Specs" diyalog kutusunun "Location" sekmesini kullanınız(tüm motor çeşitleri tarafından paylaşılan ortak özellikler bölümünde anlatıldığı gibi). İtiş gücünün merkezi genellikle egzozdadır. Motor vektörelse "vectors" kutusunu kontral ediniz.
+
+	Motorun konumu ayarladıktan sonra sıradaki ayarımız, motor performans detaylarının ayarlanmasıdır.
+
+	"Description" sekmesinin "Jet Engine Specs" kutusunda kontrol edilen parametreler aşağıdaki figürü inceleyebilirsiniz.
+
+ 
+
+	Standart atmosferik koşullar altında ölçülen sol üst parametre, motorun izin verilen maksimum itme, 100% N1 (alçak basınç kompresör) hızında itme çıkış tanımlar. Genellikle% 100 N1 olmayan kalkış itme, birçok motor üreticileri tarafından kalkış anındaki itiş oranını kabul edilir. Bu yüzden itiş değerleri üreticilerin belirlediği değerin altında olabilir.
+
+	"maxsimum allowable thrust" parametresini altında art yakıcı tarafından sağlanan itişi yükselten "afterburner thrust inc" parametresini göreceksiniz. Art yakıcı tam güçteyken, parametredeki değer "maximum allowable thrust" bölümüne eklenir.
+
+	Art yakıcının artışı motorun içine açılan havanın etkili şekilde geçtiği giriş supabındaki maksimum hızın ses hızı cinsinden değeridir(max efficient inlet Mach). Hava giriş deliğinin geometrisi, havanın belli bir hıza kadar hava geçişine izin verir.
+
+	Orta sütunda en üstünde kompresör alanının fit kare cinsinden değeridir. Kompresörün ön alanın düşük itişte sürtünme üzerinde önemi çok önelidir.
+	motor kompresör ön alanı= π * kompresör yarıçapı(sürtünme kuvvetinden etkilenen alanlar)
+
+	Sıradaki parametre ful yakıt girişi için minimum N1 değeridir(N1'in maksimum hızına yüzdeliği). Yakıt motorun bu hıza gelmesinden önce girmiş ise, bir sıcak başlangıç (motor işlemek için tasarlanmış maksimum sıcaklık aşan bir başlangıç) söz konusu olabilir. Altındaki parametre(Fan RPM at %100 N1) ise %100 N1'de fanın RPM'dir(dakika başına dönüş miktarı).
+
+	"Jet Engine Specs" kutusuna sağ sütunun en üstünde "engine-start fuel intro time" parametresini göreceksiniz. Bu motora yakıt yüklendiğinde motorun çalışma süresi boyunca rölanti yakıt akışı için geçen süreni saniye cinsinden değeridir.
+
+	Alttaki parametre olan "throttle advance time from idle to maximum", itişin aniden rölanriden full torka geçmesi komutu verildiğinde motorun rölantiden ful torka geçme süresidir.
+
+	Buradaki son parametre, ters itiş dağıtım zamanı, dağıtmak ve geri çekmek için ter itişe gereken sürenin saniye cinsinden değeridir.
+
+	
+
+	D. Roket Motorlarıyla Çalışma
+	Jetler gibi roket motorlarını kurmak uçak üreticileri için oldukça basittir. Motorun basınç merkezinin konumunu  ayarlamak  için motor özellikleri iletişim kutusundaki yer sekmesini kullanın (yukarıda "Tüm motor çeşitleri tarafından paylaşılan özellikler" bölümünde açıklandığı gibi ) Jet motorları için basınç merkezi genellikle egzoz memesinin merkezidir. Eğer motor vektörsel olursa bu kısımda "vectors" kutusunu kontrol ediniz. Roket motorunun konumunu ayarladıktan sonra diğer özelliklerini  "Description tab of the Engine Specs" diyalog kutusunda yer alan aşağıdaki figürde göreceğiniz "Rocket Engine Specs" kutusunu kullanarak ayarlayabilirsiniz. Burada basınç için 3 farklı parametre kutuları vardır. Bunlar soldan sağa
+	*deniz  seviyesinde 
+	*motorun tasarım rakımında
+	*bir boşluk içerisinde.
+
+ 
+
+ 	X-Plane'de, gerçek roket motorlarıyla her zaman bunu yapmak mümkün olmasa da ,her üç koşulda tam basınç ortaya koyabiliriz. Alttaki parametre, motorun ortalama deniz seviyesi üzerinde maksimum basınç altında elde edilen en uygun rakımıdır.
+	Sağ üstteki "nozzle exit area" parametresi, egzoz meme büyüklüğüdür. Bu x düzleminde ne büyüklükte egzoz alevi olduğunu hesaplamak için kullanılır.
+	"Rocket Engine Specs" kutusundaki son parametre motorun özgün yakıt tüketimidir(SCF). Roket motorları özgün yakıt tüketimi yanmalı motorlardan daha kolaydır, bu parametre tüm güç ayarlarında, tüm rakımlarda geçerlidir. Saat başı yakılan yakıtın kilosu, kilo başına düşen basıncı tanımlar. Unutmayalım ki özgün yakıt tüketimi, motorun özgün ani hareket etkisinin(Isp)  tersidir.Bu sayı genellikle roket yakıt tüketimiyle olan ilişkisi ile elde edilir.
+
+	E. Multi Motorlu Hava Araçları
+
+	Plane Marker'da multi motor oluşturma oldukça basittir. "Description" sekmesinde, her motorun kendi konumu tanımlanmıştır. Aynı tip (pervaneli, jet veya roket) motorların aynı karakteristiğe sahip olduğu varsayılır.
+
+	Farklı olan tek önemli nokta ise "Engine Specs" diyalog kutusunun "Transmission" sekmesidir. Bu kısım sadece pervaneli motorlara uygulanır.
+
+	Çoğu motor tasarımı her motor için ayrı ayrı bir tane iletime sahiptir. V-22 Osprey'de görebileceğiniz gibi, motorları pervanelere bağlamak için bir ortak iletim kullananlar bu duruma istisnadır.
+
+ 
+	
+	İletimin sayısı, "Transmission" sekmesinin sol tarafında tanımlanır.
+
+	Sağ taraftaki parametreler motorlar ve pevaneler için iletim ayarlarıdır. Ekranın merkezindekiler motor, sağ taraftakiler pervane ayarlarıdır. Oluşturulan her iletim için ayrı bir satır göreceksiniz.
+
+	"transmission that this engine feeds" tanımlandığı gibi, her motor bir iletimi hareket ettirebilir. Her bir pervane ise bir iletim tarafından hareket ettirilir("transmission that this engine feeds "). İki motorlu uçaklarda uç taraftaki motor "transmission 1"ı besler, pervaneler de "transmission 1" tarafından beslenilir. Gövde tarafındaki motor ise "transmission 2"yi besler, pervaneler de "transmission 2" tarafından beslenilir.
+
+II. Elektriksel , Hidrolik ve Basınçsal Sistemlerin Monte Edilmesi
+	Hava aracının alt sistemlerinde hava aracı, aydınlatma ve uçuş kontrolleri hareketleri yönetmek için kullanılır. Basınçsal sistem, kabindeki hava basıncını konforlu seviyede tutar. Bu sistemler, Plane Maker’da sistem diyalog box kullanılarak  uçak yapımında modellenir.
+A.	Elektriksel Sistemlerin Yapılandırılması
+
+
+Elektriksel Sistem,  Sistem diyalog kutusu kullanılarak yapılandırılır. Elektriksel tab, veri yolu ve inverter numaraları olduğu kadar elektriksel gücün kaynaklarını ayarlamada da kullanılır. Bundan dolayı, sistemi kurarken başlamak için güzel yerdir. 
+Not olarak, hava aracı 2 boyut aygıt panelinde her batarya butonu için bir bataryaya, her jeneratör butonu için bir jeneratöre sahip olacak. 
+
+ 
+Source box’ta soldaki parametrede bataryanın kapasitesi ayarlanır, watt/hours olarak ölçülür. Jeneratörden gelen akımdan fazlasına ihtiyaç duyulursa, jeneratör kaybı olduğunda yada bazı hava araçlarında pist üzerinde ilerlerken, batarya dikkate alınır. Yüksüz hava aracında batarya tahmini 1,000 watt/hour.
+Ayrıca eğer hava aracı basınçlı hava ile çalışan elektriksel sistemden güce çeviren yedek jeneratöre sahipse, diyalog box’un kaynakları kısmının sağ tarafındaki box’u kontrol et.
+Bir hava aracı sık sık birkaç farklı elektriksel ağ dağıtımına sahiptir ve buna da veri yolları denir. Bu veri yolları ayrı jeneratörler ve bataryalar tarafından sık sık ayrılır ve enerjilendirilir dolayısıyla bir yolun kaybı hava aracının kalan tarafında elektriksel kayba sebep olmaz. Bu durumda, aracın içinde bir anahtar yollara birlikte bağlanır ve bir yol kaybında bile hala çalışıyor durumda olunur. 
+Veri yolları, batarya ve jeneratör sayılarının ayarlanışı için, dialog box bölümünden veri yolları, batarya ve jeneratör uygun parametredir. Bir yoldan fazlasına sahipsen, batarya, jeneratör ve yolar kutusunun altında giriş kutularını kullanarak her batarya ve jeneratörde hangi yol olduğu belirtilir ve beslenir. Veri yolları her zaman bağlıysa “buses always cross-tied.” Kutusu kontrol edilir. Bu durumda, bütün motorlar ve bataryalar bütün tüm yolları besleyecek. 
+Sonuç olarak, elektriksel tab’daki inverters kutusu güç inverter sayısını ve onlara hangi sistemin bağlandığını belirtir. Inverters çoğunlukla yedek güç ve elektronikte AC gücünden DC ye çevirmek için için kullanılır.
+Elektriksel sistemlerin temelini ayarlamak için, sistem diyalogun yol 1 ve yol 2 tab’ı kullanılır, her elektriksel güç alt sistemi ne kadar akıma ihtiyaç duyduğunu ve  gücünü hangi yoldan çektiğini belirtir. Her alt sistem labelinin sağında 4 işaret kutusuna kadar yol 1 den 4 boyunca ilgilidir. Örneğin Figure 4.18 de alt sistemin penceresindeki heater yol 1 den  6 amper çiziyor. 
+
+Alt sistemlere ek olarak, yolların her birinde ana yük olabilir-amper sayısının bazıları her zaman gözükür, diğer elektronikler ne olursa olsun güç açıktır. Her yol için temel yük bus 1 tab’ın sol üstünden ayarlanır. Jeneratör yükü yol tarafından, eklenmiş her sistem ve ondan çizilen akım tarafından etkilenecek. X eksenindeki güçsel yol sistemi hata verirse, batarya ve jeneratör yolu kapalıysa, bus cross-tie kapalı demektir ve sistemin hata verdiği APU running yoktur. 
+B.	Hidrolik Sistem Yapılandırma
+Hidrolik sistem "System" diyaloğunun "General" sekmesinde yapılandırılır. Burada, kutular etiketli Hidrolik Sistemler ve Hidrolik kaynaklara bağlı Hidrolik Sistemler, Hidrolik sistemin temelini sunar. X düzlemi 4 Hidrolik pompaya kadar modellenebilir: Elektrik sistemle çalışan, hava türbine şiddetle çarparak çalışan, diğerleri motorla çalışan. Genel Sistemin Hidrolik kaynaklar bölümünden hava aracında kullandığın pompalara göre kutuları kontrol et. 
+ 
+4.19
+Her tip pompa farklı max basınca sahip, pup’s checkbox kutusu altında ayarlanabilir. Birimler maximum basınçta belirlenmez; Hidrolik model maddesi üniteye yeterince detaylanmaz, hiçbir şey olmayabilir. Tek şey, farklı maddeler arasındaki pompa oranı ve o sadece kayıp kutusundaki maddedir. Hidrolik kaynakların sağındaki sistemler hidroliğe bağlıdır. Hidrolik pompalarda hata olursa, her kontrol kutusunun hata vereceğini sistem sunacaktır. 
+Buradaki sistemlerin bazıları kendinden açıklayıcıdır.Son olarak Çubuk karıştırıcı, aracın havada tutunabilme yeteneğini kaybetmesi ile, kontrol bağı hızla titreyen bir alettir. X düzleminde yüksek gürültüyle belirlenir. Hidrolik sistemlerin aşağısının yanında stick shaker box kontrol edilirse, stick shaker hidrolik sistemle birlikte başarısız olacaktır. 
+Manuel reversion kutusu kontrolü hangisi hidrolik sistemin kaybına bağlı olduğuna dair ve uçuş kontrollerinin çalışmasını devam ettirmek için genişletir. Bu onların normal çalışma oranını ayarlamak gibidir. 
+Ortadaki ayarlar grubu, hidrolik kayıpta iniş takımının nasıl başarısız olduğu yer alır. İniş takımı hidroliklere bağlıysa, başarısızlık olayında 2 davranıştan biri olabilir: Kalan geri çekilebilir, kalan genişletilebilir yada kalan ve sürdürülür aracın hava hızı pist eşik noktasının altındaysa. Buradaki hava aracın için en yakın radio butonunu seç. Fail down below seçeneği seçildiyse göstergede okunan hava hızına göre, pist eşik noktasının altındaki hızı ayarlamalısın.
+C.	Basınçsal Sistemin Yapılandırılması
+Hava aracının basınçsal sistemi, Sistem dialog box’un general tab’ında Pressurization box kutusu kullanılarak kurulur. Kabin basıncını ayarlamak için maximum allowable pressurization alanı  sistemin sağlanan kapasitede, her kare inç ölçülen değere göre(psi) kullanılır. Deniz seviyesindeki standart atmosfer 14.7 psi’dir. maximum allowable pressurization kutusunun sağında emergency pressurization altitude bulunur. “dump to emer
+alt” butonuna tıklandığında X düzlemindeki aracın panelinde, basınçsal sistem yüksekliği eşleşecek. Tepenin sağındaki auto-manage pressurization  butonunu kontrol ederek, X düzlemindeki kontrolsel basınca sebep olunacak, hava basıncı deniz seviyesinden 7500 feet yükseklikte izin verilen max basınca yaklaşılacaktır. Sağ alttaki “dump pressure below 1000 ft,”  kutuyu kontrol ederek basınçsal sistemi, 1000 feet olduğunda dışarıdaki hava ile denge basıncına getirilir. 
+
+
+
+III. Hava Elektroniği Sisteminin Ayarlanması
+	
+Hava elektroniği sistemi hava araçlarında kullanılan elektronikten oluşmuş, navigasyon sistemi, haberleşme ve diğer sistemlerin performansını görüntüleme özelliği vardır. Hava elektroniğinin çoğu X düzleminde kurulur, paneli dizayn ederken, Chapter 5’i tanımlarken kullanılır. Ancak arka uç sistem standart menüden başlayarak dialog box kullanılarak ayarlanır. Sonra, aygıt panelini dizayn ederken, hava aracı kullanıcına özel aygıtlar ekleyeceksin. 
+
+A. Aygıt Performans Menzili Görüntüleme Sınırını Ve Rengini Yapılandırma
+
+	Aygıtları kendi kendine eklemeden önce, aygıtların arka ucunu hava aracının değişen özelliğine göre aygıtların özelliğini yapılandırabilirsin. Kırmızı,sarı ve yeşil çizgiye göre ayarlanmış performans menzilini içerir. Ek olarak, görüntüleme sınırındaki aygıtları içerir, hava hızı göstergesinde max hızı göstermesi gibi. 
+
+	Sistem dialog box’un Limit 1 ve Limit 2 tab’ını kullanarak hava aracının performans oranları ayarlanır. Bu tab’lar, aygıtsal ve limitsel sıcaklık, basınç, voltaj gibi aracın çeşitli sistemlerinde kullanılır. Bu bilgi aracın Pilotunun ölçülen el kitabına uygun olmalıdır. Not olarak, bu bilgi aracın uçuş modelinde kullanılamaz, o sadece aygıt görüntüsüyle kontrol edilir. 
+
+ 
+
+	Ayarlara ek olarak, hava aracının sisteminin kırmızı, sarı ve yeşil menzilleri, torku, sıcaklık ve gücü kontrol ederken Limit 1 ve Limit 2 tab’ları kullanılır. 
+	Instrument Displays’te  renkleri yapılandırmak için Standart Menuden Sistem dialog box’u açıp Arc Colors tab’ı seç. 3 standart menzilim her biri için (decimal) RGB değerlerini ayarlayabilirsin. Olağan olarak, green Tab (0,1,0) ın RGB değerlerine sahip ,sarı olanı (1,1,0) değerlerine sahip ve kırmızı olan ise (1,0,0) değerlerine sahiptir. 
+	Sonuç olarak, standart menüden Limits dialog kutusunu açarak görüntülenen menzil değerlerini ayarlayabilirsin. Burada, görüntülenen menzil değerler ayarlarını round instrument’te yapmak için 2 tab kullanılır ve 2 tab dijital aygıt için kullanılır. 
+Dairesel aygıtlar durumunda, soldan sağa doğru ilerleyen ölçümleri kontrol et. 
+• Görüntülenen minimum değer,
+• Görüntülenen max değer,
+• Göstergede görüntülenen minimum değerin açısı,
+• Göstergede görüntülenen max değerin açısı,
+
+	Açı ayarı, aygıtların tepesinde 0 derecedir. Açılar pozitif veya negatif olabilir, göstergeyi sararsan, hatta 360 dan bile büyük olabilir. 
+	Aygıt menzilinin üst ucunde farklı ölçeklendirme kullanmak için, “halve over.” Kutusunun sağ tarafındaki kutuyu kontrol et. Sonra, seçtiğin değerde başlangıç olarak, skale ikiye bölünmüş olacak, dolayısıyla o aygıtı hareket ettirmek için 2 birim alacak, düşük skalenin sonuna 1 birim hareket edecek. Bu , yüksek hızlı uçakların göstergelerinde sıkça kullanılır. Basınçlı olmak için göstergede daha büyük hız menziline izin verir. 
+	Dijital aygıtlar durumunda, ölçülen gösterimde, offset, skale ve dijit numarası kullanılarak measurement allows kutusunu kontrol edersin. Offset, panelde değer ölçülürken, X düzlemine eklenmiş değerdir instrument panelde görüntülenen değere karar verirken skale değeri çarpılacak. Ölçüm panelinde, decimal değerleri kullanılan toplam decimal sayısına karar verirken,  dijit değerleri kullanılan toplam dijit sayısına karar verir. 
+
+B. V-Hızının ve G-Limitinin Ayarlanması  
+
+Kırmızı, sarı ve yeşil menzillere ek olarak, aygıtlar standart ölçüm işaretlerine ihtiyaç duyarlar. Bunlar G limiti kadar V hızını da içerir(such as the maximum cruise speed, stall speed, and so on). G limitinden beklenen ile, uçuş modeline faktör edilmeyecek, onlar olabilir, ancak, Havahızı göstergesi kullanılır. Bunu ayarlamak için, Standart menüden Viewpoint dialog box’u aç. Default tab’ın sol tarafında şunları ayarlayabilirsin :
+
+• Vmca, Hava aracını yönlendiren, bir motorun çalışmadığı ve diğerlerinin tamamiyle kısıldığı minimum hızın altı,
+• Vso, kanatçığın yayılışıyla aracın havada irtifa kaybındaki hızın altı,
+• Vyse, bir motor çalışmazken optimal tırmanma hızı,
+• Vfe-m, Açılmış flaps’ın max izin verilen hızı,
+• Vfe-1, İl çentik flap için max izin verilen hız,
+• Vle, dişli çarkta max izin verilen hız, 
+• Vno, Normal manevrada max. izin verilen hız,
+• Vne, Max izin verilen hız(aracın gövdesi zarar görecek, hız %25 i geçerse),
+• Mmo, Max izin verilen uçağın ses hızına oranla hızı,
+• Pozitif G limiti, max izin verilen pozitif g yükü, (aracın gövdesi zarar görecek, hız %50 yi geçerse),
+• Negatif G limiti, max izin verilen negatif g yükü,
+	Not edilmezse, yukarıdaki bütün değerler knots’dadır.
+
+Eğer G değeri bulamazsan, çoğu genel çoğu hava elektroniği sisteminin ayarlanması için 4.0 iyi tahmindir. Ayarlar X düzleminde izin verilirse, G yükü %50 yukarıdaki değerlerin %50 sinden fazladır, yapısal zarar olur, kapı kanadı kolu ayrılacak. 
+	Not olarak, senin motorun konumuna bağlı, yukarıda görülemeyen bazı değerler listelenir. Onların sıfıra giden değerleri tarafından bu işaretlerin hiçbiri aygıtlardan ayrılamaz. X düzlemi boyunca performans tahmini açıklamasında bu hızları almaz. İniş seçildiğinde, uçağın başlangıç hızı gibi ince noktalarını kullanabilir.
+
+C. Otopilot Yapılandırılması
+
+	Otopilot yapılandırılması diğer aygıtlardan farklı yapılır. Otopilotun konumu ve başının değerinin kaynağı, çeşitli uyarı seviyelerinden otopilot kutusunun üstünde Sistem dialog box’un General tab’ında yapılandırılır. 
+
+
+
+IV. Marş Motoru Yapılandırma
+
+	Motorun ilk başlangıcını yapılandırmak çok kolaydır. Başlangıç ve batarya direnci için  X düzlemi iyi varsayılır ama  X düzleminin varsayılan oranına göre başlangış direncini arttırabilir yada azaltabilirsin. Böyle olması için, Sistem dialog’un general tab’ının Starter kutusuna “starter strength ratio” parametresi yerleştirilir. Ek olarak, elektrikli yada basınçlı hava ile başlamayı seçebilirsin.
+
+ 
+
+
+V. Yakıt Sisteminin Yapılandırılması
+
+	Weight & Balance dialog box kullanılarak hava aracının yakıt sistemi yapılandırılır, Started menüden çalıştırılır. Kurmaya başlamak için, Weight tab’a git ve max yakıt miktarına gir, in pounds, hava aracı “fuel load” kutusunda taşıyabilir. 
+	Daha sonra Tanks tab’a hareket edilir. Bu tab’a 9 adet yakıt tankı eklenebilir. Her tank aracın max yakıt oranını kaydeder, “tank #x ratio” giriş kutusu kullanılarak ayarlanır. Tankların oranlarının toplamı 1,000 e kadar eklenmelidir. Örneğin, bir hava aracı 2 yakıt tanka sahip ise, her kapı kanadında biri vardır, her tank topla yakıtın yarısını tutar. Yakıt tankının relatif basıncı “fuel pump pressure” kutusu kullanılarak ayarlanır. Bu, birden fazla seçilirse, ilk hangi tankın boş olacağına karar verecek. Örneğin, tank 1 biraz tank 2 ve tank 3 den uzun zaman önce biraz daha boş olmalı 3 tank seçildiğinde, yakıt pompa basınçlarını şekle göre ayarlayabilirsin. 
+Tank 1 20 psi
+Tank 2 17 psi
+Tank 3 10 psi
+Table 4.1: Relative fuel pump pressures 
+
+Sonuç olarak, standard position controls kullanılarak yakıt tankları araca yerleştirilir. X düzlemi aracın yerçekimi merkezinden çeşitli uzaklıklarında eylemsizlik kuvveti bant yakıt özelliklerini hesaba katar, bundan dolayı aracın doğruca işlevi için
+yakıt tankını doğru yere yerleştirmek önemlidir. Not olarak, yakıt tankını yerleştirirken, tankın yerçekimi merkezinden yerleştirmelisin, X düzlemi yakıtın ağırlığını tutmak için tanklar fiziksel olarak yeterince uzunlukta farzedilir. 
+	Ayrıca, instrument paneldeki yakıt tankı iniş takımı komuta kolları fiziksel merkezi sol ve sağ tank seçilecek. 
+
+	
+
+  
+
