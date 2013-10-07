@@ -1,0 +1,90 @@
+
+Ardupilot kodunu buradan indiriyoruz.
+https://github.com/diydrones/ardupilot 
+
+zip şeklinde olan dosyayı dışarı çıkartıyoruz.
+
+Bu işlemi değiştrilmiş arduino idesi olan ardupilot Arduinoyu seçiyoruz.
+
+
+Ardupilot arduinoyu intertten indirip kuruyoruz.
+Yukarıda gösterildiği gibi kullanıcagğımız ardupilot kartına göre seçim yapıyoruz.Biz 2.5 kullanıcağımız için 2.x seçiyoruz. 
+
+
+
+
+
+
+
+
+
+File menüsünden sketch booka gelerek arducopter veya arduplane seçiyoruz üzerinde işlem yapacağımız moda göre.
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ardupilot kartına yüklemeyi yapmak için seri porttan seçim yapmalıyız normalde bilgisayar seri portu kendi tanıyıp bu işlemi yapıyor.
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ardupilot kartı üzerindeki işlemciye öre boardan arduino kart türümüzü seçiyoruz.
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Kodu derleyip hata olup olmadığını kontrol ediyoruz.Bu işlemi sketch menüsünden verify/compile seçeneği ile yapıyoruz.Bu işlem sırasında kodumuzda hata işareti almazsak Adupilotumuza bu kodu upload edebiliriz fakat kodda herhangi bir hata olmamasına rağmen hata mesajı alırsak yukarıdaki işlemlerde bir hata yapılmış olabilir.
+
+
+
+
+
+
+ 
