@@ -1,0 +1,39 @@
+                          X-PLANE 10
+             X-Plane çok kapsamlı ve güçlü bir uçuş simülasyon programıdır.X-Plane oldukça başarılı, hatta sertifikalı bir simülatör.
+X-Plane 10 demo:
+http://www.x-plane.com/downloads/x-plane_10_demo/ linkinden x-plane 10’un demosunu yüklüyoruz.(Bu demo 10dk süre için çalışıyor.)
+X-Plane 10 Orijinal Versiyon:
+X-Plane’i bilgisayarımıza şu şekilde yükleyeceğiz:
+Yüklemeye başlamadan önce X plane’in eski versiyonları yada demosu varsa silmeliyiz. 
+1.	X-Plane’in ilk DVD sini takıyoruz.(Eğer  2011 gibi eski bir versiyonununu kullanıyorsak ilk önce “updated X-Plane installer”i indirmeli ve 3.basamağa atlamalıyız.)
+2.	Eğer X-Plane installer otomatik olarak başlatılmazsa bilgisayarımdan XPLANE10 DVD ve installer_Windows.exe’ye tıklıyoruz.
+3.	Kurulum ekranı açılınca “continue”ya tıklayıp kurulumu başlatıyoruz.
+4.	User Agreement’ı işaretleyip tekrar “continue” diyoruz.
+5.	Yüklemek istediğimiz görünümü seçiyoruz(seçmezsek kendisi default olarak seçiyor zaten)
+6.	Seçilmemiş kutucuklar açık renkte,seçtiklerimiz ise koyu renkte görünecek.(Şekil 2.1 )
+ 
+
+*Seçme işlemi tamamlandıktan sonra “select all”u tıklıyoruz.
+*Görünümün seçilmediği alanlarda sadece hava alanları ve okyanuslar görülebiliyor.
+*Görünüm seçme işlemi bittikten sonra “continue” ya tıklayarak devam ediyoruz.
+7.İkinci DVD’yi uyarı geldiği zaman takıyoruz.
+*Bu paketi 75GB yer kaplıyor.Yükleme işlemi yaklaşık 5 buçuk 6 saat sürüyor.
+Yükleme işlemi bittikten sonra;
+1)	1.DVD yi takıyoruz.(DVD yi takmazsak demo modunda çalışır)
+2)	X-plane 10 klasörünü açıp  “x-plane.exe” ye tıklıyoruz.
+3)	Settings menüsünden joystick&equipment ı seçiyoruz.
+
+ 
+
+4)	Axis butonuna tıkladığımızda joystick&equipment ayarlarını yapacağımız kısma ulaşıyoruz.
+
+ 
+
+      
+5) Joystick imizi ileri ve geri  hareket ettirdiğimizde yeşil veya kırmızı çubuk hareket edecek.Drop-down menüsüne tıklıyoruz ve “pitch” olarak set ediyoruz.(Uçağın pitch kontrolü geriye doğru çalışmadığı sürece “reverse” kutusunu işaretlemiyoruz.)
+6) Joystick i sağa ve sola hareket ettirdiğimizde yeşil veya kırmızı olan çubuğu “roll” olarak set ediyoruz.
+7) Joystick i çeviriyoruz (joystick uygunsa),rengi değişen çubuğu “yaw” olarak set ediyoruz.Eğer yaw eksenini oluşturamıyorsak program kendisi stabilize ediyor.
+8) Throttle ı ileri ve geri hareket ettirdiğimizde kırmızı/yeşil olan çubuğu “throttle” olarak ayarlıyoruz.
+9) Fren olarak atamak istediğiniz butona bir süre basılı tutun ve bırakın.
+10) Enter a basıp Joystick&equipment menüsünden çıkıyoruz.
+Cansel Öğretmenoğlu
