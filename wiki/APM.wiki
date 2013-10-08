@@ -1,0 +1,36 @@
+                                  APM 2.6 Set(harici pusula)
+                                          (ArduPilot Mega 2.6)
+ 
+APM 2.6 açık kaynak kodlu otopilot sistemidir.Kullanıcıya GPS özelliği bulunan otonom araçlar sağlar.
+Özellikle multicopter gibi araçlarda pusulanın magnetik etkileşimde bulunmaması için güç kaynağı ve motordan uzakta bulunması gerekiyor.Bu nedenle APM’in bu versiyonunda entegre edilmiş sabit bir pusula bulunmuyor.(Hava araçlarında APM’i motor ve ESC’lerden uzağa monte etmek daha kolaydır;dolayısıyla  pusulanın sabit olmaması çok kritik bir önem taşımasa da pusulanın konumunun esnek olması yine de avantajlı.)
+Tamamıyla otonom bir yapı için APM 2.6 ile pusula entegreli bir GPS modül kullanmamız gerekiyor.Eğer pusulasız bir GPS kullanırsak,buna ek olarak harici bir pusula kullanmalıyız. 
+
+
+
+Özellikleri:
+•	Arduino uyumlu
+•	3-eksenli jiroskop, ivmeölçer , mıknatıs ölçer ve yüksek performanslı barometre
+•	Otomatik veri depolamak için 4 MegaByte Dataflash mikroçip 
+•	İstemli/sökülebilen GPS, uBlox LEA-6H ve Pusula modülü.
+•	6 DoF Accelerometer/Gyro MPU-6000
+•	MS5611-01BA03’e yükseltilmiş barometrik basınç sensörü
+•	USB fonksiyonları ve işleme için Atmel's ATMEGA2560 ve ATMEGA32U-2 mikroçipleri bulunur
+
+                            3DR uBlox GPS ve Pusula Kiti
+                           
+  
+
+
+Özellikleri:
+•	ublox LEA-6H modülü
+•	5 Hz güncelleştirme hızı
+•	25 x 25 x 4 mm seramik ek anten
+•	LNA ve SAW filtresi
+•	Şarjedilebilir 3V lityum yedek pil
+•	Düşük gürültü 3.3V regülatör
+•	I2C EEPROM 
+•	Güç ve sabit gösterge LEDleri
+•	Koruyucu kılıf
+•	ArduPilot Mega uyumlu 6-pinli JST konnektör
+•	Açık RX, TX, 5V ve GND 
+•	38 x 38 x 8.5 mm toplam boyut, 16.8 gram
