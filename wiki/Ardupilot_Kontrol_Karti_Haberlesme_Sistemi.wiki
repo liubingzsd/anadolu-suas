@@ -15,21 +15,21 @@ Uçuş kontrolü için en öneli kısımdır. Bu kart sizin hava aracınıza ne 
 Geçiş noktası navigasyon kullanımı, ve eve dönüş özelliği istiyorsanız o zaman ardupilotun nerede olduğunu anlamak için bir GPS modülü gerekir. Bu iş için iki tane alternatifimiz var. Biri Mediatek GPS module diğeri Ublox LEA-6H GPS module. 
 Mediatek GPS module 66 kanala sahip, küçük ve hafif olması tercih edilmesini arttırıyor. Ardupilot için uygun bir kart.
 
-http://anadolu-suas.googlecode.com/svn/images/image2.PNG
+http://anadolu-suas.googlecode.com/svn/images/image2.png
 
 
 Ublox Lea-6h GPS module Büyük anteni sayesinde size hızlı bir başlangıç sağlar. Eğer çoklu rotor platformu kullanıyorsak ve havada düzgün durmasını istiyorsak bu kart önerilir. Fakat sabit kanatlı uçak için gözle görülür bir fark olmaz.
 
-http://anadolu-suas.googlecode.com/svn/images/image3.PNG
+http://anadolu-suas.googlecode.com/svn/images/image3.png
 
 2. RC transmitter
 	Cihazımız otomatik veya manuel olarak uçtuğu zaman kontrolünü sağladığımız donanımdır. 2.4Gz en çok kullanılan frekanstır. Ardupilot özelliklerini kullanmak için en az 6ch radio gerekir. Ancak daha fazla kanal önerilir. 
 
-http://anadolu-suas.googlecode.com/svn/images/image4.PNG
+http://anadolu-suas.googlecode.com/svn/images/image4.png
 
 3. RC Reciever
 	Vericiden gelen sinyal ve komutları alır. 
-http://anadolu-suas.googlecode.com/svn/images/image5.PNG
+http://anadolu-suas.googlecode.com/svn/images/image5.png
 
 4. APM Power Module
 	Bu kablo pil voltaj ayarını ve akım tüketimini Lipo pilden kaliteli bir biçimde sağlamanın basit bir yolunu sağlar. Lipo pilden regülatör çıkış voltajı 5.3v ve maximum 2.25 Amper akımı değiştirir. 
@@ -40,7 +40,7 @@ Maksimum akım algılama: 90A
 Gerilim ve akım ölçümü 5V ADC için yapılandırılmış
 Regülatör çıkışı 5.3V ve 2.25A max.
 
-http://anadolu-suas.googlecode.com/svn/images/image6.PNG
+http://anadolu-suas.googlecode.com/svn/images/image6.png
 
 5. Telemetri Sistemleri
 	Burada öncelikle telemetri sisteminden biraz bahsedelim. Telemetri sistemi uzaktan ölçüm ve kontrolünün sağlanabildiği kablosuz iletişim sistemlerinin genel bir ifadesidir. Telemetri sistemi ürünleri ölçüm ve izleme yapılması gerekli olan noktalarda bulunan cihazların uzaktan ölçümü ve denetlenmesi için uygulanan cihazlardır.
@@ -68,13 +68,13 @@ Anten olmadan 4 gramın altında
 Yaklaşık 1 mil aralığı
 Hava veri aktarımı 250kbps ye kadar
 
-http://anadolu-suas.googlecode.com/svn/images/image7.PNG
+http://anadolu-suas.googlecode.com/svn/images/image7.png
 
 b)Xbee telemetri sistemi
 
 c) RFD900 Long Range Telemetry
 
-http://anadolu-suas.googlecode.com/svn/images/image8.PNG http://anadolu-suas.googlecode.com/svn/images/image9.PNG
+http://anadolu-suas.googlecode.com/svn/images/image8.png http://anadolu-suas.googlecode.com/svn/images/image9.png
 
 928 MHz frekans bandında - RFD900 yüksek performanslı 900MHz, 902 kapsayan ISM band radyo modem. 
 Özellikleri: 
@@ -92,37 +92,37 @@ Malzemelerin montajı hakkında
 Ardupilot 2.5 için montaj işlemleri aşağıda verilmiştir.
 Aşağıda resmi gösterilen kabloyu kullanıcaz. 
 
-http://anadolu-suas.googlecode.com/svn/images/image10.PNG
+http://anadolu-suas.googlecode.com/svn/images/image10.png
 
  Aşağıda gösterildiği gibi GND üzerinde ucunda +5 v pim ve siyah kablo üzerindeki kırmızı kablo ile konektör fişini APM 2.5 ve 3DR radyo tarafındaki telemetri portuna takın:
 
-http://anadolu-suas.googlecode.com/svn/images/image11.PNG
+http://anadolu-suas.googlecode.com/svn/images/image11.png
 
 Ardupilot 2.0 için aşağıda montaj işlemleri gösterilmiştir.
 
-http://anadolu-suas.googlecode.com/svn/images/image12.PNG
-http://anadolu-suas.googlecode.com/svn/images/image13.PNG
+http://anadolu-suas.googlecode.com/svn/images/image12.png
+http://anadolu-suas.googlecode.com/svn/images/image13.png
 
 Xbee telemetri sisteminin ardupilota montajı:
 
-http://anadolu-suas.googlecode.com/svn/images/image14.PNG
+http://anadolu-suas.googlecode.com/svn/images/image14.png
 3DR four-wire Xbee ckablo
-http://anadolu-suas.googlecode.com/svn/images/image15.PNG
+http://anadolu-suas.googlecode.com/svn/images/image15.png
 
 Eğer usb adaptör kullacak olursak basit bir şekilde montajı aşağıda gösterilmiştir.
-http://anadolu-suas.googlecode.com/svn/images/image16.PNG
+http://anadolu-suas.googlecode.com/svn/images/image16.png
 
 Eğer XtreamBee adapter kullanırsak önce FTDI kabloyu USB porta aşağıda gösterildiği gibi bağlayınız.
-http://anadolu-suas.googlecode.com/svn/images/image17.PNG
+http://anadolu-suas.googlecode.com/svn/images/image17.png
 
 Ardupilot Mega Power module montaj işlemleri:
 
-http://anadolu-suas.googlecode.com/svn/images/image19.PNG
+http://anadolu-suas.googlecode.com/svn/images/image19.png
 
 6-pos kablo power module ve Ardupilotta bulunan 6-pos connectore bağlanır. Piliniz power modülün erkek ucuna bağlanır ve dişi uç ESC veya Power Distribution Board’a bağlanır. 
 Eğer arduplane kullanıyorsak not: Power modüle kullanırken APM(ardupilotmega) ‘nin JP1 jumper’ını kaldırmalıyız. Çünkü bizim elektronik aksamımız sadece Power modülden güç alsın ESC’den değil.
 
-http://anadolu-suas.googlecode.com/svn/images/image18.PNG
+http://anadolu-suas.googlecode.com/svn/images/image18.png
 
 Kullandığım linkler
 
@@ -150,9 +150,6 @@ http://copter.ardupilot.com/wiki/xbee-radios/
 Ahmet Gökhan Poyraz
 
 agpoyraz@gmail.com
-
-
-
 
 
 
