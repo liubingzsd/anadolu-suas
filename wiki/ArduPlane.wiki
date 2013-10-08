@@ -1,0 +1,39 @@
+1)ArduPlane kodumuzda sensör verilerilerimiz nasıl alınıyor?
+ *Kodumuzdaki  #include<AP_baro.h>
+	          #include<AP_InertialSensor.h>
+ifadeleri sensör kütüphanelerimizi belirtiyor.
+•	ArduPlane klasöründeki “libraries” kısmından kütüphanelerimize ulaşabiliriz.
+•	Burada “.h” ile belirtilen dosyalar arduino,”.cpp” ile belirtilenler ise C diliyle yazılmış programlardır.
+•	Barometre sensörümüzün kütüphanesine ulaşmak için sırasıyla;
+Arduplane2.74b--libraries-- AP_Baro klasörlerini açıp buradaki AP_Baro dosyasını sağa tıklayarak ‘notepad++’ ile açıyoruz.
+•	Barometre kodunu incelediğimizde görüyoruz ki basınç,sıcaklık ve yükseklik değerleri get..() fonksiyonuyla örneklendiriyor ve read() komutuyla sensör değerleri alınıyor.
+•	get_pressure_samples(void){
+return  _pressure_samples;
+} //ile basınç örnekleri almak için kullanılan fonksiyon.
+•	AP_Baro.cpp dosyasına baktığımızda ise burada kullanılan “read()”komutu basınç sensöründen gelen değeri almamızı sağlıyor.
+
+•	“Inertial sensor” kütüphanesi “gyro” ve “accelerometer” için oluşturulmuş bir kütüphanedir.
+
+•	“Inertial sensor” kütüphanesine ulaşmak için sırasıyla;
+Arduplane2.74b--libraries-- AP_InertialSensor klasörlerini açıp buradaki AP_InertialSensor dosyasını sağa tıklayarak ‘notepad++’ ile açıyoruz.
+•	get_gyro(void)const {return _gyro;} fonksiyonu  AP_InertialSensor.h dosyasının içerisindeki jiroskop değerini almaya yarayan fonksiyondur.
+•	get_accel(void)const {return _accel;} fonksiyonu ise  AP_InertialSensor.h dosyasının içerisindeki ivmeölçer değerini almaya yarayan fonksiyondur.
+
+2)ArduPlane GPS kodu hassasiyet oranları:
+•	AP_GPS_HIL.cpp :
+Time=_time
+Latitude=_latitude*1.0e7f
+Longitude=longitude_*1.0e7f
+Altitude_cm=_altitude*1.0e2f
+Ground_speed_cm=ground_speed*1.0e2f
+Speed_3d_cm=speed_3d*1.0e2f
+Num_sats=_num_sts
+•	GPS.cpp:
+_velocity_north*0.01f
+_velocity_easth*0.01f
+_velocity_down*0.01f
+
+
+
+
+
