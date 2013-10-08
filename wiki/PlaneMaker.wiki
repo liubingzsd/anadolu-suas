@@ -1,0 +1,100 @@
+                           Plane Maker            
+Plane Maker’ı Başlatma:
+*Programı başlatmak için masaüstündeki X-Plane dizinini açıp Plane-Maker.exe ‘ ye tıklıyoruz.
+*Windows 7 ve Vista,X-Plane ve Plane Maker’da masaüstü görünümünde bozulmaya neden olabiliyor.Böyle bir durum olursa X-Plane.exe’nin üzerinde sağa tıklayıp “properties” i seçiyoruz.(şekil 2.1)Daha sonra “compability” tabına tıklayıp “Disable desktop composition” kutucuğunu işaretliyoruz.Aynı prosedürü Plane Maker için de uyguluyoruz.
+                       
+Aircraft Açma ve Kaydetme:
+                                    
+•	Sırayla FileOpenACFOpen a tıklıyoruz.(şekil 2.2)
+•	Uçakta yaptığımız değişiklikleri kaydetmek için “File” ı açıp “Save” e tıklıyoruz.
+“Livery” Açma:
+•	Uçağı boyama işi anlamına gelen “Livery” yi yüklemek için öncelikle Plane Maker’daki Aircraft’ı açıyoruz.Daha sonra sırasıyla FileOpen Livery ‘e tıklıyoruz.
+Aircraft Dosyası Tasarlama:
+•	Yeni aircraft projesi oluştrmak için “File” menüsünden “New”e tıklıyoruz.Plane Maker silindirik bir uçak gövdesi oluşturacaktır.
+•	FileSave As ‘a tıklayarak yeni aircraft’ı istediğimiz dosyaya kaydedebiliriz.(Genelde X-Plane dizininin içindeki Aircraft dizinine kayıt yapılır.Örneğin: X-Plane 10\Aircraft\My Custom Planes)
+Plane Maker Window:
+•	Plane Maker’da görünüm 3D olarak tasarlanmıştır.
+•	Uçağımızı klavyemizdeki oklarla sağa,sola,yukarı ve aşağı hareket ettirebiliriz.
+
+           
+
+•	W,A,S ve D tuşları ile uçağımıza 3 boyutlu olarak döndürme ve yalpa hareketini sağlayabiliriz.
+•	- ve = tuşlarıyla görüntüyü yakınlaşıp uzaklaştırabiliyoruz.
+•	“Shift” tuşuna basılı tutarak sağa sola veya zoom hareketlerini daha hızlı bir şekilde gerçekleştirebiliriz.
+•	Plane Maker’da uçağımız “Skinned” ve “Wireframe” olarak iki görünüm biçimi vardır.Skinned uçağımızın X-Plane’deki görünümü ,wireframe ise ana yapısının ön plana çıktığı görünümüdür.(şekil 2.6)Bu iki görünüm arasındaki geçişi “Spacebar” ile sağlıyoruz.
+                 
+     Özel Görünümler:
+                          
+•	Background menüsü,farklı açılarda görünüm seçeneklerine sahip (Top,Bottom,Side,Front,Back).
+Aircraft Modelleme:
+                                             
+•	Plane Maker ile çalışma alışkanlığı kazanmak için bir uçak modeli seçip onun üzerinde değişiklikler yapabiliriz.Örneğin; The Boeing 777 uçağını “X-Plane 9\Aircraft\Heavy Metal\B777-200 British Airways” dosyasına tıklayarak seçebiliriz.
+Yada “X-Plane 9\Instructions\Example Plane-Basic” dosyasından örnek bir uçak seçebiliriz.
+•	Uçağımızı seçtikten sonra “Standart” menüsünden “Wings”e tıklıyoruz.(şekil 2.8)Buradan kanat uzunluklarımızı ayarlayabiliyoruz.Mesela kanat uzunluğumuzu 20 feet civarında arttıralım.Uçağımız,kanat uzunluğu arttığı için öncekine göre daha çok yükselecek fakat manevra kabiliyeti azalacaktır.(şekil 2.9)
+                   
+   Uçağın Özelliklerini Değiştirme:
+    Uçağın ”Tail number,lights,weights,balance,sounds” gibi özellikleri sistem veya gövde kategorisine girmez.
+1.	Uçak Tanımlama Bilgileri:
+•	Kimlik bilgilerini “Standard menu”den “Viewpoint Diolog Box”a tıklayarak ayarlıyoruz.
+•	Pencerenin sol üst kısmında bulunan “DEfault Tab” ile “tail number”ı belirliyoruz.Tail number hava trafik kontrol iletişminde kullanılıyor.
+•	Tail number’ın sağında aircraft dosyasının adı ve modeli yazar.Onun altında ise ICAO(Civil Aviation Organization) kodu yazar.ICAO’nun sağ tarafında ise “call sign” bulunur.Call sign hava trafik kontrolü için kullanılıyor. 
+
+2.	 Uçak Seslerini Ayarlama:
+
+•	X-Plane otomatik olarak uçağın modeline göre seslerini ayarlıyor.(Uçağın modelini “Viewpoint Dialog Box”tan belirliyoruz.)
+•	Default tabCockpitAirliner ile büyük jetlerin,
+•	Default tabCockpitGeneral Aviation ile ise küçük yada pervaneli uçakların seslerini ayarlayabiliyoruz.
+•	Otomatik ses ayarları ise “X-Plane10\resources\sounds” dosyasında bulunuyor.
+•	Bu dosyanın alt dosyaları :
+Alert: yükseklik uyarısı,sistem hataları,navigasyon hataları
+Contact: yere çarpma,suya teğet geçme,tekerlerin yola değmesi
+Engine: çeşitli motorların sesleri
+Radio chatter: uçak ve kule arasındaki haberleşme
+Systems: kanat hareket ve dişli sesleri,silah ve füze sesleri
+Weather: fırtına,rüzgar ve yağmur seslerini içerir.
+•	Her bir dosya “WAV”(sıkıştırılmamış ses dosyası) şeklindedir.
+
+3.	Görünüm Özelliklerini Ayarlama:
+
+•	Sırasıyla Standard menüViewpoint  Dialog BoxDefault Tab’a tıkladığımızda “long”,”lat” ve “vert” komutları bize kokpit görüş açılarını değiştirme imkanı sağlıyor.
+
+4.	Aydınlatmaların Düzenlemesi:
+
+•	Uçağın dış aydınlatmaları:navigasyon ışıkları,iniş ıçıkları ve ikaz lambalarıdır.
+•	İç aydınlatmaları:kokpit ve gösterge ışıklarıdır.
+•	ViewpointExt Light Tab dialog box ışıkların yoğunluğunu değiştirmeye ve açıp-kapatmaya yarar.
+•	“Show with day\night texture”e tıklayarak gece ve gündüz görünümü sağlayabiliriz.
+•	“Int Light Tab” ile kokpit ve panel aydınlatmalarının yoğunluk ve rengini ayarlayabiliriz.
+
+5.	Ağırlık ve Denge Ayarları:
+
+•	Standard menüWeight&Balance dialog box’tan ağırlık ve denge ayarlarını yapıyoruz.
+
+a)Ağırlık merkezi ayarları:
+
+•	Yatay ve dikey parametreleri değiştirerek ağırlık merkezini ayarlayabiliriz.(referans noktasına göre)
+ 
+•	Yukarıdaki şekilde en soldaki kutucuğa ağırlık merkezinin öne doğru olan sınır değerini,
+•	En sağdakine uçağın arkasına doğru olan sınır değerini giriyoruz.
+•	Ortadaki kutucuğa ise otomatik olarak verilen yatay değer giriliyor.
+•	Ağırlık merkezinin dikey konumu sabittir yani bulunduğu yere bağlı değildir.Bu nedenle sadece bir tane “vert CG” kutucuğu bulunmaktadır.
+
+6.	Ağırlık Ayarları:
+        
+
+•	“Weight Balance dialog box” daki “weight tab” dan ağırlık ayarlarını yapıyoruz.
+•	“Empty weight” uçağın yakıt deposu boşken ama yağ deposu doluyken ölçülen ağırlıktır.
+•	“Fuel load” uçağın taşıyabileceği toplam yakıt ağırlığıdır.
+•	“JATO”(Jet Assisted Takeoff) ağırlığı roketlerin itme kuvvetinden kaynaklanan ağırlıktır.
+•	“Jettisonable load” , bomba,yangın söndürme suyu ve füze gibi hafifletilebilir yüklerdir.
+
+
+
+
+
+
+     
+       
+     
+
+
