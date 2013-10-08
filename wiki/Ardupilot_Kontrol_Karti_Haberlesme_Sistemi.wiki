@@ -1,7 +1,7 @@
 #labels ardupilothaberleşme
     Öncelikle hiç bilmeyenler için ardupilot nedir bunu açıklayalım. Ardupilot her türlü insansız hava aracını uçurabilmemiz için gerekli olan bir kontol kartıdır.
 
-http://anadolu-suas.googlecode.com/svn/images/image1.PNG
+http ://anadolu-suas.googlecode.com/svn/images/image1.PNG
 
 
 Uçuş kontrolü için en öneli kısımdır. Bu kart sizin hava aracınıza ne yapması gerektiğini söyler. Bir nevi size uçmayı öğretebilir. 
@@ -149,8 +149,6 @@ http://copter.ardupilot.com/wiki/xbee-radios/
 Ahmet Gökhan Poyraz
 
 agpoyraz@gmail.com
-
-
 
 
 
