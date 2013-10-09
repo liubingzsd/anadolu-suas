@@ -1,0 +1,15 @@
+
+v5.02(2 gün önce)
+
+Bakım sürümü
+
+* başlatma ve noground seçeneklerini pprzsim-başlatma ekler
+* fixedwing: denge komutlarının başlangıç değerlerini düzeltir(yalpalama dahil)
+* fixedwing: ins_alt_float'den ins_alt_dot kullanımını düzeltir. # 511 (USE_BAROMETER ile)
+* durum arayüzü: yerel / küresel koordinat geçerlilik kontrollerini düzenler
+* durum arayüzü: yerel ned / trk'yi ecef dönüşümüne sabitler
+* lib / ocaml: leap_seconds'ı 16'ya günceller (sonuncusu 30 Haziran 2012 tarihinde oldu)
+
+Paparazzi otopilot kodunun son versiyonuna aşağıdaki linkten ulaşabilirsiniz
+
+https://github.com/paparazzi/paparazzi/releases
