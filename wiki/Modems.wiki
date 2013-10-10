@@ -1,0 +1,27 @@
+California Üniversitesi : 
+Otopilot donanımı uçağı kontrol edebilmek için ( magnetometer içeren, 3 gyroscope, 3 accelerometre, dinamik ve statik basınç portları ve GPS alıcısı bulunduran) gerekli bilginin karşılanması için uygun sensörler içermektedir. Kestrel, bütün sensör bilgilerini elde tutabilmek için ve  Kestrel ünitesi üzerindeki 4 servo motor ve geniş servo board üzerinde bulunan ek 8 servo motor üzerinden uçağın kontrolünü sağlayacak gerekli kodun çalıştırılması için onboard 8-Bit 29 MHz processor kullanmaktadır. Kestrel, yer istasyonuyla haberleşebilmek için Maxstream 9XTend 900 MHz 1 W modem kullanmaktadır. Bu, modem başlığı aracıyla otopilotun PCB bordunun alt yüzeyinden bağlantı sağlanır. Otopilot modemi soğuk tutmak ve korunumlu olması için bir fan ile alüminyum ile kaplanarak gizlenmiştir.
+
+Delhi Universitesi : 
+Telemetri sistemi Maxstream’s 24Xtreme serial modemden yararlanmaktadır.Yapılan testlerde, geniş bilgi çıktısını işleyemediğni, GCS te düşük güncellemeye sahip olduğu ve bilgi paketlerinin kaybına neden olduğu gözlemlenmiştir. Bunun birincil sebebi , bu modemlerin düşük çıkış gücüne(5omW) sahip olmalarından kaynaklanmaktadır. Bu yüzden takım, yer istasyonuyla uçak arasında wireless router kullanan TCP/IP tabanlı haberleşme sistemine geçiş yapmışlardır. TCP/IP haberleşme sisteminin güvenirliliği garantilenmiş ve yüzeyindeki birçok yapı ile çok güzenilir bir protokoldür. Ayrıca sistem bağlantının kaybedilmesi halinde otomatik olarak yeniden bağlantı yapabilme özelliğine sahiptir.
+
+Florida Uluslararası Üniversitesi : 
+Hava aracında video bağlantısı kullanıldığından, takım micropilot otopilottan horizonmp’ye bilgi göndermek için ses kanallarını kullanmaktadır. Bu konfigürasyon horizonmp ile uçak arasında iki tane tek yönlü bağlantıya sahiptir. Radio modem kullanılarak tek yönlü(aşağıdan yukarı) iletişim sağlanmaktadır. Tek link konfigürasyonlarında olduğu gibi geniş spectrumlu modemler kullanılacağı gibi hataları düzeltmeyen basit radyo modemlerde kullanılabilir. Downlink(yukardan aşağı) video linklerinin ses kanalları üzerinden işlevsellik gösterir. (bkz. http://www.webmastersitesi.com/makaleleriniz/21008-uplink-downlink-nedir.htm)
+
+Ramaiah Teknoloji Enstitüsü : 
+Takım, telemetri sisteminde 900 MHz XBee- PRO XSC pro modem kullanmaktadır. Kolay kullanımı ve yeterliliği, XBee-PRO XSC seçilmesine öncü olmuştur. XBee-PRO XSC, yüksek kazançlı antenlerle 24 kmye kadar görüş mesafesi(Outdoor RF) ve çift kutuplu antenlerle de 9.6 kmye kadar (outdoor RF) görüş mesafesine sahiptir.
+
+
+AUVSI ROSAM : 
+Uzun menzil haberleşmesi için güvenilir bir araç güçlü bir UAS emir ve kontrol (C&C) ve telemetri linki gereksninmi duyar. AggieVTOL, GCS ve UAV arasında telemetri haberleşmelerini sağlamak için Digi Xtend 900 MHz serial modem’den faydalanır. Serial modem, açık bir dış çevrede 7 mile kadar güvenilir –sağlam iletişim sağlar. 
+
+Embry Riddle Aeron Üniversitesi : 
+Modem   	Output Power           	Receiver Sensitivity              	Estimated range        
+Xbee Pro XSC 900 MHz	100 mW	-106dBm	1.6 mi
+Xbee Pro Series 
+ 1.24 GHz                       	60 mW		-92dBm	300’
+Max Stream Xtend 900 MHz                  	1000 mW	-110dBm	14 mi
+                                     
+   Kullanılabilcek olan modem 900 MHz Max Stream Xtend modem. Max Stream 1000 mW maximum çıkış gücüne sahitir. Bu modem parazitlere daha az duyarlıdır; ancak modemin yüksek çıkış gücü ve düşük frekansından dolayı, çeşitli malzemelerin güvenirliliğini düşürebilir. Servo jitter titreşim modülasyon(PWM: pulse with modulation) çizgileri üzerindeki parazitler için tanımlanabilir, bu uçağın kontrol edilmesini zorlaştırır ve sadece uygun bir kalkanla veya demir tozları ile çözülebilir. Çeşitli malzemelere bağlı bilgi ve güç kabloları bu parazit tarafından etkilenebilir.
+
+Florida Uluslararası Üniversitesi : 
+Haberleşmede çoklu kanalların kullanımı ,4. seviye yedeklemeye /fazlalığa sahip sistemler yaratmak için kullanıldğı söylenebilir. BU yedekleme her zaman hava aracından(aracına) haberleşmeyi garantilemek için yapılmıştır.Haberleşmenin asıl metodu, Verizon’s 4GLTE aracılığıla ve 3G networks UML290 Modem, 3G/4G yükssek kazançlı MIMO çok yönlü antenler kullanan,  aracılığıyla kullanımı aracılığıyla başarılmıştır. Geniş bantlı bağlantılar, uçak için geniş ölçekli kapsam sağlamasına rağmen,  hücre atlamasına ve yükseklik değişimine bağlı olarak kesik kesik olarak sinyal kaybına karşı duyarlıdır.
