@@ -54,7 +54,7 @@ return 0;
 
  http://anadolu-suas.googlecode.com/svn/images/matlabgörnt1.png
 
- http://anadolu-suas-boran.googlecode.com/svn/images/matlabgörnt3.png
+ http://anadolu-suas.googlecode.com/svn/images/matlabgörnt3.png
 
 PANDABOARD
 
