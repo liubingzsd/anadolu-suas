@@ -13,7 +13,7 @@ PID kontrolör bu hatayı sıfıra indirmek için işlemler yapar.
 
 
 
-
+https://anadolu-suas.googlecode.com/svn/images/gps segment.PNG
 
 
 
