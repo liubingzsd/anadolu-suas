@@ -12,7 +12,7 @@ PID kontrolör bu hatayı sıfıra indirmek için işlemler yapar.
 
 
 
-
+https://anadolu-suas.googlecode.com/svn/images/ddd.PNG
 
 
 
@@ -62,7 +62,7 @@ PID kontrolor yapımı:
 
 
 
-
+https://anadolu-suas.googlecode.com/svn/images/fufu.PNG
 
 
 
