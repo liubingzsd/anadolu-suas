@@ -13,7 +13,6 @@ PID kontrolör bu hatayı sıfıra indirmek için işlemler yapar.
 
 
 
-https://anadolu-suas.googlecode.com/svn/images/gps segment.PNG
 
 
 
@@ -137,7 +136,7 @@ Kalman filteleme yöntemini gps sistemindeki hataları düzeltmede kullanıcaz g
 
 
 
-
+https://anadolu-suas.googlecode.com/svn/images/gpssegment.PNG
 
 
 
