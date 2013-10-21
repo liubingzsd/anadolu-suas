@@ -7,9 +7,9 @@ Omnidirectional yani her yönde yayın yapan antenler ve directional yani belirl
 
 Yagi-antenleri:
 
-http://anadolu-suas.googlecode.com/svn/images/image20.PNG
+http://anadolu-suas.googlecode.com/svn/images/image20.png
  
-http://anadolu-suas.googlecode.com/svn/images/image21.PNG
+http://anadolu-suas.googlecode.com/svn/images/image21.png
 
     Yagi-antenler uzunlamasına antenlerdendir ve yayınlayıcı olarak uyartılmış elemanlar kullanırlar. Bu anten biçimi kısa dalgadan UHF bandının üstüne kadar olan frekans bandındaki radyo dalgaları için özel olarak tasarlanmıştır. (Adı, mucidi Japon bilim insanı Prof. Yagi' den gelmektedir.) Bu antenler aynı zamanda radarlarda da kullanılırlar.
 Yagi-antenler karşılıklı bağlaşımla (mutual coupling) bir ortak güçlü, yönlü yayın çizgesi yaratan aktif ve pasif (parazitik) eleman gruplarından meydana gelir. Bu antenler sıkça bir beslenen elemandan (genellikle bir dipol) ve bir miktar ışıma ile beslenmiş parazitik elemanlardan meydana gelir.
@@ -28,7 +28,7 @@ Anten elemanlarının alanı bazen Dalga Kılavuzu Sistemi olarakta nitelenir. B
 
 Omni anten:
 
-http://anadolu-suas.googlecode.com/svn/images/image22.PNG
+http://anadolu-suas.googlecode.com/svn/images/image22.png
 
     Wireless antenler hakkında bilmemiz gereken ilk konu anten kazancı ne kadar yüksekse (anten ne kadar güçlüyse) erişebildiğimiz alan o kadar uzayacaktır. 
 
@@ -37,16 +37,14 @@ Yagi anten bir tur yonlu antendir birbirine parelel iletken maddelerden yapilmis
 
 Grid anten: 
 
-http://anadolu-suas.googlecode.com/svn/images/image23.PNG
+http://anadolu-suas.googlecode.com/svn/images/image23.png
 
     Mesafesi çok uzun fakat ardupilotla nasıl bağdaştırırız emin değilim. Ama anten tracker yapmak istersek yagi anten kullanmazsak bu anteni kullanabilriz. Yaklaşık 35 km menzile sahip. 
 
 Diversity anten:
 
 
-http://anadolu-suas.googlecode.com/svn/images/image24.PNG
+http://anadolu-suas.googlecode.com/svn/images/image24.png
 
     Bir access point'in ayni alana bakan birden cok antene sahip olmasi durumudur. tekrarlayayim, bu antenler ayni alani cover etmek uzere yaratilmistir. bir client'i hangisinden daha cok "cekiyorsa oradan alir paketleri, hatta default olarak aldigi antenden de gonderir. bir cok alette, antenlerden birini sokup, uygun konfigurasyon secenegi ile tek bir anten kullanilmasini, ya da receive icin bir antenin transmit icin diger antenin kullanilmasini saglayabilirsiniz.
-
-
 
