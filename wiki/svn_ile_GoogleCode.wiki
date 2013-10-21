@@ -9,7 +9,7 @@ Bizim projemizin google code detayları :
 *Projemiz Kodlarında Nasıl Değişiklik Yapacağız*
 •	Öncelikle google hesabımız ile giriş yapacağız.Gmailinizi açmanız veya chrome kullanıyosunuz kullanıcınızıaçmanız yeterli
 •	Google project’ten projemizi artatıp buluyoruz.
-http://anadolu-suas-boran.googlecode.com/svn/images/googlecode1.png
+http://anadolu-suas.googlecode.com/svn/images/googlecode1.png
 
 •	Daha sonra projemiz üstüne tıklıyoruz ve projemizin sayfasıyla karşılaşıyoruz.
 Burada people kısmında ekibimizde yer alan kişiler gözükmekte. Eğer isminiz gözükmüyorsa kmmakinaci@gmail.com’a mail atın.
