@@ -1,4 +1,4 @@
-#summary Wiki Page oluşturma, Resim ve Video Ekleme
+#summary Wiki Page oluşturma, RESİM EKLEME, ve Video Ekleme
 
 =Wiki’de GoogleCode Üzerinden Sayfa Nasıl Oluşturulur?=
 
