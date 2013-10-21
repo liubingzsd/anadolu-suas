@@ -1,0 +1,265 @@
+PID KONTROL NEDİR ?
+
+Bilmemiz gereken bazı temel kavramlar 
+
+Ayar noktası (set point) :sistemin bizim tarafımızdan belirlenen,istenen noktası.
+
+İşlem değişkeni( process variable):sistemin o anki bulunduğu nokta.
+
+Hata; ayar noktası ile işlem değişkeni arasındaki farkta bize hatayı verir.
+
+PID kontrolör bu hatayı sıfıra indirmek için işlemler yapar.
+
+
+
+
+
+
+
+
+
+
+
+
+Selting time: hata değerinin son halini almasına kadar geçen süre
+
+overshot:hatanın maksimum olduğu kısımı gösterir.
+
+PID kontrol geri beslemeli bir kontrol döngüsüdür.Günümüzde neredeyse her endüstriyel otomasyonda kullanılmaktadır.
+
+Sistemi sürekli kontrol ederek anında sisteme müdahale edebilir ve istenen değere ulaşılmasını sağlar.
+
+PID ( proportional ,integration,derivation kelimelerinin baş harflerini alarak bu ismi almıştır.
+
+PID algoritması bu üç sabit parametreye göre işlem yapar.
+
+Proportional (oransal ); mevcut hatayı
+
+Integration:Süreç içerisindeki hataların toplamını
+
+derivation:Gelecekteki hatalrın tahminini oluşturur.
+
+
+
+
+
+
+
+
+
+
+PID kontrolor yapımı: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yukarıdaki şekil PID kontrol devresini göstermektedir.
+
+PID kontrol devresinde yapılan işlemler:
+
+ayar noktası yani istediğimiz durumu şeklin üst kısmındaki bufferdan sisteme veriyoruz.
+
+İşlem değişkenini sistemimizden alttaki buffera girmesini sağlıyoruz.
+
+Üzerinde error yazan op amp bize ayar noktası ile işlem değişkeni arasındaki farkı veriyor.
+
+Bu değerler propotional ve integration op amp ta değerlendirilerek sonuçlar elde ediliyor.
+Bu değerlere derivation op amptan gelen değerlede eklenip çıktı(output elde edilir.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+KALMAN FİLTRELEME:
+
+Sistem modelinin önceki bilgilerle birlikte giriş ve çıkış bilgilerinden sistemin durumlarını tahmin edebilen filtrelerdir.
+
+Sistem tahmini ,gözlem ile karşılaştırılır ,bunların arasındaki fark kalman kazancı olarak değerlendirilir.
+
+Kalman filtresi doğrusal sistemlerde düzgün olarak çalışır fakat gerçek uygulamalarda genellikle doğrusal olmayan sistemlerle karşılaşırız.Bunun için sistemler doğrusallaştırılır ve böylece kalman filtesi genişletilmiş kalman filtesi adını alır.
+
+KALMAN FİLTRESİ bir filte olarak geçsede aslında tahmin edicicidir.
+ 
+
+kalmna filtesi matematiksel bir yapıdır bu yüzden matematisel ifadelere fazla yer vermeden konuyu basitçe anlaşılmasını sağlamak yüzeysel geçiyorum.
+
+Kalman filtresi oluşturan üç temel bileşen durum vektörleri ,dinamik model ve gözlenen (observation ) model
+
+bunlara göre işlemlerimizi yapıyoruz.
+
+KALMAN FİLTRE algoritması 
+
+İLK adım kalman filtrede tahmin(prediction) kısmıdır.
+ 
+burada işlemler dinamik modele göre yapılır.
+
+İkinci adım ise düzeltme(correction ) kısmını oluşturur.
+Buradaki işlemler ise gözlenen (observation) modele göre yapılır.
+
+Kalman filteleme yöntemini gps sistemindeki hataları düzeltmede kullanıcaz gibi gözüküyor .Genellikle konu anlatımındaki örnekler gps sistemi ile ilişkilendirilip anlatılmış.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GPS( küresel konumlama sistemi)
+
+gps dünyanın neresinde olursanız olun sizin yerinizi uydularla haberleşerek tespit edilmesini sağlayan bir sistemdir.Bu uydular ABD tarafından uzaya yerleştirilmiştir.Bu uydular istenildiği takdirde ABD tarafından kullanım dışı bırakılabilecek şekilde tasarlanmıştır.Avrupa ve Rusya'nın kendi uydularıda pozisyon belirleme için gönderildi.Galileo(AVRUPA) ve Glonasas(rusya) bu uydularla daha iyi konum belirleme yapıldığı ifade edilmekte .GPS modülü araştırırken galileo ile uyumu kontrol edilebilir.Bu üç sistemdede işler aynı şekilde yürümektedir.
+
+
+
+
+GPS sistemi ile konum belirlenirken 3 uydu bizim 2 boyutta yerimizi tespit etmemize ,4 ve daha üzeri uydu ile bağlantı ise bizim 3 boyutta yerimizi tespit etmemizi sağlar.Biz gps sistemini havacılık alanında kullanıcağımız için bizim en az 4 uydu ile bağlantı kurmamız gerekmektedir.
+
+GPS sistemi üç bileşenden oluşmaktadır.Bunlar uydular ,yer yüzündeki kontrol istasyonları,ve tabiki kullanıcılardır.
+
+
+
+GPS sistemi nasıl konum tespiti yapar:
+
+Uyduların kesin konumu: GPS alıcısı  ilk açıldığında  uyduların yörünge bilgileri alınır.Bu biraz vakit alabilen bir işlem olabilir.Alınan yörünge bilgileri kaydedilir ve tekrar tekrar kullanılabilir.
+
+Her uyduya olan mesafe:
+gps alıcısan olan uzaklıklar basit bir şekilde hesaplanır.Alıcı sinyalin hızını geçen süreyle çarparak mesafeyi hesaplar.
+
+Üç uydu ile yaklaşık konumu 4 uydu ilede kesin konum belirlenir.Bilgiler enlem boylam olarak sisteme aktarılır.
+Hataya Sebep olan durumlar:
+Uydu saati ve alıcı saatindeki hatalar
+
+Yörünge hataları 
+GPS alıcsının etrafındaki sinyali zayıflatan yada geçmesini engelleyen cisimler 
+Atmosgerdeki durumlar yerçekimi ve solar basınç sinyalin zayıflamasına sebep olabilir.
+
+Bu hataların giderilmesinde daha önceden konumu kesin olarak belirlenen yerlerle haberleşilerek düzeltme apılabilmektedir.Bu sistem dgps olarak isimlendirilmektedir.
+
+WAYPOİNT 
+ 
+waypointler kullanıcı tarafından belirlenen konumlardır ,bunlar kaydedilerek belirli bir rotada hareket etme sağlanır.Bu işelm uzaktan radio kotrolü ilede yapılabilir.
+
+GPS otomatik bu isimleri verdiği gibi bizde kendi ismlerimizi verebiliriz.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARDUİNO İLE BASİT GPS ALICISI:
+
+GPS den aldığımız verileri LCD ekrana yazdırma.
+
+
+
+
+
+
+
+#include <TinyGPS.h>       GPS KÜTÜPHANELERİMİZ
+#include <LiquidCrystal.h> LCD EKRAN 
+LiquidCrystal lcd( 8, 9, 4, 5, 6, 7 ); LCD EKRANIN AYARLARI 
+// GPS İÇİN DEĞİŞKEN TANIMI
+TinyGPS gps;
+void getgps(TinyGPS &gps);
+void setup()
+{
+  Serial.begin(4800);
+  lcd.begin(16, 2);
+}
+void getgps(TinyGPS &gps)
+ 
+{
+  float latitude, longitude;
+  
+  gps.f_get_position(&latitude, &longitude); enlem ve boylam bilgileri alındı
+  lcd.setCursor(0,0); // lcd ilk satır  enlem değeri yazdırılacak.
+  lcd.print("Lat:");
+  lcd.print(latitude,5); VİRGÜLDEN SONRA 5 KARAKTER DAHA GÖSTERİLEBİLİR
+  lcd.print(" ");
+  lcd.setCursor(0,1); lcd 2. satıra boylam degerleri yazılacak
+  lcd.print("Long:");
+  lcd.print(longitude,5);VİRGÜLDEN SONRA 5 KARAKTER DAHA GÖSTERİLEBİLİR
+  lcd.print(" ");
+  delay(3000); // 
+  lcd.clear();
+}
+void loop()
+{
+  byte a;
+  if ( Serial.available() > 0 ) // seri iletişimden bilgi geldiğinde
+  {
+    a = Serial.read(); // dataları a değişkenine atıyor
+    if(gps.encode(a)) // gps verisi ise
+    {
+      getgps(gps); // datayı alıp lcd ye yollanmasını sağlıyor.
+    }
+  }
+}
