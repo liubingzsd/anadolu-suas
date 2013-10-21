@@ -1,0 +1,120 @@
+I.	Hava Aracı
+ a.	Uçağın Gövdesi
+ b.	Hava Elektroniği
+  i.	Kontrol Kartı
+  ii.	Sensörler
+   1.	Rakım
+   2.	GPS
+   3.	Diğer Sensörler
+  iii.	Haberleşme
+   1.	Telemetri ve Veri Bağı
+   2.	Güvenlik Zinciri
+  iv.	Otopilot
+  v.	OMAP
+  vi.	Other Hardware
+ c.	Uçuşla İlgili Yazılımlar
+  i.	Sabit Pervaneler
+  ii.	Pervaneli Hava Araçları
+II.	Yer Kontrol İstasyonu
+ a.	Yer Bilgisayarı
+ b.	Yer Yazılımı
+ c.	Yer Veri Bağı
+ d.	Yer Güvenlik Zinciri
+III.	Sistem Mimarisi
+IV.	Yük
+
+I.	Hava Aracı
+	Paparazzi aslında sabit kanatlı uçaklar için tasarlanmıştı ama zaman geçtikçe pervaneli uçakları da kapsadı ve hibrid uçaklar için çalışmalar devam ediyor. Esasen her gövde çeşidi için gerekli donanımlar aynıdır; yazılım, aynı elementlerin çoğunu birbirleriyle değiştirilir bazı kısımlar ile kullanır.
+	a.	Uçağın Gövdesi
+	Paparazzi hava sistemi, çok yapılandırılabilirdir ve otonom olarak hemen hemen her gövdeyi çalıştırmak için kullanılabilir. Şu anki gövde aralığı; 20cm'den 4.3m'ye, 100gr'den 25kg'ye kadar kullanılır.
+	Paparazi varsayılan yazılım paketi, geleneksel sabit kanatlı ve multikopter gövdelerini destekler. Yazılımı özelleştirme, bir çok gövde yapılandırma kontrollerinin esnek sistem kabiliyetindeki donanım sonuçlarının çeşitliliğini destekler. Ayrıca, hibrid uçak gelişimi, bazı ilave girişimlerle yapım halinde.
+
+	Paparazzi İHA'daki önemli birleşenler:
+•	Ana Otopilot Kartı (Autopilot Control Board)
+•	Sensörler (Rakım- IR Sensor Board -, GPS, Basınç ve diğerleri)
+•	Veri Bağları Radyo Modemi (Datalink Radio-Modem & Antenna )
+•	RC Alıcı (RC Receiver & Antenna)
+•	İtki Sistemi (Propulsion System (electric motor(s)/speed control(s) or IC engine(s)))
+•	Servolar (Servos)
+•	Yük(Payload)
+•	Bateri(Battery)
+
+
+	b.	Hava Elektroniği
+		i.	Kontrol Kartı (Control Board)
+	Yıllar içinde, çok sayıda otopilot ana kartları tasarlanmıştır ve Paparazzi sisteminin bir parçası olarak kullanımı için test edilmiştir. Son olarak, STMicroelectronics STM32Fxxx mikroişlemcisi serisi tanıtıldı. Bu kart bir ya da iki tane mikrodenetleyici  ve servoları, motor kontrollerini, sensörleri, RC alıcıları, radyo modemleri ve çeşitleri yükleri kontrol etmel için gerekli konnektörlere sahiptir.
+	Her kontrol kartı belirli bir kaç uygulamaya erişmek için tasarlanmıştır. Çoğu kartlar aktif şekilde kullanılır. Yazılım kısmı çeşitli donanımların hepsini desteklemek için üretilmiştir.  Bazı kartlar daha sıkı entegre olması için dahili sensörlere sahiptir. 
+	Linux esaslı single kart bilgisayarları (Gumstix prduct line) tamamlanmış haldedir. Bu araçlar çok gelişmiş hava araç kontrol şemasları veya yükler için gerekli işlem gücü sağlarlar.
+		ii.	Sensörler
+	Paparazzi otopilot neredeyse tüm sensörlerle arayüzlenebilir. Çoğu varsayılan ayarlarla desteklenebilir. Paparazi projelerinde kullandığımız projeler boyutu, monteleme yöntemi ve çalışma pirensiplerine göre farklılık gösterir.  Sensörler  ısı, ışık ultrason, manyetik alan çekim alanı basınç vb etkenlere bağlıdır. Hemen hemen her sensör kartımıza kabul edilebilir ama bunların içinde IMU ve IR sensörleri olmazsa olmazdır. Bunların dışındaki sensörler yönlendirme kalitesini arttırma v uçağın gelişmiş yeteneklerini arttırmak için kullanılır.
+			1.	Kızılötesi Sensörleri (Paparazzi otopilot birincil yükseklik algılaması)
+	Sabit kanatlı uçaklarda 6 dik kızılötesi sıcaklık sensöri kullanılır. IR sistemler titreme, ani rüzgar değişikliği, irtifa kaybı nedenlerdeki karışıklığa muaf bir şekilde güvenilir sonuç almamızı sağlar. Yakın zamanlarda tam eylemsizlik ölçüm çözümleri sabit kanatlı hava araçlarına entegre edilmiştir. Paparazzi ayrıca rotorlu uçaklarda sıradan eylemsizliksistemini kullanıyor. Ucuz analog accelerometer ve gyroscope, küçük paparazzi hedefli IMU'lar ve ticari şekilde uygun AHRS çözümlerini içeren geniş eylemsizlik sistem yelpazesi için yazılım kodları mevcuttur. Otopilot kartları harici IMU kullanırken, bazıları karta entegre edilmiş IMU'lara sahiptir. Tüm otopilot anakartları eylemsizlik ve IR rakım algılama çözümlerinin iki türünü de destekler.
+ 
+	Kızılötesi spektrum, 0.75µm'den 100µm'ye dalga boyunda, kırmızışı ışık ile mikrodalga aralığında gap spanlar.
+ 
+	Paparazzi otopilot, birincil rakım algısı için kızılötesi termopillerini kullanır. Uçağın kanadının bir tarafa yatma açısı sıfır olduğunda (zero bank-pitch angle) iki sensör arasındaki sıcaklık farkı sıfır olmalı, ve yatma açısı 90 olduğunda bu fark maksimum olmalıdır. Bu ilişkiye göre doğrusal eğim (regresyon) yapılabilir ve bunun açısı hesaplanabilir.
+  
+  
+
+			2.	GPS
+	Genellikle b-blox'dan alınan standart GPS alıcıları kullanılır. Bu markanın yüksek performansı çok etkili ikili protokollerinden dolayı, GPS alıcısı olarak bu marka kullanılır. 
+  
+	Standart u-blox GPS alıcı modülü; konum, rota, hız ve irtifa ölçmek için kullanılıyor. Bu GPS ünitesi(anten ve alıcı) bir kart üzerinde bulunabilir ya da bağımsızda bulunabilir.Ayrıca GPS çoğaltmaya destek sağlayan aletler de kullanılıyor(Wide Area Augmentation System WAAS, European Geostationary Navigation Overlay Service EGNOS).
+ 		 
+	GPS, İHA lokalizasyonu için çok önemlidir. AHRS durum değerlendirmesine ek olarak (özellikle sabit kanatlı uçaklarda) otonom uçuşlarda geçiş noktalarının navigasyonu sağlayan uçuş kontrol safhalarında kullanılır.
+ 	 
+			3.	Diğer Sensörler
+	Diğer sensör grubu da İHA kartında yararlı olabilir. Bunlar uçuş kontrolünün bir parçası da olabilir, sadece bazı değerleri ölçmek için de kullanılabilirler. Günümüzde kullanılan sensör çeşitleri aşağıdaki maddeleri içerebilir:
+•	diferansiyel basıncı (airspeed)
+•	barometre basıncı (rakım)
+•	sonar (rakım)
+•	akım (enerji tüketimi)
+•	sıcaklık ve nem (meterolojik ölçümler)
+
+		iii.	Haberleşme
+	Hava kökenli donanımlar ayrıca "Radyo Modem(Veri Bağı)" & "RC Alıcı(Güvenlik Zinciri)" gibi haberleşme cihazları içerir.
+			1.	Telemetri ve Veri Bağı
+	Bir seri bağlantı sağlayan herhangi bir kablosuz cihaz, telemetri ve telekontrol (Datalink) için kullanılabilir. Geçmişte, telemetri tabanlı ses kanallılar bile kullanılmıştır. Çift yönlü iletişim genellikle tavsiye edilir ama çok özel uygulamalarda gerekli değildir. En yaygın veri bağlantı cihazı, radyo modem XBee dizisidir. Diğer sistemler uzun aralıkl güçlü radyolara sahiptir. 
+	Bağın telemetri partı (uçaktan grounda) operatör ve monitör görev süsince bir operatöre yardım için İHA hakkında durum bilgisi elde etmek için kullanılır(ayrıca bazı yük bilgisi). Bağın  datalink veya telekontrol partı, uçağa komut göndermek ve yük ile etkileşimde bulunmak için kullanılırı(uçaktan grounda). 
+			2.	Güvenlik Zinciri
+	Geleneksel radyo kontrol verici ve alıcı çifti, İHA için manuel kontrol seçeneği sağlamak için kullanılır. Hava kökenli donanım ve yazılımlar, standart bir radyo kontrol alıcısına bağlantıyı destekler. OtopilotR/C alıcı kartından outputları okur ve kontrol modunun neye ihtiyacı olduğuna karar verir. Manual moddayken, grounddaki güvenlik pilotu uçağı kontrol etmek için R/C vericiyi kullanır. Rotorlu uçaklarda, bilgisayar kontrolünün bazı seviyeleri sabit uçuş üretmek için gereklidir. Paparazzi manual bypass veya "Fly-by-Wire" sistemleri, otopilotun her zaman R / C alıcı ve aktüatörler arasındaki sıralı kalmasına rağmen uzun yıllar boyunca akort edildi ve kontrole baskın gelmeyi sağlamak için güvenli bir methot sağlar.
+	Bu bağ gerçek otonom uçuşları için gerekli olmamasına rağmen yeni bir hava aracının akort edilme süresince yardımcı olabilir ve genellikle önemli bir güvenlik kontrol fazlalığı olarak düşünülür. 
+	Paparazzi neredeyse tüm R/C sistemleri destekler.
+iv.	Otopilot
+ 
+	Paparazzi en büyük avantajlarından biri, birden fazla donanım tasarımları desteğidir. Mevcut autopilotlarında iki ana işlemci etrafında tasarlanmıştır:
+•	STM32 mikroişlemci serisi
+•	LPC21xx mikroişlemci serisi
+	Her iki mimariyi kullanan aktif ve güncel otopilot tasarımları vardır. Tüm otopilotlar aynı yeteneklere, çevre birimlerine ya da özelliklere sahip değildir ama her birinin farklı uygulamalarda avantajları vardır. 
+	Şu anda, kartlar STM32F1 serisi etrafında tasarlanmış, ancak F2 ve F4 üst serisine(çevre birimleri ve çeşitli hızlar sunan bir zengin işlemci özelliği) yükseltme özellikleri vardır. Mimari bağımlı firmware kodu, libopencm3 tarafından kısmen desteklenmektedir. 
+	Kart tabanlı LPC21xx, LPC2148'e sahiptir. Tiny serileri, Booz, TWOG, YAPA, Umarim and NavGo otopilotlarının hepsi LPC2148'i kullanır. 
+	Bazı otopilotlar, küçük tek kartlı bilgisayarlar ile sıkı entegrasyon için tasarlanmıştır, bunlar kısmen Gumstix Overo serileri gibi OMAP işlemcilerine bağlıdır. Diğer otopilor kolayca arayüzlenebilmesine rağmen Lisa/L ve Classix kartları bu düşünceyle tasarlanmıştır.
+v.		OMAP
+	Texas Instruments OMAP işlemcileri, hem yüksek hem de düşük seviyeli donanım arayüzleri ile tam Linux işletim sistemine erişim sağlamak için popüler, düşük maliyetli ve güçlü tek kartlı bilgisayarlar ve COM'ları bir dizi (computer-on-modules) entegre edilmiştir(USB 2.0, ethernet, serial, SPI,I2C gibi).
+	En popüler ve erişilbilir platformların bazıları Gumstix Overo serisi ve BeagleBoard serisi içerir. Sınırlı belgeler ve çok sayıda uygulamalardan dolayı bazı denemeler gerekmesine rağmen çok sayıda başarılı entegrasyonlarınların olduğu kaydedilmiştir.
+Otopilot Entegrasyonu: OMAP kartları, Paparazzi otopilotuna iki farklı yolla bağlanılır:
+•	daughterboard gibi Gumstix kartları kullanarak(Lisa/L veya Classix gibi),
+•	bir tür kabloyladıştan OMAP kartına bağlanarak
+Birkaç uygun arayüz yöntemi vardır:
+•	SPI bağlantısı(Lisa/L'de kullanıldığı gibi)
+•	Seri bağlantı
+•	USB bağlantısı
+vi.	Other Hardware
+	
+II.	Yer Kontrol İstasyonu(GCS)
+	Yer kontrol istasyonu, bir operatörün İHA ile etkileşiminin yapıldığı yerdir. Genellikle İHA etkinliği hakkında geri bildirim sağlayan komuta ve uçağın kontrolünü sağlayan ve sistem için geçersiz kılma kontrol yöntemi sağlayan birkaç bölümden oluşur.
+	a.	Yer Bilgisayarı
+	Yazılım paketi Debian GNU / Linux işletim sistemine dayalı bir i386 mimarisi üzerinde çalıştırılmak üzere geliştirilmiştir. Günümüzde Ubuntu, gayet popülerdir ve Paparazzi için desteklenen bir seçenektir(Mac OS x'te de desteklenir). Bir bilgisayarın seçenekleri uygulamalar göre çeşitlilik gösterecektir amauçuş alanına iyi bir bateriyle gitmek için küçük bir notebook easy özgündür.
+	b.	Yer Yazılımı
+	Havada dahili ana otopilot kartının yapılandıran yazılım kadar önemli olan başka şey de GCS üzerindeki, İHA'nın kontrolünü, izlenmesini, konfigrasyon için insan ara yüzü sağlayan yazılımlardır. Paparazzi yazılım paketi, solid core functionality, kolay uyarlama ve esnek genişleyebilirlik ile özelliklere sahiptir. Multi İHA'lar da olmak üzere tüm hava araçlarını destekler.
+	c.	Yer Veri Bağı
+	Paparazzi, yerden İHA uçuşlarını denetlemek için çeşitli imkanlar veriyor. Varsayılan olarak, telemetri(downlink) ve telekontrolün(uplink) ikisini birden destekleyen çift yönlü kablolu bir modem kullanır. Bu veri bağlantısı sayesinde, uçuş paramatreleri gerçek zamanlı mevcuttur ,ve navigasyonun tam kontrolü ve bir veya bir kaç uçağın ayarlanması yer istasyonundan mümkündür.
+	Bağın ground kısmı, XBee gibi USB veya serial port üzerinden yer istasyon bilgisayarına bağlanılan eşleştirme radyo modeminden oluşur.
+	d.	Yer Güvenlik Zinciri
+	Güvenlik zincirinin ground kısmı bir radyo kontrol vericinden oluşur(ve güvenlik pilotu). Bu uçağın manual kontrolünü sağlamak için kullanılır.
+III.	Sistem Mimarisi
+
+ 
+
+IV.	Yük
+	Paparazzi, çok çeşitli yüklerle arayüzlenmek için tasarlanmıştır. Hava kökenli kartlar, otonom için bir kaç servolar ve/veya manual Pan/Tilt kamera sistemleri veya diğer mekanik yükleri, ,SPI, I2C, konrol edebilir ve GPIO bağlantıları dijital cihazlara bağlanmak için uygundur ,ve analog inputlar, hemen hemen her düşünelebilir sensörle arayüzlemek için uygundur. İlgili yazılım, bu açık kaynak kodunun içine kolayca entegre edilebilir. Bazı kartlar son derece gelişmiş yük yazılım uygulamaları ıçin Gumstix Bilgisayarına bağlanabilir. 
