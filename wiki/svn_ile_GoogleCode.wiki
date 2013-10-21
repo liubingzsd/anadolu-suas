@@ -14,27 +14,27 @@ http://anadolu-suas-boran.googlecode.com/svn/images/googlecode1.png
 •	Daha sonra projemiz üstüne tıklıyoruz ve projemizin sayfasıyla karşılaşıyoruz.
 Burada people kısmında ekibimizde yer alan kişiler gözükmekte. Eğer isminiz gözükmüyorsa kmmakinaci@gmail.com’a mail atın.
 
-http://anadolu-suas-boran.googlecode.com/svn/images/googlecode2.png
+http://anadolu-suas.googlecode.com/svn/images/googlecode2.png
 
 •	Şimdi ben deneme amaçlı bizim görevler klasörümüzü google code’a gönderip çekeceğim.Öncelikle gönderme işlemini yapalım. Import edeceğiniz dosyanın üzerine gelerek sağ tıklayın.Daha Sonra TortoiseSVN-> import seçeneğini tıklayın.
 
-http://anadolu-suas-boran.googlecode.com/svn/images/googlecode3.png
+http://anadolu-suas.googlecode.com/svn/images/googlecode3.png
 
  •	Karşınıza bu ekran gelecek ve buradayazılı olan bu linki aynen yazınız. İlerleyen aşamalarda trunk/’tan sonra herkes çalışacağı klasör isimlendirmesini seçecek. /trunk/ yolu bize proje içinde klasörler oluştumamıza yarıyor böylece kendimizle ilgili yerleri çekebiliyoruz. Buradaki bir önemli nokta da URL 0f repository mutlaka https:// olmalı bunun yerine http:// kullanılırsa hata alınacaktır.Import mesajımızı girdikten sonra OK seçeneğine tıklıyoruz.
 
-http://anadolu-suas-boran.googlecode.com/svn/images/googlecode4.png
+http://anadolu-suas.googlecode.com/svn/images/googlecode4.png
 
 •	Karşımıza yetki alnaı çıkıyor. Buraya kendi gmail (google) kullanıcı adımızı giriyoruz. Burada şifre konusunda tam emin değilim herkese bir googlecode şifresimi yoksa her projeye bir şifremi veriliyo bilemiyorum ancak benim giriş yaptığım şifre: eH3VM8yF7YE9 eğer bu şifre başarılı olmazsa http://code.google.com/hosting/settings den bir şifre karşınıza çıkacak onunla deneyin. Ancak düşüncem benim verdiğim sifre geçerli olacaktrır.Başarılı girişten sonra dosyanız projeye eklenmiş olacaktır ve aşağıdaki ekran belirecektir.
 
-http://anadolu-suas-boran.googlecode.com/svn/images/googlecode5.png
+http://anadolu-suas.googlecode.com/svn/images/googlecode5.png
 
 •	Şimdi de projeden kaynak çekelim. Bunu masaüstünüzde oluşturduğunuz boş bir klasöre yada ileride proje için kullancapınız klasöre sağ tıklayıp SVN CheckOut seçeneğini seçin. Proje google üzerinde açık kaynak kodlu olduğundan kaynak çekerken hiçbir şifre sorulmayacaktır. Checout dedikten sonra karşımıza aşağıdakine benzer bir ekran gelecektir.
 
-http://anadolu-suas-boran.googlecode.com/svn/images/googlecode7.png
+http://anadolu-suas.googlecode.com/svn/images/googlecode7.png
 
 •	OK seçeneğine tıkladıktan sonra karşınıza başarılı olduğunuzu belirten çekilen kaynakları gösteren bir ekran çıkar. Eğer bu ekran hatalıysa doğru yaptığınızdan emin olun.
 
-http://anadolu-suas-boran.googlecode.com/svn/images/googlecode8.png
+http://anadolu-suas.googlecode.com/svn/images/googlecode8.png
 
 •	Artık google code üzerinde çalışabiliyoruz. Bunda delete, add, commit işlemleri TortoiseSVN kullanımıyla ilgili. Eğer svn kullanımıyla ilgili hala sıkıntı çekiyorsanız projenin şu anki haline bir pdf yolluyorum oradan çekerek okumanızı öneririm.Bu pdf projede yer kaplamamsı amcıyla herkes başarılı bir giriş yapınca silinecektir.
 
