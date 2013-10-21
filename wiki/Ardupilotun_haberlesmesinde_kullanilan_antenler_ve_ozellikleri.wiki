@@ -1,0 +1,52 @@
+    Ardupilot kontrol kartı için kullanılan haberleşme sistemlerinin menzilini artırmak ve parazitlenmeyi önlemek için antenleri değiştirilmektedir. Anten kullanmadan hava aracımızın gidebildiği mesafe yaklaşık 5km iken (bu mesafe kullanacığınız bütün parçalara ve dizaynınıza göre değişir) anten kullanarak 8-10 km ye kadar çıkabiliyoruz. Ayrıca aldığımız verilerdeki kayıpları minimuma indiriyoruz. 
+    Öncelikle omnidirectional ve directional anten nedir bunu baçıklayalım. 
+Omnidirectional yani her yönde yayın yapan antenler ve directional yani belirli bir yönde belirli bir açı altında yayın yapan antenlerdir. Bu antenlerden yönlü olanının (directional) kazancı diğer antenlere göre çok daha yüksektir.Örnek modemin üzerindeki anten omni directional yapıda bir antendir. Dolayısı ile directional tipte bir anten kullanmak mesafeyi oldukça uzatacaktır. Bu durum göz önüne alarak, takacağınız antenin tipine göre antenin yayın yapacağı alan değişecektir. Omni anten ile her yönden yayın alıriken Directional yapıda bir anten ile sadece belirli bir yöne yayın yapabilir ve alabilir iken mesafeniz oldukça uzun olacaktır. 
+    Genelde kullanılan antenleri şöyle söyleyebiliriz. Yagi anten, omni anten, diversty anten, grid anten, 
+
+ Tabi daha bir çok anten çeşidi var fakat ardupilotla ilgili olarak en çok kullanılan Yagi anten gözüme çarptı. Bunları sırasıyla tanıtmaya çalışalım. 
+
+Yagi-antenleri:
+
+http://anadolu-suas.googlecode.com/svn/images/image20.PNG
+ 
+http://anadolu-suas.googlecode.com/svn/images/image21.PNG
+
+    Yagi-antenler uzunlamasına antenlerdendir ve yayınlayıcı olarak uyartılmış elemanlar kullanırlar. Bu anten biçimi kısa dalgadan UHF bandının üstüne kadar olan frekans bandındaki radyo dalgaları için özel olarak tasarlanmıştır. (Adı, mucidi Japon bilim insanı Prof. Yagi' den gelmektedir.) Bu antenler aynı zamanda radarlarda da kullanılırlar.
+Yagi-antenler karşılıklı bağlaşımla (mutual coupling) bir ortak güçlü, yönlü yayın çizgesi yaratan aktif ve pasif (parazitik) eleman gruplarından meydana gelir. Bu antenler sıkça bir beslenen elemandan (genellikle bir dipol) ve bir miktar ışıma ile beslenmiş parazitik elemanlardan meydana gelir.
+    Grafikte görülen Yagi-anten aktif eleman olarak bir yayınlayıcı (radiator/dipol) ve pasif eleman olarak bir yansıtıcı (reflector) ve eşit olmayan aralıklarla yerleştirilmiş üç adet yönlendiriciye (director) sahiptir. Anten kazancı pasif elemanların sayısı artıkça yükselir. Aynı zamanda frekans bant genişliği küçülür ve anten ışıma çizgesi daha keskin hale gelir.
+
+
+Yagi antenin çalışma prensibi:
+
+
+    En küçük bir Yagi-anteni üç elemandan oluşur. Elemanların uzunluğu yarı dalga boyuna bağlı olarak değişir; yansıtıcı yarı dalga boyunun % 15 inden biraz daha uzundur. Yönlendiriciler ise yayınlayıcıdan (dipolden) uzaklaştıkça yarı dalga boyunun % 5 i kadar miktarlarda kademeli kısalırlar. Yayınlayıcı enerjisinin bir bölümünü yönlendiricilere terk eder ve bu enerjiyi kapan yönlendiriciler salınmaya (oscillation) başlarlar. Bu bakımdan bir yayınlayıcı gibi çalışmaya başlayan yönlendiricilere aynı zamanda „parazitik yayınlayıcı” da denilir. Yagi-antenin yönlendiricileri hep birlikte bir sözde dalga kılavuzu sistemi oluşturur ve yayınlayıcı ile birlikte salınmaya başlarlar. Fakat bu salınımın çevrimi (oscillating cycle) sabit değildir ve yayın çizgesi yönünde gittikçe gecikir. İşte bu gecikme sadece yayın süresiyle değil, aynı zamanda yönlendiricilerin uzunlukları ile belirlenen bir faz kaymasına sebep olur. Rezonans uzunluklarından sapma sonucunda yönlendiriciler akımların faz kayma miktarına bağlı olarak kapasitif karakter alırlar. Eğer dipolun uzunluğu yayın yarı dalga boyundan bir miktar daha kısa ise dipol kendi tınlaşım (resonance) frekansının daha altında bir değerde çalışmaya başlar. Bu durumda empedans kapasitif karakterdedir ve akım gerilimden yaklaşık λ/2 öndedir (leading). Eğer dipolun uzunluğu λ/2 den bir miktar daha fazlaysa, indüklenen gerilim ve dolayısıyla elektrik alan kuvveti akımla yer değiştirir ve akım bu durumda yaklaşık λ/2 kadar geride kalır (lagging).
+Yayınlayıcıdan uzağa takılı bir yönlendirici, istenilen anten ışıma yönünde yaklaşık bu gecikme süresi kadar yayınlayıcının (radiator) salınımıyla hemen hemen aynı faz açısıyla binişir. Fakat anten ışıma yönünün ters istikametinde yayınlayıcıdan itibaren olan mesafelerdeki geçiş zamanlarındaki faz farkları birbiriyle toplanır ve bu yöndeki kısmi ışımalar birbirini karşılıklı kısmen iptal ederler. Faz farkına göre eleman aralıklarının bir en uygun ayarlaması yapılsa dahi kayıpların önüne geçilemez ve yönlendiricinin yayınlayıcı ile aynı genlikte salınması mümkün olmaz.
+
+    Sadece bu bir yönlendiriciden gelen anten kazancı 3 dB i bulur, yani istenen anten ışıma yönünde bir 2–elemanlı Yagi-antenle kazanç bir basit dipolunkinin neredeyse iki katıdır! Bir elemanı ister yansıtıcı gibi, ister yönlendirici gibi çalışsın bu elemanlar uzunluklarının belirlediği reaktanslarına özellikle bağımlıdır. Endüktif karakterli yansıtıcı, kapasitif davranış gösteren yönlendiricinin salınımının faz açısını ters yöne kaydırır. Sonuç olarak bireysel salınımlar anten yayın yönünde birbirine eklenir, ters yönde birbirini yok eder.
+Resim.3 ten de anlaşılacağı gibi eleman ilaveleri antenin yönlülüğünü daha da arttırabilecektir. Ve bu nedenle daha uzun Yagi-antenleri yapılmaktadır. Bir beslenmiş dipol veya katlanmış dipol ile yansıtıcı ve yönlendiricilerin birleşiminde bir yönde en çok ve diğer yönde ise en az ışıma meydana gelir. Ancak anten kazancı doğrusal olarak artmaz. Örneğin 3 elemandan oluşan bir temel Yagi-anteninin kazancı yaklaşık 5 ila 6 dB kadardır. Bir adet ilave yönlendiricinin katılmasıyla kazanç 2 dB kadar arttırır. Bundan sonraki ilave her yönlendirici kazancı küçük miktarlarda düşürür.
+Anten elemanlarının alanı bazen Dalga Kılavuzu Sistemi olarakta nitelenir. Bu sistem gönderilen sinyalin fazını geciktirir ve bu faz gecikmesi salınımın yönlendiriciden yönlendiriciye ışık hızından bir miktar daha yavaş yeniden türemesine sebep olur: Bu etki „Faz Hızı” olarak adlandırılır. Bu Faz Hızı antene bağlı olarak ışık hızının yaklaşık % 70 ila % 90 ı kadardır. İlave bir dipol, bir önceki dipolden yarı dalga boyundan biraz daha kısa bir mesafeye monte edilmesi ve daha kısa boyutlandırılmış olması gerekir. Yagi-antenlere bu faz kaydırıcı bağlaşma özelliği nedeniyle Yürüyen Dalga Anteni de denilir.
+
+Omni anten:
+
+http://anadolu-suas.googlecode.com/svn/images/image22.PNG
+
+    Wireless antenler hakkında bilmemiz gereken ilk konu anten kazancı ne kadar yüksekse (anten ne kadar güçlüyse) erişebildiğimiz alan o kadar uzayacaktır. 
+
+    Wifi cıhazlarda bulunan antenler yaklaşık 2dB kazançlara sahip olup,bu kazançlar ile uzun mesafelere gitme olasılıkları çok düşüktür. Bu sebepten ötürü günümüzde Wireless anten ihtiyacı artmaktadır.
+Yagi anten bir tur yonlu antendir birbirine parelel iletken maddelerden yapilmis bir anten cesididir; omni ise cok yonlu ya da yonsuz olarak gecer ve 360 dereceden sinyal alma ozelligi wardir ama yonlu antenler kadar guclu ve uzun mesafelere erisemez.
+
+Grid anten: 
+
+http://anadolu-suas.googlecode.com/svn/images/image23.PNG
+
+    Mesafesi çok uzun fakat ardupilotla nasıl bağdaştırırız emin değilim. Ama anten tracker yapmak istersek yagi anten kullanmazsak bu anteni kullanabilriz. Yaklaşık 35 km menzile sahip. 
+
+Diversity anten:
+
+
+http://anadolu-suas.googlecode.com/svn/images/image24.PNG
+
+    Bir access point'in ayni alana bakan birden cok antene sahip olmasi durumudur. tekrarlayayim, bu antenler ayni alani cover etmek uzere yaratilmistir. bir client'i hangisinden daha cok "cekiyorsa oradan alir paketleri, hatta default olarak aldigi antenden de gonderir. bir cok alette, antenlerden birini sokup, uygun konfigurasyon secenegi ile tek bir anten kullanilmasini, ya da receive icin bir antenin transmit icin diger antenin kullanilmasini saglayabilirsiniz.
+
+
+
