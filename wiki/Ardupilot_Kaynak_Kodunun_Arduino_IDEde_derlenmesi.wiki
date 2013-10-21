@@ -51,4 +51,4 @@ Mission planer ardupilot sistemi için tasarlanmış çeşitli verilerin anlık 
 
 X-CTU telemetri işlemi için kullanılacak xbee sisteminin ID ve çeşitli ayarlamalarının yapıldığı ara yüzdür. Xbee sistemlerinin birbirlerine tanıtılma işlemi ve test işlemleri bu arayüz sayesinde yapılmaktadır.
 
-                                                       *GÖKHAN GÖL*
+                                                       *  GÖKHAN GÖL*
