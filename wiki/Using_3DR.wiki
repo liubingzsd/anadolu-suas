@@ -72,6 +72,7 @@ red LED yanıp sönme – veri aktarımı
 red LED kesintisiz/aralıksız– yazılım güncellemesi modunda
 
 Mission Planer ile Konfigürasyon
+
 https://anadolu-suas.googlecode.com/svn/trunk/Screenshot-3DRradio.png
 
 APM Mission Planer’ın son versiyonu ile basit bir kullanıcı arayüzü kullanarak 3DR radio konfigürasyonu yapabilmektesiniz.
@@ -83,35 +84,132 @@ Aşağıdaki pencere karşınıza gelecek.Burada bulunan ”Load Settings”e t�
 Bu, çoğu kullanıcı için önerilen yapılandırma yöntemidir.
 
 3DR radio konfigürasyonu(ayarlaması) için  FTDI-to-USB kablo kullanımı 
+
+
 Eğer bir önceki paragrafta yazılanla çalışmıyorsa aşağıdaki adımları izleyin.…
+
 Her şeyi bağla,3DR “yer” radiosunu ayarla
+
+
 3DR(air radio) ‘ı FTDI-to-USB kablo ile bilgisayarınızın USB port & note Com port’una bağlayınız 
+
+
 Com port # ‘u tanımlatabilmek için  Windows > Device Manager > Ports 
-Yeşil Led yanıp söndüğünde FTDI kablosu 3DR üzerinde doğru yönlendirilmiş olduğunu söyleyebiliriz.
+
+
+Yeşil Led yanıp söndüğünde FTDI kablosu 3DR üzerinde doğru 
+yönlendirilmiş olduğunu söyleyebiliriz.
+
+
 3DR yer radiosunu bilgisayardki USB portuna yada Com port#’a  bağlayınız (MP’da Flight Data sekmesinde ,sağ üstte, baud rate’i  57600 ayarlayınız  ve “ground radio com port #” u seçiniz )
-Mission Planer’da , radio konfigürasyon penceresinin açılması için Ctrl + A’ya tıklayınız ve açılan pencereden  “Load Settings “ e tıklayınız. 
+
+
+Mission Planer’da , radio konfigürasyon penceresinin açılması için Ctrl + A’ya tıklayınız ve açılan pencereden  “Load Settings “ e tıklayınız.
+
+
 Mission Planner radio konfigürasyon penceresindeki Advanced Options kutucuğunu işaretleyiniz.
-Eğer yukarıda önerilen ayarlarla yüklenen değerler aynı değilse,bunu bu yüzden yapıyoruz ve daha sonra “save “ kaydet butonuna basınız.(If loaded values aren’t the same as above recommended settings, make it so, then click on Save)
+
+
+Eğer yukarıda önerilen ayarlarla yüklenen değerler aynı değilse,bunu bu yüzden yapıyoruz ve daha sonra “save “ kaydet butonuna basınız.
+
 3DR air radio konfigürasyonu 
+
+
 Mission Planer’da sağ üstte , 3DR air radiosunun  com port’unu seçiniz
+
+
 Mission Planer radio konfigürasyon penceresinde,”Load Settings” e tıklatın ( air radio için )
+
+
 Hava radiosu(air radio)ayarlarını düzenleyin ( “Advanced Options”-gelişmiş ayarlar -dahil) bu ayarlar yerdeki radyo ayarları ile birebir aynı olmalıdır.Daha sonra “Save Settings” e tıklayın (air radio için )
+
+
 Biçim alanında (Format Field)herhangi bir değer eklemek mümkün olmayabilir bu normaldir.
+
+
 Mission Planer’da , “Configure” tıklayınız  > 3DR Radio > yer radiosu ile aynı ayarları giriniz (gelişmiş ayarlar dahil ) >” Save Settings”e tıklayınız (ayarlarınız kaydetmek için ).
+
+
 İki radyonunda birbirine bağlanması için bekleyiniz  (Yeşil LED’in kesintisiz yanması)
+
+
 Yukarıdaki adımlar çalışmaz ise aygıt yazılımını güncelleyin
 Sırayla her radio bağlı iken  “Update Firmware” e tıklayınız (yazılım güncellemesi için ).Daha sonra yukarıdaki adımları tekrar ediniz.
-Unutmayın ki!!  fiziksel olarak belirli bir Com port üzerinden bir radyo bağlıyken, “Copy Required items to Remote” butonunu kullanamazsınız. (there is no remote until you go wireless)
+
+
+Unutmayın ki!!  fiziksel olarak belirli bir Com port üzerinden bir radyo bağlıyken, “Copy Required items to Remote” butonunu kullanamazsınız. 
+
+
+
 Kablosuz telemetriyi doğrulamak için 
+
+
 FTDI – USB kablosunu  APM ‘den çıkarınız
+
+
 Hava radyosunu (air radio)  APM ve LIPO’ya bağlayınız
+
+
 Mission Planer’da  > Flight Data tab > yer radio com port’unu seçiniz ve daha sonra “connect” butonuna basınız  
 
 
 
-Serial and air rates ‘one byte form’
+Seri ve Hava Hızının "bir byte'lık formu"
+
 
 SERIAL_SPEED ve  AIR_SPEED parametrelerinin ikiside aynı formda bulunmaktadır ve APM bu parametreleri SERIAL3_SPEED EEPROM parametresi için kullanmaktadır. Bu kbps hızındadır , tamsayı olarak kesilmiştir.Buradan hareketle’9′ 9600 baud , ’38′  38400 baud, ’115′ 115200 baud demek oluyor.
 
-Choosing the air data rate
-Anahtar parametre olan AIR_SPEED parametresi radio aralığını kontrol ederThe key parameter that controls the range of your radios is the AIR_SPEED. The default is 64 (which is 64kbps) will give you a range of over a kilometre with small omni antennas. The lower you set the AIR_SPEED the longer your range, although lowering the AIR_SPEED also lowers how much data you can send over the link.
+Air Data Seçimi
+
+Anahtar parametre olan AIR_SPEED parametresi radio aralığını kontrol eder.Başlangıç değeri olarak 64kbps ayarlanmıştır bu değerin düşürülmesi mesafeyi,mesafedeki hızı ve veri aktarımının miktarını  etkileyecektir.
+
+Eğer elinizde APM’in son yazılımı varsa (APM:Plane 2.33 yada daha sonraki versiyonları ,APM:Copter 2.54 yada daha sonraki versiyonları ), APM radyo yazılımı tarafından MAVlink  veri akışına MAVlink RADIO paketlerinin enjekte edilmesi işlemini  kullanılarak sahip olduğu telemetri hızına kolayca ulaşabilir.Eğer SERIAL_SPEED ‘i radyonun gerçekte istediği değerden daha büyük bir değere ayarlanırsa , bu sizin linkinizin daha fazla ilgi görmesine olanak sağlar.
+
+Hava veri hızının seçiminde bir diğer faktör ise TDM “sync time”dır.İki radyo birbirlerinin frekans atlama modellerini çözümlemeleri gerekmektedir. Radyolar bunu alıcı kanalında yavaş verici kanalında hızlı değişimler yapamak vasıtasıyla sağlarlar. Diğer radyo ile senkronize olma süreci, yüksek hava veri hızlarında sadece birkaç saniye sürer, ancak düşük hava veri hızları için daha yavaş olur.
+
+Çoğu amatör İHA uygulamaları için varsayılan 64 AIR_SPEED ile etkinleştirilmiş ECC iyi olacak.
+
+HATA DÜZELTME
+
+Yukarıda bahsedildiği , Eğer ECC parametresi 1 e ayarlarsan, radyolar 12/24 hata doğrulama kodunu destekler.Bunun anlamı her 12 bit için ,radyo 24 bit data yolar. Bitleri hesaplamak için Golay kod tablosuna bakınız.Bu işlem alma işlemi sonlandığında tekrar edilir ve her 12 bitte 3 bit hata kodunu kulanması için radyoya izin verir.
+
+Aşağıdaki ECC seçeneği mevcut veri ban genişliğini ikiye böler.Daha kullanışlı olan mesafelerde bunu kullanmayı sürdürebilirsin.ayrıca bir çok “gürültü” yi seri akıştan elde edebilirsin.
+
+
+
+MAVlink ÇERÇEVELEME
+
+
+Eğer MAVLINK seçeneğini 1 ayarlarsan ,radyo MAVlink çerçeveleme yapacak. MAVlink protokol APM tarafından telemetry verisini yer istasyonuna aktarmak için kullanılır. MAVlink çerçeveleme kullanıldığında,radyo , radyo paketlerini MAVLink paketleri sınırları içinde sıralamyı deneyecektir.Bunun anlamı eğer bir paket kaybedilirse ,eğer alıcı tarafından görülüyorsa yarım MAVlink paketlerini sonlandırma .Bu kısmı paketler ter istasyonu konsolunda gürültü hattı olarak gözükür.
+
+Radyo yazılımı bir radyo paketi içinde mümkün oldukça çoklu MAVlink paketlerini düzenlemyi deneyecektir.En yüksek radyo paketi boyutu 252 bytedır.
+
+Radyo yazılımı MAVLink 0.9 ve MAVLink 1.0 iletim formatlarını destekler.
+
+
+MAVLink RAPORLAMA
+
+Eğer MAVLINK 1 e ayarlandıysa, o zaman ayrıca radyo yazılımı seri bağlantıdan gelen MAVLINK HEARTBEAT mesajını arayacaktır.Eğer HEARTBEAT mesajını görürse,MAVlımk protokolünün kullanımda olduğunu bilir,ve MAVLINK “RADYO” durum paketlerini seri akışa aktarmaya başlar.
+
+Radyo paketleri RSSI seviyesi hakkında her iki linkin ucunda bilgi içerir.Link kalitesi çok düşse de yer istasyonunun yada hava aracının harekete geçmesine olanak tanır.
+
+Radyo paketleri ayrıca hata oranları ve tam seri aktarım nasıl olduğuyla alakalı bilgi içerir.Son APM yazılımı bu bilgiyi telemetri akış hızını ,Radyonun sürdürebildiği veri hızına otomatik olarak adapte edebilmek için kullanabilir.
+
+
+Güç Seviyeleri
+
+Radyonuzun ayarlamalarını yaparken bulunduğunuz ülkenin hali hazırda kullanılan yasal güç değerlerini dikkate alarak yapmalısınız.US ve Australia için LIPD sınıf lisansları (ki bunlar frekans atlama değeri olarak 915-928MHz ‘i kabul etmektedirler) tarafından 20dBm seviyesindeki güç değeri ideal olarak kabul edilmekte ve 30dBm’e kadar izin verilmektedir .Bu yüzden anteniniz 10dBi’den daha az kazanç elde ettikçe siz ISM kurallarına uymalısınız.Radyonuz  herhangi güç seviyesini desteklemeyebilir.O sadece tabloda verilen güç seviyelerini destekleyebilir.
+
+https://anadolu-suas.googlecode.com/svn/trunk/Ekran%20Al%C4%B1nt%C4%B1s%C4%B1.PNG
+
+ 
+Eğer desteklenmeyen bir güç seviyesi seçilirse ,tabloda bulunan en yüksek değer seçilmelidir.
+Lütfen ülkeniz için EIRP (Equivalent isotropically radiated power)  güç limitlerini dikkatlice kontrol ediniz,anten kazançlarını hesaba kattığınızdan emin olunuz.3DR radyo bir “DIY” radyo partıdır ve bunun herhangi birşekilde yerel kurallara uygun şekilde kullanılması sizin sorumluluğunuzdadır. 
+Örn:Eğer sizin içinde bulunduğunuz yerel değerler max 30dBdm(1W)’a kadar izin verirse, siz 12dB verici kazancı olan bir amplifikatör kullanırsanız ve anteniniz 3dBi kazancında ise sizin TXPOWER’ı en çok 14’e kadar ayarlamanız gerekmektedir.
+Eğer nasıl hesaplayacağınız bilmiyorsanız biz burada bir tutorial linki vedik onu kullanabilirsiniz.
+
+
+http://dev.ardupilot.com/wiki/common-db-watt-dbm/
+
+
+
