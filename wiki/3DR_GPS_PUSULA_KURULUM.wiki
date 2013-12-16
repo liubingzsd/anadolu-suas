@@ -1,0 +1,74 @@
+
+Bu sayfada GPS+Pusula modülünün kurulumu kapsamaktadır.
+
+
+•	GPS kurulumu (üzerinde pusula olmaksızın )
+
+1.	Üzerinde pusula taşımayan modüller için , modülün kare anten tarafı yukarı bakacak şekilde olduğu sürece oryantasyonu (yönü) önemli değildir.
+2.	GPS gökyüzünü net bir şekilde görecek pozisyonda olmalı ve pervanelerin altında olmamalı
+3.	Modülün kurulumu yapılırken  transmisyon ekipmanlarına (telemetri,video vericileri),motorlara ve ESC’lere olabildiğince uzak olmasına dikkat edilmeli.
+
+ 
+https://anadolu-suas.googlecode.com/svn/trunk/IMG_5403.jpg
+
+https://anadolu-suas.googlecode.com/svn/trunk/IMG_5401.jpg
+ 
+
+
+
+3DR GPS Modülü +Pusula APM:Plane, APM:Rover ve  APM:Copter version 3.0.1 versiyonları ile çalışabilmektedir.Fakat  APM:Copter 2.9.1b ve daha önceki versiyonları ile çalışamamaktadır.
+
+ https://anadolu-suas.googlecode.com/svn/trunk/Test.jpg 
+
+
+ https://anadolu-suas.googlecode.com/svn/trunk/web-copy-case-side.jpg
+
+
+
+
+
+APM 2.6 Bağlantısı
+
+
+3DR uBlox (üzerinde pusula bulunan) GPS  modülü APM 2.6 ile uyumluluğa sahiptir ve iki adet kablosu bulunmaktadır. Bu kablolar;bir tanesi 4-position kablo ,diğeri ise 5-position to 6-position kablodur.Gps ile APM 2.6 bağlantısı için 5-position to 6-position kablosu kullanılacaktır.5-position kısmı APM 2.6 girişine ,6-position kısmı ise GPS’e bağlanacaktır.
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/gps-to-apm-wiring-web.jpg
+
+
+
+
+Gps’in pusula girişi APM’in I2C girişine 4-position kablosu kullanılarak bağlanacaktır.
+
+ 
+
+
+GPS Modülünün Montajı
+
+Bu modül uçuş kontrol modülünden ayrı olarak monte edilmelidir.Bu sayede modül gökyüzünü net bir şekilde görecek ve pusulayı manyetik etkilerden uzak tutmuş olacaktır.
+GPS+Pusula modülünü monte ederken;
+
+•	Modülü net bir gökyüzü görüntüsü alacak şekilde aracın dış kısmına yerleştiriniz.Modülü motorlar ve ESC’lerden mümkün olduğunca uzak bir yere yerleştiriniz,Gps üzerindeki front oku APM’in üzerindeki forward oku ile aynı yönlü olmalıdır ve ileriyi göstermelidir.
+•	Modül DC Güç kablolarından ve pilden birkaç inç uzakta olacak şekilde yerleştirilmelidir.
+•	Modül demir  içerikli metal objelerden uzak olacak şekilde yerleştirilmelidir.(plastik veya manyetik etkisi olmayan paslanmaz çelik maddeler kullanılabilir.)
+•	Güç ve toprak kablolarını olabildiğince döndürerek yerleştirin ki manyetik etkiler azalsın.
+
+Modülün Mission Planer’ da Kurulumu
+
+Not:Eğer GPS/Magnetometre doğru yönde (okun ileriye dönük olması durumu) monte edilirse ve Uçuş Kontrol Kartı da ileriye dönük okun sağ tarafın olursa . Pusula GPS modülü anteninin altında baş aşağı şekilde olduğundan dolayı parametre (COMPASS_ORIENT)  “Roll180” veya “8” e ayarlanacaktır.
+
+•	Mission Planer’ı başlat ve Uçuş Kontrol Kartının bağlantısını yap; “connect” butonuna tıkla
+•	“Hardware” sekmesini seç ve sol taraftaki menüden “Mandatory Hardware” sekmesini seç ve daha sonra “Compass” sekmesini seç.
+•	compass orientation pull down item sekmesinden aşağı oku tıklayarak “ROTATION_ROLL_180” seç.
+
+Not:Eğer Uçuş Kontrol Kartı farklı bir yönde yerleştirildiyse,pusula oryantasyon parametreleri GPS’in durumuna göre uçuş kontrolleri için ayarlanmalıdır.Örneğin;
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/CompassOrient.png
+
+
+ 
+Merak edenler için aşağıda verilen linki tıklayarak başta anlatılan tüm kurulumu izleyebilirsiniz.
+
+
+<wiki:video url="http://www.youtube.com/watch?v=niqvBmXeNjU"/>
