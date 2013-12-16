@@ -6,13 +6,13 @@ BATARYANIN VOLTAJ VE AKIM TÜKETİMİNİN ÖLÇÜLMESİ İÇİN 				GÜÇ MODÜL
 •	Uçuş esnasında batarya kapasitesine yaklaştığında, ……
 
 
-•	APM yazılımı PDB, ESC ve motorlardan pusula üzerinde daha doğru müdahele yapabilmesine izin verir. ????
+•	APM yazılımı PDB, ESC ve motorlardan pusula üzerinde daha doğru müdahele yapabilmesine izin verir. 
 * Güç modülü (PM), giriş voltajı olarak maximum 18V ve akım olarak maximum 90Amp i kabul eder.
 * Modülümüzü Apm ile kullandığımız zaman 90Amp akım algılama aralığı kullanılabilir, PX4/Pixhawks ile 60Amp‘e kadar ölçülebilir.
 * Uyarı: Güç modülümüzün giriş voltajı maximum 18V dir.
 * Uyarı: Güç modülü servolar veya yüksek akımlı aygıtlar için (mesela FPV transmitter) yeterli güce sahip değildir.
 	* Güç modülü APM için, alıcımız için ve küçük elektronik modülümüz için (mesela PPM encoder veya 3DR telemetri radio) yeterli gücü sağlar. 
-	* APM’nin sol tarafındaki A9, A10 ve A11 pinlerinden gelen sinyallerden servoları kontrol edebiliriz ama servolar ayrı ESClerden güç alması gerekir. Yani Jumper JP1 ile ayırmalısın ve ayrı BEC kullanmalısın …..??
+	* APM’nin sol tarafındaki A9, A10 ve A11 pinlerinden gelen sinyallerden servoları kontrol edebiliriz ama servolar ayrı ESClerden güç alması gerekir. Yani Jumper JP1 ile ayırmalısın ve ayrı BEC kullanmalısın.
 
 	APM 2.5 İLE BAĞLANMASI
 
