@@ -1,0 +1,112 @@
+                                   
+                           ESC KALİBRASYONU 
+
+
+
+Elektronik hız kontrolörleri uçuş kontrolerden gelen hıza göre motorları döndürür.Çoğu ESC nin 
+kalibre edilmesi gerekmektedir Böylce ESC ler uçuş kartından gelen PWM değerlerinin maksimum ,minumum değerlerini bilirler.Bu sayda ESC kalibrasyon talimatlarını içermektedir.
+
+
+ESC KALİBRASYONU HAKKINDA: 
+
+ESC kalibrasyonu kullandığınz markaya göre değişir,Bu nedenle kullandığınız ESC nin dökümalarına bakınız ( örneğin ses tonları).”All at once” kalibrasyonu iyi çalışır çoğu ESCler için,
+Bu nedenle ilk olarak bunlardan kullanılamsı iyi bir fikir.Eğer hata olursa ,”Manual ESC – by- ESC” metodunu denemelisin
+
+
+“All at once” method kullanılır 3DR ESCs 
+DJI Optp ESCs gerektirmez ve kalibrasyonu desteklemez,Bu nedenle bu sayfayı geç.
+Bazı markalar kalibrasyona izin vermez.Sen ayarlamalısın Radio throttle kanalının son noktasını.
+Bu prosedür radio control kalibrasyonu ,Esc ve motorların bağlanmasından sonra 
+uygulanır.Önümüzdeki bu adımlar : 
+
+
+
+
+
+ALL  AT ONCE kalibrasyon: 
+ESC kalibrasyonundan önce ,kopterin pervanelerinin takılı olmadığından emin olun ve APM nin USB ile 
+bilgisayar abağlı olmadığını ve lipo pillin çıkarıldığından emin olun .
+
+https://anadolu-suas.googlecode.com/svn/trunk/wiki/8.png
+
+1. Kumandayı aç ve throttle çubuğunu maksimuma getir.
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/wiki/2.jpg
+
+2.LiPO pili bağla,APM nin üzerindeki mavi yeşil kırmızı LEDler arka arkaya yansın.Bu APM nin ESC 
+kalbrasyonu için hazır olduğunu gösterir.
+
+https://anadolu-suas.googlecode.com/svn/trunk/wiki/3.jpg
+
+3. Kumanda throttle kanalı hala yüksekteyken,lipoyu çıkarın
+
+https://anadolu-suas.googlecode.com/svn/trunk/wiki/4.jpg
+
+4.Kumanda throttle kanalı yüksekteyken tekrar lipoyu takın.
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/wiki/5.jpg
+
+5.şimdi APM ESC kalibrasyon modundadır.
+6.ESC nizin ses tonu çıkartmasını bekleyin.Düzenli beep sayısı pilinizin hücre sayısını belirler.Sonra 
+2 beep sesi throttle kanalının maksimum değerinin alındığını gösterir.
+8.Kumandanızın throttle çubuğu aşağı indirin minumum değeri belirtmek için .
+
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/wiki/6.jpg
+
+
+
+9.ESC uzun bir beep sesi yaymalı bu throtle minimum değerinin yakalandığını gösterir ve kalibrasyon tamamlanır.
+10.Eğer uzun ses duyuduğunda kalibrasyon başarılı olduğunda,ESC ler hazırdır.Throttle artığında  dönüş yapmalı .
+11.Thorettle yukarı aşağı yaparak motoru kontrol ediniz.
+12.APM hala ESC kalibrasyon modundaır.Uçuştan önce ,normal uçuş moduna dönülmesi gerekmektedir.
+13.ESC kalibrasyonundan direk normal uçuşa girmek için,Throttle indirin ve bataryayı takıp çıkarın.
+
+
+
+
+http://www.youtube.com/watch?feature=player_embedded&v=gYoknRObfOg
+
+
+
+
+http://www.youtube.com/watch?feature=player_embedded&v=gYoknRObfOg
+ESC by ESC kalibrasyonu:
+ESC kalibrasyonundan önce ,kopterin pervanelerinin takılı olmadığından emin olun ve APM nin USB ile 
+bilgisayar abağlı olmadığını ve lipo pillin çıkarıldığından emin olun .
+
+https://anadolu-suas.googlecode.com/svn/trunk/wiki/7.png
+
+
+1.ESC 'nin üç kablosundan birini RC alıcının throtle kanalına takın.
+2.Kumandayı açın ve Throtle maksimuma getirin.
+3.LiPO pili bağlayın.
+4.2 tane Beep sesi duyacaksınız.Throttelı aşağı indirin.
+5.BEEP lerin sayısını duyacaksın son uzun beep sesi ESC nin kalibrasyon işleminin tamamlandığını gösterir.
+6.Sonra bataryayı çıkartıp bu adımları diğer ESCler için yapın.
+7.ESC kalibre edilmemiş gibiyse Throttle kanalını ters kullanılması gerekebilir.
+8.Eğer problem devam ederse tekrar deneyin yada Trim % 50 olarak throttle kanalında işlem yapın.
+9.Ayrıca APM ye USB den güç sağlayarak hatanın giderilmesini sağlayabilirsiniz.
+TEST :
+ESC ler kalibre edildiğinde ,onları test edbilirsin LiPO battarya ile.
+1. kumandanızın uçuş modu tuşunun Stabilize modunda olduğundan emin olun.
+2.Kopteri kaldırın.
+3.Hafifçe throttle gaz verin .Motorların aynı anda ve hızda dönmesi gerekir.Aksi halde kalibrasyoda
+sıkıntı var demektir.
+
+Notlar Ve Çözüm bulma : 
+ALL At once ESC kalibrasyon modu APM den pilotun throttleını ESC ye aktarmaya sebep olur.Eğer bu durumda APM ye güç verdiğinde, bu moddayken aynı PWM sinyalini tüm ESClere göndericeksin.Bu da hepsini çalıştıracak. Çoğu ESC progrma giriş modunu başlatmak için tam Throttle kullanır.Tam throtle pozisyonu en yukarı en son nokta olarak kaydedilir.Throttle sıfıra çekildiğinde bu pozisyon en alt son nokta olarak kaydedilir.
+Eğer kalibrasyondan sonra motorlar aynı hızda dönmez ya da aynı anda çalışmaya başlamaz ise kalibrasyon işlemini  tekrar ediniz.Eğer yukarıdaki otomatik kalibrasyonu denediniz  ve bu çalışmadı yada ESCler motorları doğru süremediyse ,Yukarıda anlatılan manual kalibrasyon methodunu deneyin.Bu yöntemin hemen hemen her zaman çalışması grekir.(Nadirende olsa manual kalibrasyondan sonra ek olarak otomatik kalibrasyon gerekebilir.)
+Son olarak, çok sayıda ESC markası ve modeli var ve bazılarının normal olark programlanmasında problemler var.Bu ESCler APM ile birlikte basitçe çalışmayabilir.Bu maalesef gerekli fakat bu doğruyu göz ardı etmek olmaz.
+TAVSİYE EDİLEN ESC AYARLARI AŞAĞIDADIR.
+
+1.FREN: KAPALI
+2.BATARYA TİPİ: Ni-xx(NiMH or NiCd)(LiPO batarya kullansan bile bu ayar kullanılabilr ??? )
+  (even if you’re using Li-po batteries this setting reduces the likelihood that the ESC’s low voltage detection will turn off the motors)
+3.CutOff Mod: Soft-Cut (Default)
+4.CutOff EŞİK: Low
+5.Başlangıç Mod: Normal (Default)
+6.Zamanlama: MEDIUM
