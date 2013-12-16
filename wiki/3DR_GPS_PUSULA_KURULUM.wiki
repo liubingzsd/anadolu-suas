@@ -1,11 +1,15 @@
-
 Bu sayfada GPS+Pusula modülünün kurulumu kapsamaktadır.
 
 
 •	GPS kurulumu (üzerinde pusula olmaksızın )
 
 1.	Üzerinde pusula taşımayan modüller için , modülün kare anten tarafı yukarı bakacak şekilde olduğu sürece oryantasyonu (yönü) önemli değildir.
+
+
 2.	GPS gökyüzünü net bir şekilde görecek pozisyonda olmalı ve pervanelerin altında olmamalı
+
+
+
 3.	Modülün kurulumu yapılırken  transmisyon ekipmanlarına (telemetri,video vericileri),motorlara ve ESC’lere olabildiğince uzak olmasına dikkat edilmeli.
 
  
