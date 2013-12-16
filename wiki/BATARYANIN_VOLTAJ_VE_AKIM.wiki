@@ -1,6 +1,6 @@
 BATARYANIN VOLTAJ VE AKIM TÜKETİMİNİN ÖLÇÜLMESİ İÇİN 				GÜÇ MODÜLÜNÜN AYARLANMASI
 
-	3DR güç modülünü APM’ye takmak için özel bir connector vardır. (Ayrı bir aparat diyebiliriz). Bu bizim için kullanışlıdır çünkü:
+3DR güç modülünü APM’ye takmak için özel bir connector vardır. (Ayrı bir aparat diyebiliriz). Bu bizim için kullanışlıdır çünkü:
 •	güç modülümüzün 5.3V ve 2.25Amp de sabit kalmasını sağlar. Yani voltaj düşüklüğü durumunu ortadan kaldırır. 
 
 •	Uçuş esnasında batarya kapasitesine yaklaştığında, ……
