@@ -1,0 +1,64 @@
+
+OTOMATİK KAMERA STABİLİZESİ
+
+Bu sayfa bizim hava  aracımızın havadayken kameramızın (belirli bir sallantı halinde) FPV video kaydetmesi için veya yer istasyonundan
+doğrudan görüntü aktarımı için yapmamız gereken ayarlamaları göstermektedir.
+
+Bu genellikle "zemin-görüntü dengeleme"( “Earth-frame picture stabilization”) olarak adlandırılır. Yani basit olarak kameranın her türlü roll tilt (yalpalama, sarsıntı) ine rağmen kameranın seviyesini(dengesini) koruması olarak da açıklayabiliriz.Diğer kamera seçenekleri(pozisyon izleme ve uzaktan tetikleyici(Remote Shutter Triggering.)) için tracking safyasına bakabilirsin.
+
+
+ https://anadolu-suas.googlecode.com/svn/trunk/IMG_0710.jpg
+
+
+KAMERA AÇILARI
+
+Kameranın dik olması düz bir şekilde aşağıdaki manzaranın resmine bakmamızı sağlar ve bu başlamak için iyi bir nokta. Daha iyi bir görüntü alabilmemiz için kameranın dik konumda olmasındansa eğik açılarda olan konumlarda daha iyi görüntü sağlayabilriz. Zemin görüntüsünü (eğik olarak) almak için düşeyden 40 derece eğik monte et.  70 derecelik açıyla monte edersek çoğunlukla gökyüzü görüntüsünü alırız. Senin bu konudaki kararın yazılımını etkilemeyecek. Senin yazılımının işi programlamış olduğun durumlara göre Gimbal’ın açısını ayarlamak. Genellikle gimbal’lar senin platform seviyenin hemen üstünde olur. Sen kameranı hangi açıyla istersen bağlayabilirsin
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/X-Comby-Gimbal.jpg
+
+ 
+
+KAMERA MONTE İŞLEMİ
+
+
+Gimbal’ın hassasiyetliğinden ötürü kameranın güvenli bir şekilde monte edilmesi gerekir ve aynı zamanda kamera için motordan gelen titreşimin azaltılması gerekmektedir. Bu iki işlemi aynı anda gerçekleştirmek zor bir iş. Gimbal üzerinde kamerayı monte etmek için bir çok yöntem (Havada uçarken kalması için), vardır. Şunları söyleyebiliriz: Yumuşak köpük, sert köpük, neopren tüpler, lastik bandlar, küçük borular (tubes), naylon cıvata, cırt cırt band. Tube’ler genellikle helix şeklinde kullanılır. Biz burada özellikle bişeyi en iyisi bu şeklinde tavsiye etmiyoruz. Zaten bunlar senin kullanacağın hava aracına bağlı. Buna rağmen cırt cırt lastik bantlar (ekstra güvenlik için) kurulum ve daha verimli sonuçlar alabilmek için hızlıdır.
+
+GİMBAL SERVOLARI BAĞLAMAK
+
+
+	Roll, pitch ve yaw servolarını APM’nin herhangi ikincil servo çıkışlarına bağla(Biz size yazılımın hangi kanal üzerinde olduğunu “setup process” kısmında söyleyeceğiz)
+
+* APM1 için: ch5, ch6 ch7 ve/veya ch8
+* APM 2.x için : ch5, ch6, ch7, ch8, ch9, ch10 ve/veya ch11 (not: ch9, ch10, ch11 servolarda doğru dijital çıkışını bağlamak için fabrika işaretine sahiptir.)
+* APM 2.x için ch9, ch10 ve/veya ch11 kanallarının ….
+Onları istediğin bir düzende bağlayabilirsin. Eğer onlardan birisi yoksa veya kullanmayacaksan sadece onu bağlama. Sen zaten servoyu açık/kapalı kameraya bağlayabilirsin. 
+
+*Servonun roll ve tilt kısmını output kanalının tilt (6) ve roll(5) kısmına bağla
+
+	YAZILIM KURULUM AŞAMALARI
+
+	-APM yi çalıştır Mission Planer a bağla.
+-Hardware\optional hardware\ camera gimbal sekmesine gir.Tilt\roll\pan kısımlarına ayrı ayrı bağlamış oldugun kanalları eşle.(örn.gimbal sayfasından tilt=RC6 roll=RC5 seç)(Pan kısmında eğer bir tane bağlı değilse o kısmı boş bırak)
+-'Input CH'kısmını Disable olarak bırak.bu RC channel bilgisini hesaba katmadan gimbal seviyesini koruması icin önemlidir.
+-Uçak gövdesini APM etrafında az miktarda oynat. servo ların hepsi bu noktada hareket etmeli.(büyük ihtimalle yanlış hareket edicek ama sorun yok)
+-Araç gövdesi hareket ettiğinde, aracın servo horn un yere göre konumunu sabit tutmak için(relative to ground?) servoların hareketinin doğru yönde olduğunu kontrol et.eğer doğru değilse 'reverse' kutucugunu işaretle.eğer yanlış servo hareket ederse az önce yapmış oldugun adımları(tilt=rc6) yeniden ayarlaman gerekli.
+-Başlangıç (initial) min ve max değerlerini seçim kutucuğundan 900 ve 2100 olarak tilt ve roll için seç.(bu değerler kasıtlı olarak servonun menzili dışındadır)
+-Dört yön için gimbal ın max 'throw' unu belirle.bu örnek için fiziksel olarak her yönde 45 derece gittiğini farz edeceğiz.
+-Gimbalın maximum fiziksel throw limitini yansıtmak için min ve max açı değerlerini -45 ve 45 olarak ayarla.
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/MP_CameraGimbal.png
+
+
+
+	FULL THROW GIMBAL İLE MIN VE MAX PWM DEĞERLERİNİ DOĞRULAMAK
+
+-aracın gövdesini sert bişekilde sola eğ ve 'Roll' 'servo' 'Min' değerlerini servo fiziksel olarak hareket etmeye başlayana kadar (kımıldayınca) arttır,hareket ettiği anda dur.
+-aracın gövdesini sert bişekilde sağa eğ ve 'Roll' 'servo' 'Max' değerlerini servo fiziksel olarak hareket etmeye başlayana kadar (kımıldayınca) azalt,hareket ettiği anda dur.
+-Pitch hareketi için de bunları tekrarla.(ileri ve geri yönünde)
+
+	GIMBAL IN KONUM VE SEVİYESİNİ AYARLAMA
+-araç gövdesini olabildiğince düzgün tut
+-eğer gimbal seviyesi düzgün değilse, ilk olarak donanımı  hafifçe oynat. mesela servo hornunu oynatalım.bu sayede gimbal bi sonraki aşamaya geçmeden önce olabildiğince hizaya gelmiş olur.bunu servodan hornu gevşeterek ve ya yeniden konumlandırarak yapabilirsin. ve ya baskı çubğu(push-rod) kullanıyorsan onların uzunluklarını da ayarlayarak da yapabilrisin.
+-eğer 'tilt' hala hizada değilse, Tilt\Angle\Min ve Tilt\Angle\Max sekmesinden ayarlayarak 'trim' yapabilirsin.(iki sekmedede oklar aynı yönde olmalı mesea asagı yönde). bu aralarındaki farkın sabit olmasını garantiliyecek,fakat bu gimbalın merkez pozisyonunu küçük miktarlarla ayarlıyacak(???)(bunu cok fazla yapma çünkü bu maximum throw un extremeties lerde aynı miktarda etkiler)
