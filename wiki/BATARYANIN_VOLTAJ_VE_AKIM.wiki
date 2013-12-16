@@ -2,7 +2,10 @@ BATARYANIN VOLTAJ VE AKIM TÜKETİMİNİN ÖLÇÜLMESİ İÇİN 				GÜÇ MODÜL
 
 	3DR güç modülünü APM’ye takmak için özel bir connector vardır. (Ayrı bir aparat diyebiliriz). Bu bizim için kullanışlıdır çünkü:
 •	güç modülümüzün 5.3V ve 2.25Amp de sabit kalmasını sağlar. Yani voltaj düşüklüğü durumunu ortadan kaldırır. 
+
 •	Uçuş esnasında batarya kapasitesine yaklaştığında, ……
+
+
 •	APM yazılımı PDB, ESC ve motorlardan pusula üzerinde daha doğru müdahele yapabilmesine izin verir. ????
 * Güç modülü (PM), giriş voltajı olarak maximum 18V ve akım olarak maximum 90Amp i kabul eder.
 * Modülümüzü Apm ile kullandığımız zaman 90Amp akım algılama aralığı kullanılabilir, PX4/Pixhawks ile 60Amp‘e kadar ölçülebilir.
@@ -58,6 +61,9 @@ Sensor: 4: 3DR Power Module
 APM:2:APM2.5- 3DR Power Module
 Battery Capacity: Fill in the your battery capacity in mAh
 
+
+
+
 2-	Yer istasyonundan düşük batarya alarmı
 
 Eğer batarya düşük olduğu zaman Mission Planer’ın seni sözlü olarak uyarmasını istiyorsan “MP Alert on Low Battery” kutucuğunu işaretle ve söylenecek uyarıyı elle gir. (uyarı bilgisayar sesiyle sesli bir şekilde okunacaktır), sonra Voltage seviyesini gir, sonra da kalan akımı yüzde olarak gir.
@@ -76,8 +82,13 @@ https://anadolu-suas.googlecode.com/svn/trunk/MP_battery_alarm_003.png
 
 		VOLTAJ OKUMAYI  KALİBRE ETME
 APM/PX4’ün voltajı doğru bir şekilde ölçtüğünü şu şekilde kontrol edebilirsin:
+
 1-	Lipo bataryayı el voltmetresiyle voltajını kontrol et
+
+
 2-	APM/PX4’ü bilgisayara bağla ve lipo bataryayı fişe tak
+
+
 3-	Voltajı Mission Planer’daki INITIAL SETUP>Optional Hardware>Battery Monitor screen veya Flight data ekranındaki HUD veya Status Tab ısmından kontrol et.
  
 
@@ -88,7 +99,11 @@ https://anadolu-suas.googlecode.com/svn/trunk/MPCheckVoltage-300x191.png
 Eğer Doğru olmayan bir voltaj değeri buluyorsan. (mesela 0.2 volttan fazla bir değer buluyorsa), doğrusunu bulmak için aşağıdaki işlemleri yapabilirsin.
 
 1-	Mission Planer’daki INITIAL SETUP>Optional Hardware>Battery Monitor ekranından “Sensor” ve “Other” kısmını ayarla
+
+
 2-	“Measured Battery Voltage” kısmına elindeki voltmetre cihazına göre gördğün değeri gir.
+
+
 3-	Tab veya …. Basın ve “Voltage Divider (Calced)” değeri güncellenecektir ve “Battery voltage(Calced)” şimdi ölçülen değere eşit olamk zorundadır.
  
 
