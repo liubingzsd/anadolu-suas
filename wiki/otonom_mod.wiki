@@ -1,0 +1,56 @@
+
+                                                          OTONOM MOD 
+
+       Otonom modda kopter önceden tanımlanan görevleri takip edecek, otonom waypoint takibi,komutlar ,olaylar vb .Bu sayfa otonom uçuş bilgilerini sağlamaktadır.Bir görev dosyası oluşturmak için  Planning a mission with waypoints and events bu linkten daha detaylı bilgi alabilirsiniz.
+
+
+GENEL BAKIŞ : 
+
+Otomatik mod helikopter eylemlerini denetlemek için dahili komut dosyası görev takip sağlar.  bir geçiş noktalarını ya da, kalkış, dönüş x defa  bir resim çekmek, vb gibi çok karmaşık eylemler olabilir.
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/wiki/auto.png
+
+
+
+
+
+Görev komutu konum bilgisi olarak GPSe bağımlı olduğundan, Otonom mod GPS bağımlıdır ve kalkıştan önce GPS in kullanımına izin verilmesi gerekmektedir.Her zaman otopilot ve GPS ledlerinin GPS kilidinin açıldığını gösterdiğinden emin olunuz.
+
+MAVİ LED APM' nin üzerindeki SÜREKLİ MAVİ 
+MAVİ LED  GPS MODÜLÜ üzerindeki SÜREKLİ MAVİ 
+MAVİ LED GPS VE PUSULA üzerindeki YANIP SÖNÜYOR
+UYARI :
+Otonom modda ,uçuş kontrolörü hava basıncını ölçen barometre kullanır irtifa belirleyebilmek için.
+Eğer hava basıncı uçuş yaptığınız bölgede değişiyorsa, Kopter hava basınç değişimlerini takip edecektir asıl takip etmesi gereken irtifa yerine.(unless you are within 20 feet of the ground and have SONAR installed and enabled). 
+
+
+
+
+YERDEN VE HAVADAN OTONOM MODU KULLANMAK
+Yerden ve havadan otononom modu kullanmak için iki yol vardır:Eğer kalkış için otonom modu kullanıcaksan,Güvenlik görev komutlarının yerine getirilmesini engeller ,illk seferinde sen kolu ve throttle”ı artırmalsın.Bu engelleme kazayla mode switchne dokunulduğunda copterin kalkış yapmasını önlemek için vardır.Yerden kalkış için otonom mod     kulladındığında,Throotle kontrolü için temel olarak Alt_hold throtle değeri kullanılır.
+Kopter ilk kalktığında ilk hedefin irtifasını takip edevek ve sonra görev komutlarını takip edecektir.
+Havadaki uçus esnasında otonom modda geçilirse kopter ilk hedefin konumunda gidip ordan tekrar mevcut olan görev komutunu yerine getirecektir.
+
+GÖREV SONU :D 
+
+Görev komutu bittiğinde,kopter eve dönmeyecektir.Mode swirchi ile kontrol tekrar kazılmadıkça son konumunda uçuşa devam edecektir.Kopterin bu durumda eve dönmesi için görev komutunun sonunda RTL komutunu eklemelisin.Eğer manual olarak inmek istiyorsan ve disarm motor ? Bunu yapmak için sabilize moduna	geçmelisin.
+    	
+RTL ve AUTOLAND halinde kopterinson konumunda görev komutu kopteri
+inişe zorlar ve motorları durdurur.
+Bu iki seçenekten biri ayarlanmadıkça ,manual olarak otonom modda iniş yapılamaz.
+since the throttle stick controls altitude, not the motors directly. 
+AYARLAMA : 
+
+ 
+Waypoint_Speed değeri waypointler arasındali seyahat oranını ayarlar.
+
+Kullanımda olan hız iki waypoint arasındaki 6 m/s dir .
+NAV_ PI iki waypoint ardındaki hızı sabit tutmak için kullanılır.
+NAV_P istenen hızın korunması için helikopterin yatırılması,eğilmesi için kullanılır.
+Hızlı veya 0 hızda olabilir.
+The higher the P the more the copter will tilt.
+Kopter daha falza eğilebilir P ile.
+NAV_I uçağın hızını değil dış kuvvetlerin dengelenmesinde kullanılır.
+
+İstenen hızın korunması  I kopteri kaldırır, aşırı yükselmeyi önlemek için hızlıca aşağı inecektir.
