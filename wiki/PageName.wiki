@@ -1,0 +1,111 @@
+Camera Gimbal
+
+
+ArduCopter  serbest çıkış kanallarını(free ouput channel ) kullanarak gimbal’ın 3 eksendeki hareketinde dengede durmanısını sağlayabilir. Pilot yardımı ile stabilizasyonda mümkündür.(alıcının 6.kanalındaki ayar düğmelerini kullanarak bunu yapmak mümkündür)
+
+Bir kameranın deklanşörü servo veya röle ile bağlantılı APM tarafından bir kez tetiklenebilir. Deklanşörü tetikleme eylemi alıcınızın 7.kanalındaki anahtar üzerinden yada görev sırasında otomatik olarak kontrol edilebilir.
+
+Uyarı : servo’nun güç (kırmızı) ve toprak (siyah) kablolarını  RC10(A10) ve RC11(A11) ile bağlamayınız yada servoları hareket ettirdiğinizde APM’de voltaj düşüklüğüne sebep olabilirsini.Bu konuyla ilgili detaylar aşağıda Servoların APM ile bağlantısı kısmında verilecektir.
+
+Uyarı : Gimbal’a ekstra ağırlık ekledikten sonra kopterinizin 50% hızla gezinebildiğinden  emin olun fakat bu stabilize modayken  kesinlikle 70% olmamalıdır çünkü  düşük güçte çalışan kopter denge bozulmalarından kurtulmak için  düşük güce sahiptir.
+
+Mission Planer aracılığıyla Gimbal konfigürasyon(ayarı)
+
+
+Konfigürasyon menüsünün altında “Hardware Options” sekmesi bulunmaktadır.Bu sekmeden “Camera Gimbal” sekmesi seçilir ve ekran gelir.
+Kameranızın her servo/axis ayarı için uygun olanservo  kanalını seçinizin ve “Stabilise” kutucuğunun işaretlemiş olduğundan emin olun 
+ “Servo Limits” gimbal servoların bağlı olmadığından emin olmak için ayarlanmalıdır.
+ “Angle Limits” servo sınırlarında eğim açısıyla uyumlu olmalıdır.Eğer gimbalın test sırasında stabilize birşekilde kalmadığı sonucuna ulaşırsanız,açı limitlerini yukarı aşağı hafifçe ayarlayın.
+Bunlar gerçek açı limitleri değil  fakat 60derecelik limit içinde hareket etmesi için ne kadar kumanda edilebileceği bilgisi elde edilir.""These are not really ‘angle’ limits but how much the servo is commanded to move within the limits of the 60° most servos can move.eg If set to -60/+60 the servo will reach -30°/+30° (its limit) when the ‘copter reaches -60°/+60°If set to -15/+15 the servo will reach -30°/+30° (its limit) when the ‘copter reaches -15°/+15°)""
+“Retract Angles” reacted mod aktif olduğu zamandaki gimbalın durumunu ifade eder.(i.e. MNT_MODE=0). “Retracted”normal olarak gimbalın uçağın gövdesinin içine doğru çekildiğindeki durum bu durum multicopterlerle ilgili değil.
+“Neutral Angles” mount ilk olarak başlatıldığında gimbalın durumunu ifade eder.Bu genelde düzgündür.(this normally facing straight forward.)
+“Control Angles” gimbalı yer kontrol merkezinden kontrol etmemizi sağlayan parametrelerdir.Bu kontrol isteğe bağlı olarak Joysticklede kontrol edilebilir.are parameters to allow control of the gimbal from a ground station perhaps using a joystick. Bu değerler yer istasyonu tarafından yazılır bu yüzden MP’da bu değerlerin güncellenmesinin bir anlamı yoktur.
+
+Eğer gimbal yanlış yönde hareket ederse,”reverse” kutucuğunu işaretleyip işaretlemediğini kontrol et.
+
+https://anadolu-suas.googlecode.com/svn/trunk/MPCameraAndGimbalSetupScreen.png
+
+
+ 
+
+
+Eğer uçarken gimbalın tilt,roll,ve pan değerIerini değiştirmek istersen,,giriş kanalındaki “RC6”yı ayarlayabilirsin.Bu kanal senin verici ayar düğmen ile genellikle uyumludur.
+!Note!: Eğer bu işlemleri yapacak olursan CH6 ‘yı Mission Planner’daki  “Standard Parameters” -> “Configuration” sekmesinden  “CH6_NONE” a ayarlayınız.
+
+
+
+ https://anadolu-suas.googlecode.com/svn/trunk/MPCamSetupSetCH61.png
+
+
+Shutter configuration
+
+Servonun hangi analog çıkışını bağlayacağımızı(genellikle A10-A11) seçmek için shutter dropdown (Mission Planner’da bu çıkışlar  RC10 ve  RC11 olarak adlandırılır ) Eğer drop-down kısmından “Relay” i seçersek, kameranın Shutter’ini başlatmak için APM2 üzerindeki A9 pini çekilecektir.
+Servo takılı olmadığından servonun limitlerini ayarla. Shutter’ın altında PWM değerlerini ayarlayabilirsin. (genellikle 1000-2000 arasındadır) Bu değerler Shutter’ın “pushed” veya “not pushed” olduğu zaman servonun olması gereken durumunu belirtir. 
+“Duration” kısmı servonun baskısını shutter butonunun ne kadar basılı kaldığını control eder. mesela 10=1 saniye 20=2 saniye.
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/MPShutterSetupScreen.png
+
+ 
+	Shutter’ın doğru bir şekilde active edilip edilmediğini manuel olarak test edebilirsin. Eğer CH7’yi “Trigger Camera” ‘ya ayarladıysan,  bir önceki adımda“Shutter” ı A10' a kadar limitlerini ayarla.
+
+
+ https://anadolu-suas.googlecode.com/svn/trunk/MPCH7TriggerCamera.png
+
+
+
+Uçuş esnasında “DO_DIGICAM_CONTROL” commandını kullanarak da shutter’i başlatabilirsin. (Ayrıca bir parametreye gerek duyulmaz)
+
+Önemli bir not: DO_x gibi olan bütün commandları görev başlangıcında veya bitişinde göremeyiz. (açığa çıkmazlar) İki waypoint arasında görünmelidir.
+ 
+
+https://anadolu-suas.googlecode.com/svn/trunk/MPTriggerCameraFromMissionSmall.png		
+
+
+
+
+
+
+APM2 ile Servo Bağlantılar
+
+Uyarı:	
+•	Servolara RC10(A10)ve RC11(A11) konnektörleri tarafından güç bağlantısı (kırmızı+siyah) yapmayınız.
+
+
+•	 ◾Sadece RC10 ve RC11 konnektörlerinin sinyal çizgilerini kullanın.
+
+
+•	PWM çıkış güç ve toprak pinleri vasıtasıyla servolara güç verin.
+
+
+•	Alterntif olarak eğer digital bir servoya sahipseniz gimbalın roll/tilt gibi hareketlerini RC5’ten RC8’e kadar olan çıkışlara atayabilirsini.Tabi bu çıkışlar uygun ise.
+
+
+•	Bu çözümler birtakım olasılıklardan kaçınırlar bunlar ki; Pan/Tilt servolar çok fazla akım çekebilirler bu da APM^de voltaj düşüklüğüne sebep olur ve APM’i resetler.
+Uyarı!! 
+
+
+•	Aşağıda gösterildiği üzere konnektör  12 ve 13’te doldurulmamış olarak bulunan 2 takım pad (blok) vardır.
+
+
+•	Sizin kullandığınız APM  bu bölgeleride içeren(bu bölgelerinde doldurulmuş olduğu) daha uzun konnektörlere sahip olabilir
+
+
+•	 10. ve 11.pinlerin bağlı olduğundan emin olunuz.(12.ve13. bağlı olmayacak) (NC ifadesi “Not Connected” yani bağlantının olmadığı anlamına geliyor).
+
+
+
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/CAMERA_APM2b.jpg
+
+
+
+Not: APM2.x RC10 & RC11 çıkışların analog ve dijital çıkışlara uyumlu olması için 50hz frekansta çalışmaktadır.RC1-RC8 pinleride dijital servolara uyumlu olması için  490Hz'e  ayarlanmıştır.
+
+
+Aşağıda pitch/roll servo bağlantılarının 10. ve 11. çıkışlara nasıl bağlandığı gösterilmektedir.
+
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/camerapins.jpg
