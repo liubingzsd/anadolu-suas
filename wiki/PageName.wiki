@@ -7,13 +7,39 @@ https://anadolu-suas.googlecode.com/svn/trunk/select-frame-type1-e1377904351353.
  
 ( H tipi quadkopter için “advance parameter” seçeniğndeki  “3” tipi seçilir .H tipi ayarlarını uygulamak için , sağ  ve sol arka pervaneler yerdeğiştirilir( her iki kablonun yerdeğiştirmesi ile ) ve her motorun yönleri değiştirilir.Öndeki iki motor içinde aynı işlemler uygulanır.)
 Pusula kalibrasyonu : 
-“Initial setup” ın altındaki “Mandatory Hardware “ ve onun altındaki “Compass” seçilir.Kurulum için doğru oryantasyonu seçin .
-“Enable” ve “AutoDeck” kutucuklarının  seçili olduğundan emin olun .
+
+“Initial setup” ın altındaki “Mandatory Hardware “ ve onun altındaki 
+
+“Compass” seçilir.Kurulum için doğru oryantasyonu seçin .
+
+“Enable” ve “AutoDeck” kutucuklarının  seçili olduğundan emin olun 
+. 
 “Live Calibration “ butonuna basın .
+
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/Compass_LiveCalibration.png
+
+
+
+
+
+
+
+
+
 
 
 Çevirme işlemlerinin 60 saniye içerisinde olacağını söyleyen bir pencere açılır ve 60 saniyeden geriye doğru sayar.
 Bu 60 saniye içerisinde aracımızı yavaş bir şekilde her yöne çevirmemiz gerekir.(ön arka sol sağ yukarı ve aşağı) Her çevirme işleminin arasında kısa br süre (birkaç saniye) beklenmelidir. 
+
+https://anadolu-suas.googlecode.com/svn/trunk/compass-dance.jpg
+
+
+
+
+
+
 
 İşlem sonunda bize yeni bir pencere açılacak. Bu pencere bize kalibrasyon verilerimizi gösterecektir. Değerlerimiz -150 ile +150 arasında ise kalibrasyonumuz geçerli bir kalibrasyondur.
 Kalibrasyonun gösterimini bu videoda bulabilirsiniz.
@@ -24,14 +50,52 @@ Sol taraftaki menüden initial setup’ın altında accel calibration’u seçin
 Eğer arducopter code 3.0 kullanıyorsan AC 3.0 kutucuğunu seçtiğinden emin ol. Eğer 2.9.1b (yada daha eski) kullanıyorsan, kutucuğu işaretleme. Bu kalibre işlemini yapmak için aşağıda gösterilen şekilleri sırasıyla yapmamız gerekir. (Sırası önemli). Level pozisyonu havadaki denge konumunun sağlanması açısından önem arz etmektedir. 
 Her adım için butona bastıktan sonra hareketlerimizi yavaş bir şekilde yapmamız büyük önem taşır. 
 
+
+https://anadolu-suas.googlecode.com/svn/trunk/accel-calib-positions.jpg
+
+
+
+
 Calibrasyona hazırsan ‘calibrate accel’ butonuna bas. (bastıktan sonra hangi hareketi yapacağımızı mission planer bize söylüyor)
+
+
+
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/calibrate-accel.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/accel-clibration-press-any-key.png
+
+
+
+
 
 
 Kalibrasyon işlemini tamamladığınızda mission planer ‘calibration succesfull’ yazısını gösterecektir.
 
+https://anadolu-suas.googlecode.com/svn/trunk/calibration-successful.png
 
 RADİO CONTROL KALİBRASYONU
-Alıcıyı açınız. Alının airplane modunda olduğunu doğrulayın (emin olun) (APM’in uçağı kullanabilmesi için platformun çeşidine bakılmaksızın  airplane moda olması gerekmektedir ve bütün ayarlar(trimler) merkezde olmalıdır.	
+Alıcıyı açınız. Alının airplane modunda olduğunu doğrulayın (emin olun) (APM’in uçağı kullanabilmesi için platformun çeşidine bakılmaksızın  airplane moda olması gerekmektedir ve bütün ayarlar(trimler) merkezde olmalıdır.
+
+https://anadolu-suas.googlecode.com/svn/trunk/radio_setup1.png
+
+
+
+
+	
 
 
 1 Modundaki Kumanda için sol stick pitch ve yaw kontrolü yapacak,sağ stick ise throttle ve roll kontrolü yapacak.
@@ -39,6 +103,14 @@ Alıcıyı açınız. Alının airplane modunda olduğunu doğrulayın (emin olu
 Diğer tip Kumandalar için alıcının 3-position switch’i kanal 5’e bağlanır ve bu şekilde uçuş modu kontrolü yapılır.
 İsteğe bağlı olarak kumandanın ayar düğmesi kanal 6 yı havada ayar yapmak için  kontrol edebilir.Kanal 7 ve 8 yardımcı fonksiyonlar için kullanılanılabilir.
 Mission Planer’da sağ alt köşedeki yeşil “Calibrate Radio” yazan butonu tıklayınız.Daha sonra Mission Planer bir pencere açacaktır,bu pencere Radio kontrol ekipmanlarının bağlı olup olmadığından ,pilin  ve pervanelerin takılı olmadığından emin olduğunuzu onaylatmak içindir.Eminseniz “OK” butonuna basınız.
+
+
+https://anadolu-suas.googlecode.com/svn/trunk/calibrate-radio.png
+
+
+
+
+
 
 
 Daha sonra kontrol çubuklarını ve ayar düğmelerini max-min sınırlarını içerisinde hareket ettirerek, sonuçları ekrandaki kalibrasyon barından gözleyebilirsiniz. Kırmızı çizgiler kalibrasyon çubukları üzerindeki max- min değerleri göstermektedir. Pozisyon aralığı yoluyla kanal 5 ve 6 yı  ayarlayabiliriz.Temel operasyonlar için kanal 7 ve 8 kulannılmamaktadır.(Move the Ch 5 and 6 toggle switches through their range of positions )
@@ -49,6 +121,7 @@ Channel 1: low = roll left, high = roll right.
 Channel 2: low = pitch forward, high=pitch back.
 Channel 3: low = throttle down (off), high = throttle up.
 Channel 4: low = yaw left, high = yaw right.
-
+https://anadolu-suas.googlecode.com/svn/trunk/radio-calib-click-when-done.png
 
 Roll, pitch, throttle, yaw, ve  radio 5  çubuklarının max-min değerleri için kırmızı çizgileri ayarlandığında “Click when Done” butonuna tıklayınız.Mission Planer kalibrasyon verilenin özetini gösterecektir. Normal değerler minimum için 1100 civarında maximum için 1900 civarında olacaktır.Eğer çubuklardaki değerler sizin hareket ettirdiğiniz yönün tersi yönünde artıp azalıyorsa bu demek oluyor ki kumandayla ters bir ayar bulunmaktadır. Kumandanızın  channel-reverse fonksiyonunu kullanınız.(eğer bu ayarı daha önceden yapmadıysanız RC gears manueline bakınız)
+https://anadolu-suas.googlecode.com/svn/trunk/radi-calib-results.png
