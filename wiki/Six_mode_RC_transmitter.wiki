@@ -1,0 +1,81 @@
+
+Getting Six Modes on Your RC Transmitter
+
+Eğer 6 moda sahip olmak isterseniz ,RC vericinizi bunun için ayarlamanız gerecektir.Bu genellikle vericideki  2position switch ve 3position switch’in bir araya getirilip karıştırılması yoluyla elde edilir.Anahtalarınızı (Switchlerinizi) sinyal genişlikleri  1165, 1425, and 1815 microsaniyeyada  1165, 1295, 1425, 1555, 1685, and 1815 millisaniye olan PWM sinyalleri üretmek üzere ayarlayınız ( .  If you want to have six modes, you’ll probably have to configure your RC transmitter to do this. That’s usually accomplished by mixing a two position switch and a three position switch on your transmitter. Set your switch(es) to (ideally) produce PWM pulse widths of 1165, 1425, and 1815 microseconds or 1165, 1295, 1425, 1555, 1685, and 1815 milliseconds. (Eğer birtane kadrana sahipseniz, Bunu bir analog kadran ile de yapabilirsiniz,fakat 6 farklı ayar için doğru pozisyonlara çevirmek gerçekten zor).
+PWM Sinyal genişliğinin ne olduğunu nasıl biliriz? Mission Planner’ın  Radio Calibration ekranı!
+
+https://anadolu-suas.googlecode.com/svn/trunk/wiki/1.png
+
+
+
+
+Burada değişik RC sistemler ile  birlikte 6 modunu oluşturmak için yada RC ünitesine daha çok mod ekleyebilmek için kullanıcılarında katkı sağladığı öğretici kaynaklar vardır:
+JR XG8 DMSS
+JR9303
+JR X2720
+Futaba T8FG
+Futaba T7CP
+Futaba T6EX
+Futaba 12fg
+Futaba 9ZAP/ZHP
+Futaba T10CAG
+Futaba T14
+Graupner MX-16
+Turnigy 9x(or an even easier way) (Here!)
+Turnigy 9x with ER9x firmware
+Turnigy 9XR
+Hitech Aurora 9
+Spektrum DX8  (alternate method below)
+Spektrum DX7
+Spektrum DX7s
+
+yada kendi 6 pozisyon switch’inizi oluşturun (build your own six-position switch!)
+
+Burada Spektrum DX8 ile 6 modunu ayarlamak için alternatif bir yol
+Bu method Gear anahtarını (switch) ve Uçuş modu anahtarını (Flight Mode Switch) kullanmaktadır.Diğer tüm anahtarlar (switchler ) seçilmişler olarak ayrılabilirler. Bu method ayrıca her modun sinyal periyodunun (pulse width range) ortasında  ayarlanabilmesine imkan tanımaktadır bu yüzden küçük değişiklikler modları değiştirmemektedir.Bu ayarlamalar  içinanlık PWM sinyalini görüntülemek için Mission Planer’Da bulunan Flight Mode kurulumunu kullanınız.
+
+
+
+
+
+
+1. Switchlerin Kurulumu (*required for the 6 modes)
+Silindir çubuğunu aşağıda tutun ,DX8 ‘i açın , Switch Select için aşağıya kaydırın , roller bar’a tıklayın   Switch’leri aşağıdaki gibi ayarlayınız;
+* Gear = Gear (Channel 5)
+* FMode = Inh  Bir kanala atanmamış  –  6 modu için Gear Sw (channel 5) ile karışmak için (mix with) kullanılıyormuş .
+Diğerleri zaten istediğiniz gib.Bir method aşağıdaki gibi:
+Aux1 için kontrol düğmesi (knob to aux1 ) = kanal  6 -kamera eğimi ve ayarı için 
+Mix = aux2 = kanal 7 –Waypoint ve RTL’yi kaydetme,otomatik ayar (auto trim ) yada APM konfigürasyonlarındaki diğer ayarlar.
+Flap to aux3 = kanal 8 diğer kullanımlar için 
+Normal ekran görünene kadar BACK tuşuna basınız,yada gücü kapatınız ve daha sonra tekrar açınız.
+2. Kanal 5 için  non-mixed servo ayarı kurulumu  (Gear kanalları Gear Switchleri tarafından kontrol ediliyor)
+Bu değerler karıştırlmama (no mixing) değerleri– 0 durumundaki F Modu anahtarları  ve en düşük sinyal genişliği 1165ms (mod 1) ve en yükseği 1815ms(mod 6)
+roller bar’a tıklayın , Servo Setup’ı aşağıya kaydırın , Gear kanalını seçin , Sub Trim’i seçin .
+sub trim’i 0 olarak ayarlayın 
+Travel ‘ı seçin .
+Travel’ı 1165ms pulse olarak ayarlayın  (sol,pozisyon 0)  (~90%).
+Travel’ı 1815ms pulse olarak ayarlayın  (sağ,pozisyon 1)  (~74%).
+3. F Modu 1.pozisyondayken Gear pulse genişliğini değiştirmek için Mix1 kurulumu 
+Roller’a tıkla , Mixing’i aşağıya kaydır , roller’a tıkla , Mix’in altındaki diğer çizgi için kaydır( xxx > xxx, AIL > RUD, yada  diğer mix ayarları vardır), roller’a tıkla, Mix 1’i seç, roller’a tıkla .
+Mix’i ayarla : Gear > Gear. Dişli (gear) dişliyi Fmodu ayarlarının değişimine bağlı olarak değiştirecek 
+ Offset ayarı  = 0, Trim = Inh.
+ SW = FM 1
+1 pozisyonu için verici üzerindeki F modu switch’ini ayarla .
+0 pozisyonu için verici üzerindeki Gear switch’ini ayarla .
+Mod 2 için Top Rate’i  1290ms pulse width için ayarla (~-35%)
+(değişim  = 400 ms * -90% * -35% = 126 ms. sonuç= 1165 ms + 126 ms = 1251 ms = mode 2)
+1 pozisyonu için verici üzerindeki Gear switch’ini ayarla .
+Mod 5 için Bottom Rate’i  1685 ms pulse width için ayarla (~– 45%)
+(change = 400 ms * +73% *- 45% = -131 ms. Result = 1815 ms – 131 ms = 1684 ms = mode 5)
+
+4. F Modu 2.pozisyondayken Gear pulse genişliğini değiştirmek için Mix2 kurulumu
+Mix’i ayarla : Gear > Gear. Dişli (gear) dişliyi Fmodu ayarlarının değişimine bağlı olarak değiştirecek 
+Offset = 0, Trim = Inh
+SW = FM2
+2 pozisyonu için verici üzerindeki F modu switch’ini ayarla
+0 pozisyonu için verici üzerindeki Gear switch’ini ayarla.
+Mod 3 için Top Rate’i  1425ms pulse width için ayarla (~–72%)
+(Fark = 400 ms * –90% * – 72% = 259 ms.  Sonuç= 1165 ms + 259 ms = 1424 ms = mode 3)
+1 pozisyonu için verici üzerindeki Gear switch’ini ayarla.
+Mod 4 için Bottom Rate’i  1550 ms pulse width için ayarla   (~–89%)
+(fark= 400 ms * +73% * – 89% = -262 ms. Sonuç= 1815 ms – 262 ms = 1553 ms = mode 4)
