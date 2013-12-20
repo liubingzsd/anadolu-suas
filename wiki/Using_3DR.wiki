@@ -1,3 +1,4 @@
+#labels APM,3DR,ARDUPLANE,ARDUCOPTER,XBEE,APM2.6
 Using the 3DR Radio for telemetry with APM 2.x 
 
 https://anadolu-suas.googlecode.com/svn/trunk/3DR-radio-kit-dip-small.jpg
@@ -6,16 +7,15 @@ https://anadolu-suas.googlecode.com/svn/trunk/3DR-radio-kit-dip-small.jpg
 
 
 
-3DRobotics 3DR Radio APM ile Yer istasyonu arasında telemetri bağlantısı kurmak için ideal bir yoldur.Küçük,pahalı olmayan ve yüksek mesafesi ile iyi bir çözüm. 3DR Radio açık kaynaklı bir yazılım kullanmaktadır,ki bu yazlım bize diğer radiolarla yapamayacağımız şeyler yapabilme olasılığını kazandırır.
-Radio Özellikleri
-Küçük boyut
-Hafif  (anten olmadan 4 gramın altında )
-900MHz or 433MHz arasında değişik frekansalarda kullanılabilir.
+*3DR Radio*, APM ile Yer istasyonu arasında telemetri bağlantısı kurmak için kullanılır.Boyutlarının küçük olması ve ucuz olmasının yanında veri aktarım mesafesi veri kaybı olmadan 1km çapındadır. 3DR Radio açık kaynaklı bir yazılım kullanmaktadır,ki bu yazlım bize diğer radiolarla yapamayacağımız şeyler yapabilme olasılığını kazandırır. Ancak sadece 2 modül arasında haberleşme imkanı tanır. Yani ikiden fazla modülün kordinatör-slave ilişkisi yoktur.
+*Radio Özellikleri*
+Küçük boyutlu ve hafif olmaları
+900MHz,433MHz gibi değişik frekanslarda kullanılabilir.
 Alıcı hassasiyeti-121 dBm
 İletim gücü (transmit power up to) 20dBm (100mW)
 Görünmez seri bağlantı 
-Hava veri hızı  250kbps’a kadar
-MAVLink protocol çerçeveleme ve durum raporlama (framing and status reporting)
+Hava veri hızı  250 kbps’a kadar
+MAVLink protocol çerçeveleme ve durum raporlama 
 Frekans atlamalı yaygın spektrum (FHSS)
 time division multiplexing ile uyumlu (TDM)
 LBT and AFA destekli 
@@ -28,26 +28,25 @@ Radyo konfigürasyonları için AT komutları
 Uzantan radyo yapılandırmaları için RT komutları 
 APM ile birlikte kullanıldığında akış kontrolü ile uyumlu 
 Si1000 8051 mikro denetleyici ve Si4432 radyo modülü ile HM-TRP radyo modülleri tabanlı 
-3DR Radio Bağlantısı
-Önemli Not :
-Sizin APM 2.x kartınız USB ile bağlı ise  siz 3DR ile bağlantı kuramazsınız ,çünkü onlar aynı portu paylaşıyorlar.Wireless bağlantısını yapmadan önce APM USB ile bağlı olmadığından emin olunuz.
+*3DR Radio Bağlantısı*
+Önemli Not :3DR ile APM arasında bağlantı kurabilmek için APM'in bilgisayara USB ile bağlı olmaması gerekir. Çünkü aynı port kullanılır.
+
 2 adet  3DR radio gerekmektedir, bir tanesi hava aracı için , diğeri ise yer kontrol istasyonu için.
-Yukardaki resimde USB bağlantısına sahip  tipik bir “yer “radio modülü görmektesiniz.USB bağlantısı ile yer istasyonunuza kolay bir şekilde bağlantı yapabilirsiniz.Ayrıca bu modül  D2XX FTDI sürücüsünü kullanmaktadır.Aşağıdaki linkten elde edebilirsiniz.
-here
+Yukardaki resimde USB bağlantısına sahip  tipik bir “yer “radio modülü görmektesiniz. USB bağlantısı ile yer istasyonunuza kolay bir şekilde bağlantı yapabilirsiniz. Ayrıca bu modül  D2XX FTDI sürücüsünü kullanmaktadır.
 
-Bu sürücü  Windows 7 ve üst sürümleri için kurulu/yerleşik olarak bulunmakta ,bu yüzden bu linki eğer Windows XP yada daha alt bir sürüm kullanıyorsanız kullanabilirsiniz.
-Hava aracı modeli  FTDI six pin header, bu da  APM telemetri portuna direk olarak bağlanabilme imkanı sağlıyor.
-APM 2.5 İçin
+Hava aracına yerleştirilecek 3DR modem üzerinde ftdi port çıkışları bulunmaktadır. Bunun için APM 2.5-2.6 için telemetri portları ile uyumlu şu kablo kullanılır:  
 
-Dahili kabloyu kullan 
 
 https://anadolu-suas.googlecode.com/svn/trunk/telemcable.jpg
 
-APM 2.5 üzerindeki telemetri portuna ve 3DR radio tarafına bağlayın .Plug it into the telemetry port on APM 2.5 and on the 3DR radio side, kırmızı kablo 5V pini ,en sondaki siyah kablo ground olacak şekilde bağlantıyı takınız.
+Bu kablo APM 2.5 üzerindeki telemetri portuna ve 3DR modeme bağlanır. Bağlantı şekli aşağıda bulunmaktadır.
 
-APM 2.0 İçin 
+https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-prn1/1521876_10202753636791267_141307340_n.jpg
 
-APM 2 için hava modül bağlantısı aşağıdaki gibi olacaktır.
+
+
+
+APM 2 3DR modül bağlantısı aşağıdaki gibi olacaktır:
 
 https://anadolu-suas.googlecode.com/svn/trunk/telemtry.jpg
 
@@ -58,32 +57,29 @@ https://anadolu-suas.googlecode.com/svn/trunk/3drradio.jpg
 
 
 
+Genellikle modemlerin baod rate (haberleşme hızları) 57600  olarak daha önceden ayarlanmış birşekilde gelmektedir. Bu değer APM’in telemetri için kullandığı önceden tanımlanmış (default rate) olan değerdir, fakat isteğinize bağlı olarak Mission Planer’da bulunan radio kurulum arayüzündeki AT komutlarını yada 3DR Radio Configuration Utility  kullanarak  bu değerde değişiklik yapabilirsiniz. 
 
-Radiolar 57600 serial rate olarak daha önceden ayarlanmış birşekilde gelmektedir. Bu değer APM’in telemetri için kullandığı önceden tanımlanmış (default rate) olan değerdir, fakat isteğinize bağlı olarak Mission Planer’da bulunan radio kurulum arayüzündeki AT komutlarını yada 3DR Radio Configuration Utility  kullanarak  bu değerde değişiklik yapabilirsiniz. 
+*3DR Telemetry Radio Konfigürasyonları ve Kullanımı*
 
-3DR Telemetry Radio Konfigürasyonları ve Kullanımı
-Durum LEDleri
+_Durum LEDleri_
 
-3DR Radiolar iki tane durum ledine ,bir yeşil,birde kırmızı lede sahiptirler.
-Ledlerin açıklamaları
+3DR Radiolar iki tane durum ledine (yeşil ve kırmızı) sahiptirler.
+Ledlerin açıklamaları:
+
 Yeşil  LED yanıp sönmesi  – diğer bir radio için arama yapmakta
 Yeşil  LED aralıksız – diğer bir radio ile bağlantı kurulmuş demektir
-red LED yanıp sönme – veri aktarımı
-red LED kesintisiz/aralıksız– yazılım güncellemesi modunda
+Kırmızı LED yanıp sönme – veri aktarımı
+Kırmızı LED kesintisiz/aralıksız– yazılım güncellemesi modunda
 
-Mission Planer ile Konfigürasyon
+*Mission Planer ile Konfigürasyon*
 
 https://anadolu-suas.googlecode.com/svn/trunk/Screenshot-3DRradio.png
 
-APM Mission Planer’ın son versiyonu ile basit bir kullanıcı arayüzü kullanarak 3DR radio konfigürasyonu yapabilmektesiniz.
-Mission Planer’da “yer “3DR radiosunu bağlamak için sağ üstte bulunan” COM Port “ u ve baud rate olarak 57k’yı  seçiniz. Daha sonra Control-A’ya basın.
-Aşağıdaki pencere karşınıza gelecek.Burada bulunan ”Load Settings”e tıklayın ve bu aşağıda gösterildiği gibi verilerle doldurma işlemi olacak. (the remote radio’s settings will only show if it is also powered on and connected to APM running current APM:Plane or APM:Copter code)
+APM Mission Planer’ın son versiyonu ile basit bir kullanıcı arayüzü kullanarak 3DR radio konfigürasyonu yapabilmektedir.
+Mission Planer’da 3DR modem bağlantısını yapmak için Mission planer arayüzünde sağ üstte bulunan COM Port modemin bağlandığı porta ayarlanır. Baud rate 57000  seçilir. Daha sonra Control-A’ya basılır.
+Aşağıdaki pencere karşınıza gelecek.Burada bulunan ”Load Settings”e tıklayın ve bu aşağıda gösterildiği gibi verilerle doldurma işlemi olacak. Bu, çoğu kullanıcı için önerilen yapılandırma yöntemidir.
 
-
-
-Bu, çoğu kullanıcı için önerilen yapılandırma yöntemidir.
-
-3DR radio konfigürasyonu(ayarlaması) için  FTDI-to-USB kablo kullanımı 
+*3DR radio konfigürasyonu (ayarlaması) için  FTDI-to-USB kablo kullanımı* 
 
 
 Eğer bir önceki paragrafta yazılanla çalışmıyorsa aşağıdaki adımları izleyin.…
@@ -210,6 +206,3 @@ Eğer nasıl hesaplayacağınız bilmiyorsanız biz burada bir tutorial linki ve
 
 
 http://dev.ardupilot.com/wiki/common-db-watt-dbm/
-
-
-
